@@ -1,0 +1,42 @@
+{
+  "name": "safewalk",
+  "version": "1.0.0",
+  "description": "a route generator based on safety",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "server:debug": "nodemon --inspect app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahhchooey/SafeWalk.git"
+  },
+  "keywords": [
+    "map",
+    "routing",
+    "route",
+    "safety",
+    "crime"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahhchooey/SafeWalk/issues"
+  },
+  "homepage": "https://github.com/ahhchooey/SafeWalk#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
