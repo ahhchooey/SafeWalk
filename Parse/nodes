@@ -1,0 +1,203 @@
+broadway // grant
+    latitude: '37.797858', 
+    longitude: '-122.407051'
+broadway // columbus
+    latitude: '37.797868',
+    longitude: '-122.406694'
+broadway // kearny
+    latitude: '37.798020',
+    longitude: '-122.405527'
+broadway // montgomery
+    
+broadway // bartol
+broadway // osgood
+broadway // sansome
+    latitude: '37.7984297',
+    longitude: '-122.40222',
+broadway // battery
+broadway // front
+broadway // davis
+    latitude: '37.7988809',
+    longitude: '-122.39869',
+
+pacific // grant
+pacific // beckett
+pacific // columbus // kearny
+pacific // montgomery
+pacific // osgood
+pacific // sansome
+pacific // battery
+    latitude: '37.7976541',
+    longitude: '-122.40086',
+pacific // front
+    latitude: '37.7978066',
+    longitude: '-122.39968',
+
+jackson // grant
+jackson // beckett
+jackson // wentworth
+jackson // kearny
+jackson // columbus
+jackson // montgomery
+jackson // hotaling
+jackson // sansome
+jackson // battery
+jackson // front
+    latitude: '37.7969264',
+    longitude: '-122.39950',
+jackson // davis
+    latitude: '37.7970920',
+    longitude: '-122.39833',
+jackson // drumm
+
+washington // grant
+washington // walter u lum
+washington // wentworth
+washington // kearny
+washington // columbus // montgomery
+washington // sansome
+washington // battery
+washington // drumm
+    latitude: '37.7963468',
+    longitude: '-122.39695',
+washington // davis
+    latitude: '37.7961860',
+    longitude: '-122.39815',
+
+
+clay // grant
+clay // walter u lum
+clay // kearny
+clay // montgomery
+clay // leidesdorff
+clay // sansome
+clay // battery
+clay // davis
+clay // drumm
+clay // front
+    latitude: '37.7951633',
+    longitude: '-122.39914',
+
+sacremento // grant
+sacremento // kearny
+sacremento // montgomery
+    latitude: '37.7937798',
+    longitude: '-122.40295',
+sacremento // leidesdorff
+sacremento // sansome
+    latitude: '37.7939870',
+    longitude: '-122.40131',
+sacremento // battery
+    latitude: '37.7941342',
+    longitude: '-122.40014',
+sacremento // halleck
+sacremento // davis
+    latitude: '37.7944340',
+    longitude: '-122.39779',
+sacremento // drumm
+    latitude: '37.7945882',
+    longitude: '-122.39658',
+sacremento // spring
+
+california // grant
+california // quincy
+california // leidesdorff
+    latitude: '37.7929543',
+    longitude: '-122.40195',
+california // kearny
+    latitude: '37.7926386',
+    longitude: '-122.40441',
+california // montgomery
+    latitude: '37.7928512',
+    longitude: '-122.40276',
+california // sansome
+    latitude: '37.7930603',
+    longitude: '-122.40112',
+california // battery
+    latitude: '37.7932091',
+    longitude: '-122.39995',
+california // front
+california // davis
+    latitude: '37.7935086',
+    longitude: '-122.39760',
+california // drumm
+california // spring
+    latitude: '37.7927171',
+    longitude: '-122.40382',
+
+pine // grant
+pine // quincy
+pine // kearny
+pine // belden
+    latitude: '37.7917349',
+    longitude: '-122.40386',
+pine // montgomery
+    latitude: '37.7918989',
+    longitude: '-122.40257',
+pine // sansome
+    latitude: '37.7921084',
+    longitude: '-122.40093',
+pine // battery
+pine // front
+    latitude: '37.7924082',
+    longitude: '-122.39858',
+pine // davis // market
+pine // saint george aly
+    latitude: '37.7916520',
+    longitude: '-122.40452',
+
+bush // grant
+bush // kearny
+bush // belden
+bush // montgomery
+    latitude: '37.7909686',
+    longitude: '-122.40238',
+bush // sansome
+    latitude: '37.7911771',
+    longitude: '-122.40074',
+bush // battery
+    latitude: '37.7913265',
+    longitude: '-122.39957',
+bush // saint george aly
+    latitude: '37.7907219',
+    longitude: '-122.40433',
+
+sutter // grant
+    latitude: '37.7896315',
+    longitude: '-122.40539',
+sutter // kearny
+    latitude: '37.7898293',
+    longitude: '-122.40384',
+sutter // montgomery
+sutter // sansome
+sutter // market
+
+post // grant
+    latitude: '37.7886939',
+    longitude: '-122.40522',
+post // kearny 
+post // montgomery
+
+
+maiden // grant
+    latitude: '37.7882302',
+    longitude: '-122.40513',
+maiden // kearny
+    latitude: '37.7884272',
+    longitude: '-122.40357',
+geary // grant
+geary // kearny
+    latitude: '37.7879630',
+    longitude: '-122.40349',
+geary // market
+
+market // grant
+market // kearny
+market // montgomery
+    latitude: '37.7887211',
+    longitude: '-122.40206',
+market // battery
+market // front
+market // sansome
+market // davis
+market // drumm
