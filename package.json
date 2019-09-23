@@ -27,13 +27,16 @@
   },
   "homepage": "https://github.com/ahhchooey/SafeWalk#readme",
   "dependencies": {
+    "ajax": "0.0.4",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react-router-dom": "^5.0.1",
     "validator": "^11.1.0"
   },
   "devDependencies": {
