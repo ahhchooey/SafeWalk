@@ -17,6 +17,7 @@ export default class SearchForm extends React.Component{
         this.selected = false
         this.handleSubmit = this.handleSubmit.bind(this)
         this.showDropdown = this.showDropdown.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
     showDropdown(e){
         e.target.nextElementSibling.classList.add('show')
@@ -25,9 +26,8 @@ export default class SearchForm extends React.Component{
     hideDropdown(e){
         e.target.nextElementSibling.classList.remove('show')
     }
-    handleClick(str, place){
-        this.setState({[str]: place })
-        debugger
+    handleClick(){
+       debugger
     }
 
     handleInput(str) {
@@ -90,7 +90,7 @@ export default class SearchForm extends React.Component{
                         <input type="text" onChange={this.handleInput('destination')} value={this.state.destination} />
                         <div className="locations-dropdown">
                             <ul>
-                                {places.map(place => <li onClick={console.log('test')} >{place.place_name}</li>)}
+                                {places.map((place, idx) => <li onClick={this.handleClick} key={idx}>{place.place_name}</li>)}
                             </ul>
                         </div>
                     </label>
