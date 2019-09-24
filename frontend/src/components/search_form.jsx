@@ -12,7 +12,11 @@ export default class SearchForm extends React.Component{
         super(props)
         this.state = {
             start: "",
-            destination: ""
+            destination: "",
+            startPlaces: [],
+            destinationPlaces: [],
+            startCoordinates: "",
+            destinationCoordinates: ""
         }
         this.selected = false
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,11 +30,14 @@ export default class SearchForm extends React.Component{
     hideDropdown(e){
         e.target.nextElementSibling.classList.remove('show')
     }
-    handleClick(){
-       debugger
+    handleClick(str, place){
+        let coord = (str === 'destination') ? 'destinationCoordinates' : 'startCoordinates'
+        this.setState({ [coord]: place.geometry.coordinates, [str]: place.place_name})
+        console.log(this.state)
     }
 
     handleInput(str) {
+        let places = (str === 'start') ? 'startPlaces' : 'destinationPlaces'
         return (e) => {
             this.setState({ [str]: e.target.value })
             if (e.target.value === '') return
@@ -44,7 +51,7 @@ export default class SearchForm extends React.Component{
                 types: ['address']
             }).send()
                 .then(res => {
-                    this.setState({ places: res.body.features})
+                    this.setState({ [places]: res.body.features})
                 })
             // this.setState({ [str]: e.target.value })
         }
@@ -52,19 +59,19 @@ export default class SearchForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault()
-        let query = this.state
-        // $.ajax({
-        //     url: '/api/intersections',
-        //     method: 'GET',
-        //     data: {
-        //         query
-        //     }
-        // }).then(() => {
-        //     console.log('success')
-        //     this.setState({ start: "", destination: "" })
-        // }, () => {
-        //     console.log('failure')
-        // })
+        let query = {start: this.state.startCoordinates, destination: this.state.destinationCoordinates}
+        $.ajax({
+            url: '/api/intersections/fastest',
+            method: 'GET',
+            data: {
+                query
+            }
+        }).then(() => {
+            console.log('success')
+            this.setState({ start: "", destination: "" })
+        }, () => {
+            console.log('failure')
+        })
     }
 
 
@@ -80,7 +87,7 @@ export default class SearchForm extends React.Component{
                         <input type="text" onChange={this.handleInput('start')} onFocus={this.showDropdown} onBlur={this.hideDropdown} value={this.state.start} />
                         <div className="locations-dropdown">
                             <ul>
-                                {places.map(place => <li>{place.place_name}</li>)}
+                                {this.state.startPlaces.map((place, idx) => <li key ={idx} onPointerDown={() => this.handleClick('start', place)}>{place.place_name}</li>)}
                             </ul>
                         </div>
                     </label>
@@ -90,7 +97,7 @@ export default class SearchForm extends React.Component{
                         <input type="text" onChange={this.handleInput('destination')} value={this.state.destination} />
                         <div className="locations-dropdown">
                             <ul>
-                                {places.map((place, idx) => <li onClick={this.handleClick} key={idx}>{place.place_name}</li>)}
+                                {this.state.destinationPlaces.map((place, idx) => <li onPointerDown={() => this.handleClick('destination', place)} key={idx}>{place.place_name}</li>)}
                             </ul>
                         </div>
                     </label>
