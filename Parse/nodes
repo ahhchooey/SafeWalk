@@ -199,190 +199,249 @@ clay // front
     longitude: -122.39914,
 
 sacremento // grant
+    id: 50,
     latitude: 37.793387, 
     long: -122.406148
 sacremento // kearny
+    id: 51,
     latitude: 37.793579, 
     longitude: -122.404629
 sacremento // montgomery
+    id: 52,
     latitude: 37.7937798,
     longitude: -122.40295,
 sacremento // leidesdorff
+    id: 53,
     latitude: 37.793891, 
     longitude: -122.402164
 sacremento // sansome
+    id: 54,
     latitude: 37.7939870,
     longitude: -122.40131,
 sacremento // battery
+    id: 55,
     latitude: 37.7941342,
     longitude: -122.40014,
 sacremento // davis
+    id: 56,
     latitude: 37.7944340,
     longitude: -122.39779,
 sacremento // drumm
+    id: 57,
     latitude: 37.7945882,
     longitude: -122.39658,
 sacremento // spring
+    id: 58,
     latitude: 37.793650, 
     longitude: -122.404032
 
 california // grant
+    id: 59,
     latitude: 37.792451, 
     longitude: -122.405952
 california // quincy
+    id: 60,
     latitude: 37.792500, 
     longitude: -122.405676
 california // leidesdorff
+    id: 61,
     latitude: 37.7929543,
     longitude: -122.40195,
 california // kearny
+    id: 62,
     latitude: 37.7926386,
     longitude: -122.40441,
 california // montgomery
+    id: 63,
     latitude: 37.7928512,
     longitude: -122.40276,
 california // sansome
+    id: 64,
     latitude: 37.7930603,
     longitude: -122.40112,
 california // battery
+    id: 65,
     latitude: 37.7932091,
     longitude: -122.39995,
 california // front
+    id: 66,
     latitude: 37.793373, 
     longitude: -122.398802
 california // davis
+    id: 67,
     latitude: 37.7935086,
     longitude: -122.39760,
 california // drumm
+    id: 68,
     latitude: 37.793674, 
     longitude: -122.396474
 california // spring
+    id: 69,
     latitude: 37.7927171,
     longitude: -122.40382,
 
 pine // grant
+    id: 70,
     latitude: 37.791509, 
     longitude: -122.405765
 pine // quincy
+    id: 71,
     latitude: 37.791552, 
     longitude: -122.405453
 pine // kearny
+    id: 72,
     latitude: 37.791689, 
     longitude: -122.404256
 pine // belden
+    id: 73,
     latitude: 37.7917349,
     longitude: -122.40386,
 pine // montgomery
+    id: 74,
     latitude: 37.7918989,
     longitude: -122.40257,
 pine // sansome
+    id: 75,
     latitude: 37.7921084,
     longitude: -122.40093,
 pine // battery
+    id: 76,
     latitude: 37.792265, 
     longitude: -122.399807
 pine // front
+    id: 77,
     latitude: 37.7924082,
     longitude: -122.39858,
 pine // davis // market
+    id: 78,
     latitude: 37.792547, 
     longitude: -122.397378
 pine // saint george aly
+    id: 79,
     latitude: 37.7916520,
     longitude: -122.40452,
 bush // grant
+    id: 80,
     latitude: 37.790586, 
     longitude: -122.405571
 bush // kearny
+    id: 81,
     latitude: 37.790760, 
     longitude: -122.404066
 bush // belden
+    id: 82,
     latitude: 37.790846, 
     longitude: -122.403706
 bush // montgomery
+    id: 83,
     latitude: 37.7909686,
     longitude: -122.40238,
 bush // sansome
+    id: 84,
     latitude: 37.7911771,
     longitude: -122.40074,
 bush // battery
+    id: 85,
     latitude: 37.7913265,
     longitude: -122.39957,
 bush // saint george aly
+    id: 86,
     latitude: 37.7907219,
     longitude: -122.40433,
 
 sutter // grant
+    id: 87,
     latitude: 37.7896315,
     longitude: -122.40539,
 sutter // kearny
+    id: 88,
     latitude: 37.7898293,
     longitude: -122.40384,
 sutter // montgomery
+    id: 89,
     latitude: 37.790041, 
     longitude: -122.402222
 sutter // sansome
+    id: 90,
     latitude: 37.790269, 
     longitude: -122.400583
 sutter // market
+    id: 91,
     latitude: 37.790345, 
     longitude: -122.400090
 
-
 post // grant
+    id: 92,
     latitude: 37.7886939,
     longitude: -122.40522,
 post // kearny 
+    id: 93,
     latitude: 37.788703, 
     longitude: -122.405247
 post // montgomery
+    id: 94,
     latitude: 37.789110, 
     longitude: -122.402038
 
 maiden // grant
+    id: 95,
     latitude: 37.7882302,
     longitude: -122.40513,
 maiden // kearny
+    id: 96,
     latitude: 37.7884272,
     longitude: -122.40357,
 geary // grant
+    id: 97,
     latitude: 37.787775, 
     longitude: -122.405064
 geary // kearny
+    id: 98,
     latitude: 37.7879630,
     longitude: -122.40349,
 geary // market
+    id: 99,
     latitude: 37.788011, 
     longitude: -122.403133
 
 market // grant
+    id: 100,
     latitude: 37.786746, 
     longitude: -122.404625
 market // kearny
+    id: 101,
     latitude: 37.787688, 
     longitude: -122.403454
 market // montgomery
+    id: 102,
     latitude: 37.7887211,
     longitude: -122.40206,
 market // battery
+    id: 103,
     latitude: 37.790794, 
     longitude: -122.399527
 market // front
+    id: 104,
     latitude: 37.791722, 
     longitude: -122.398324
 market // drumm
+    id: 105,
     latitude: 37.793329, 
     longitude: -122.396331
 
 halleck // leidesdorff
+    id: 106,
     latitude: 37.793463, 
     longitude: -122.402085
 halleck // sansome
+    id: 107,
     latitude: 37.7935442,
     longitude: -122.40122,
 halleck // battery
+    id: 108,
     latitude: 37.793700, 
     longitude: -122.400088
 halleck // front
+    id: 109,
     latitude: 37.7938436,
     longitude: -122.39888,
