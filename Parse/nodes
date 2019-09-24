@@ -1,81 +1,176 @@
-broadway // grant st
+// in kilometers!!!
+
+broadway // grant ave
     id: 1,
     latitude: 37.797858, 
-    longitude: -122.407051
+    longitude: -122.407051,
+    options: {
+        2: .03,
+        11: .11
+    }
 broadway // columbus st 
     id: 2,
     latitude: 37.797868,
-    longitude: -122.406694
+    longitude: -122.406694,
+    options: {
+        1: .03,
+        3: .17,
+        13: .14
+    }
 broadway // kearny st
     id: 3,
     latitude: 37.798020,
-    longitude: -122.405527
+    longitude: -122.405527,
+    options: {
+        2: .17
+        4: .15
+        13: .11
+    }
 broadway // montgomery st
     id: 4,
     latitude: 37.798270, 
-    longitude: -122.403877
+    longitude: -122.403877,
+    options: {
+        3: .15,
+        14: .11,
+        5: .03
+    }
+
 broadway // bartol
     id: 5,
     latitude: 37.798284,
-    longitude: -122.403543
+    longitude: -122.403543,
+    options: {
+        4: .03,
+        6: .04
+    }
 broadway // osgood st
     id: 6,
     latitude: 37.798339,
-    longitude: -122.403091
+    longitude: -122.403091,
+    options: {
+        5: .04,
+        7: .08,
+        15: .1
+    }
 broadway // sansome st
     id: 7,
     latitude: 37.7984297,
     longitude: -122.40222,
+    options: {
+        6: .08,
+        8: .1,
+        16: .1
+    }
 broadway // battery st
     id: 8,
     latitude: 37.798590,
-    longitude: -122.401071
+    longitude: -122.401071,
+    options: {
+        7: .1,
+        9: .1
+        17: .11
+    }
 broadway // front
     id: 9,
     latitude: 37.798738, 
-    longitude: -122.399897
+    longitude: -122.399897,
+    options: {
+        8: .1,
+        10: .11,
+        18: .11,
+    }
 broadway // davis
     id: 10,
     latitude: 37.7988809,
     longitude: -122.39869,
+    options: {
+        9: .11,
+        29: .2,
+    }
 
 pacific // grant
     id: 11,
     latitude: 37.796915,
-    longitude: -122.406857
+    longitude: -122.406857,
+    options: {
+        1: .11,
+        12: .03,
+    }
 pacific // beckett
     id: 12,
     latitude: 37.796948,
-    longitude: -122.406555
+    longitude: -122.406555,
+    options: {
+        11: .03,
+        20: .1
+    }
 pacific // columbus // kearny
     id: 13,
     latitude: 37.797062, 
-    longitude: -122.405412
+    longitude: -122.405412,
+    options: {
+        2: .14,
+        3: .11,
+        14: .15,
+        22: .1,
+        35: .25
+    }
 pacific // montgomery
     id: 14,
     latitude: 37.797304, 
-    longitude: -122.403703
+    longitude: -122.403703,
+    options: {
+        4: .11,
+        13: .15,
+        15: .07,
+        24: .1
+    }
 pacific // osgood
     id: 15,
     latitude: 37.797414, 
     longitude: -122.402899
+    options: {
+        6: .1,
+        14: .07,
+        16: .07
+    }
 pacific // sansome
     id: 16,
     latitude: 37.797516, 
-    longitude: -122.402062
+    longitude: -122.402062, 
+    options: {
+        7: .1,
+        15: .07,
+        17: .1,
+        26: .1
+    }
 pacific // battery
     id: 17,
     latitude: 37.7976541,
     longitude: -122.40086,
+    options: {
+        8: .11,
+        16: .1,
+        18: .1,
+        27: .1
+    }
 pacific // front
     id: 18,
     latitude: 37.7978066,
     longitude: -122.39968,
-
+    options: {
+        9: .1,
+        17: .1,
+        28: .1
+    }
 jackson // grant
     id: 19,
     latitude: 37.796041, 
-    longitude: -122.406678
+    longitude: -122.406678,
+    options: {
+        
+    }
 jackson // beckett
     id: 20,
     latitude: 37.796081, 
