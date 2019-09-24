@@ -1,6 +1,6 @@
-{
+const seed = {
   1: {
-    id: 1,
+    custid: 1,
     latitude: 37.797858, 
     longitude: -122.407051,
     options: {
@@ -10,7 +10,7 @@
     name: "broadway // grant ave"
   },
   2: {
-    id: 2,
+    custid: 2,
     latitude: 37.797868,
     longitude: -122.406694,
     options: {
@@ -21,7 +21,7 @@
     name: "broadway // columbus st" 
   },
   3: {
-    id: 3,
+    custid: 3,
     latitude: 37.798020,
     longitude: -122.405527,
     options: {
@@ -32,7 +32,7 @@
     name: "broadway // kearny st"
   },
   4: {
-    id: 4,
+    custid: 4,
     latitude: 37.798270, 
     longitude: -122.403877,
     options: {
@@ -43,7 +43,7 @@
     name: "broadway // montgomery st"
   },
   5: {
-    id: 5,
+    custid: 5,
     latitude: 37.798284,
     longitude: -122.403543,
     options: {
@@ -53,7 +53,7 @@
     name: "broadway // bartol"
   },
   6: {
-    id: 6,
+    custid: 6,
     latitude: 37.798339,
     longitude: -122.403091,
     options: {
@@ -64,7 +64,7 @@
     name: "broadway // osgood st"
   },
   7: {
-    id: 7,
+    custid: 7,
     latitude: 37.7984297,
     longitude: -122.40222,
     options: {
@@ -75,18 +75,18 @@
     name: "broadway // sansome st"
   },
   8: {
-    id: 8,
+    custid: 8,
     latitude: 37.798590,
     longitude: -122.401071,
     options: {
         7: .1,
-        9: .1
+        9: .1,
         17: .11
     },
     name: "broadway // battery st"
   },
   9: {
-    id: 9,
+    custid: 9,
     latitude: 37.798738, 
     longitude: -122.399897,
     options: {
@@ -97,7 +97,7 @@
     name: "broadway // front"
   },
   10: {
-    id: 10,
+    custid: 10,
     latitude: 37.7988809,
     longitude: -122.39869,
     options: {
@@ -107,17 +107,18 @@
     name: "broadway // davis"
   },
   11: {
-    id: 11,
+    custid: 11,
     latitude: 37.796915,
     longitude: -122.406857,
     options: {
         1: .11,
         12: .03,
+        19: 0.1
     },
     name: "pacific // grant"
   },
   12: {
-    id: 12,
+    custid: 12,
     latitude: 37.796948,
     longitude: -122.406555,
     options: {
@@ -127,7 +128,7 @@
     name: "pacific // beckett"
   },
   13: {
-    id: 13,
+    custid: 13,
     latitude: 37.797062, 
     longitude: -122.405412,
     options: {
@@ -140,7 +141,7 @@
     name: "pacific // columbus // kearny"
   },
   14: {
-    id: 14,
+    custid: 14,
     latitude: 37.797304, 
     longitude: -122.403703,
     options: {
@@ -152,9 +153,9 @@
     name: "pacific // montgomery"
   },
   15: {
-    id: 15,
+    custid: 15,
     latitude: 37.797414, 
-    longitude: -122.402899
+    longitude: -122.402899,
     options: {
         6: .1,
         14: .07,
@@ -163,7 +164,7 @@
     name: "pacific // osgood"
   },
   16: {
-    id: 16,
+    custid: 16,
     latitude: 37.797516, 
     longitude: -122.402062, 
     options: {
@@ -175,7 +176,7 @@
     name: "pacific // sansome"
   },
   17: {
-    id: 17,
+    custid: 17,
     latitude: 37.7976541,
     longitude: -122.40086,
     options: {
@@ -187,7 +188,7 @@
     name: "pacific // battery"
   },
   18: {
-    id: 18,
+    custid: 18,
     latitude: 37.7978066,
     longitude: -122.39968,
     options: {
@@ -199,3 +200,4 @@
   }
 }
 
+module.exports = seed;

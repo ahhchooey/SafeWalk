@@ -1,7 +1,8 @@
 const router = require("express").Router();
+const Intersection = require("../models/intersection.model.js");
 
 router.route("/test").get((req, res) => {
-  res.json({msg: "this is a test"})
+  res.json({msg: "this is a testooo"})
 })
 
 router.route("/").get((req, res) => {
