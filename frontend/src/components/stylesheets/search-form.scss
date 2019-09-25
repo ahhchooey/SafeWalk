@@ -4,9 +4,12 @@
    border: 1px solid lightgray
 }
 .search-form {
-    justify-content: center;
     z-index: 3;
-    display: none
+    display: none;
+    background-color: white;
+    width: 100%;
+    color: black;
+
 }
 .show{
     display: block
