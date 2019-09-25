@@ -22,8 +22,8 @@ broadway // kearny st
     latitude: 37.798020,
     longitude: -122.405527,
     options: {
-        2: .17
-        4: .15
+        2: .17,
+        4: .15,
         13: .11
     }
 broadway // montgomery st
@@ -44,6 +44,7 @@ broadway // bartol
         4: .03,
         6: .04
     }
+
 broadway // osgood st
     id: 6,
     latitude: 37.798339,
@@ -68,7 +69,7 @@ broadway // battery st
     longitude: -122.401071,
     options: {
         7: .1,
-        9: .1
+        9: .1,
         17: .11
     }
 broadway // front
@@ -96,6 +97,7 @@ pacific // grant
     options: {
         1: .11,
         12: .03,
+        19: .1
     }
 pacific // beckett
     id: 12,
@@ -103,6 +105,7 @@ pacific // beckett
     longitude: -122.406555,
     options: {
         11: .03,
+        13: .1,
         20: .1
     }
 pacific // columbus // kearny
@@ -112,9 +115,10 @@ pacific // columbus // kearny
     options: {
         2: .14,
         3: .11,
+        12: .1,
         14: .15,
         22: .1,
-        35: .25
+        23: .12,
     }
 pacific // montgomery
     id: 14,
@@ -160,7 +164,7 @@ pacific // front
     latitude: 37.7978066,
     longitude: -122.39968,
     options: {
-        9: .1,
+        9: .11,
         17: .1,
         28: .1
     }
@@ -169,374 +173,949 @@ jackson // grant
     latitude: 37.796041, 
     longitude: -122.406678,
     options: {
-        
+        11: .1,
+        20: .03,
+        31: .1
     }
 jackson // beckett
     id: 20,
     latitude: 37.796081, 
-    longitude: -122.406372
+    longitude: -122.406372,
+    options: {
+        19: .03,
+        12: .1,
+        21: .01
+    }
 jackson // wentworth
     id: 21,
     latitude: 37.796090, 
     longitude: -122.406254
+    options: {
+        20: .01,
+        22: .1,
+        33: .1
+    }
 jackson // kearny
     id: 22,
     latitude: 37.796221, 
-    longitude: -122.405170
+    longitude: -122.405170,
+    options: {
+        13: .1,
+        21: .1,
+        23: .06,
+        34: .1
+    }
 jackson // columbus
     id: 23,
     latitude: 37.796316, 
-    longitude: -122.404443
+    longitude: -122.404443,
+    options: {
+        13: .12,
+        22: .06,
+        24: .08,
+        35: .13
+    }
 jackson // montgomery
     id: 24,
     latitude: 37.796428, 
-    longitude: -122.403509
+    longitude: -122.403509,
+    options: {
+        14: .1,
+        23: .08,
+        35: .1,
+        25: .05
+    }
 jackson // hotaling
     id: 25,
     latitude: 37.796496, 
-    longitude: -122.402937
+    longitude: -122.402937,
+    options: {
+        24: .05,
+        26: .09,
+        110: .1
+    }
 jackson // sansome
     id: 26,
     latitude: 37.796638, 
-    longitude: -122.401875
+    longitude: -122.401875,
+    options: {
+        16: .1,
+        25: .09,
+        27: .1,
+        36: .1
+    }
 jackson // battery
     id: 27,
     latitude: 37.796793, 
-    longitude: -122.400705
+    longitude: -122.400705,
+    options: {
+        17: .1,
+        26: .1,
+        28: .1,
+        37: .1
+    }
 jackson // front
     id: 28,
     latitude: 37.7969264,
     longitude: -122.39950,
+    options: {
+        18: .1,
+        27: .1,
+        29: .1
+    }
 jackson // davis
     id: 29,
     latitude: 37.7970920,
     longitude: -122.39833,
+    options: {
+        10: .2,
+        28: .1,
+        30: .1,
+        39: 0.1
+    }
 jackson // drumm
     id: 30,
     latitude: 37.797244, 
-    longitude: -122.397167
+    longitude: -122.397167,
+    options: {
+        29: .1,
+        38: .1
+    }
 washington // grant
     id: 31,
     latitude: 37.795161, 
-    longitude: -122.406491
+    longitude: -122.406491,
+    options: {
+        19: .1,
+        33: .04,
+        40: .1
+    }
 washington // walter u lum
     id: 32,
     latitude: 37.795229, 
-    longitude: -122.405876
+    longitude: -122.405876,
+    options: {
+        33: .02,
+        34: .08,
+        41: .1
+    }
 washington // wentworth
     id: 33,
     latitude: 37.795195, 
-    longitude: -122.406072
+    longitude: -122.406072,
+    options: {
+        21: .1,
+        31: .04,
+        32: .02
+    }
 washington // kearny
     id: 34,
     latitude: 37.795337, 
-    longitude: -122.404975
+    longitude: -122.404975,
+    options: {
+        22: .1,
+        32: .08,
+        35: .15,
+        42: .1
+    }
 washington // columbus // montgomery
     id: 35,
     latitude: 37.795545, 
-    longitude: -122.403334
+    longitude: -122.403334,
+    options: {
+        23: .13,
+        24: .1,
+        34: .15,
+        43: .1,
+        110: 0.05
+    }
 washington // sansome
     id: 36,
     latitude: 37.795750, 
-    longitude: -122.401697
+    longitude: -122.401697,
+    options: {
+        26: .1,
+        37: .1,
+        45: .1,
+        110: 0.1
+    }
 washington // battery
     id: 37,
     latitude: 37.795884, 
-    longitude: -122.400531
+    longitude: -122.400531,
+    options: {
+        27: .1,
+        36: .1,
+        39: .21,
+        46: .1
+    }
 washington // drumm
     id: 38,
     latitude: 37.7963468,
     longitude: -122.39695,
+    options: {
+        30: .1,
+        39: .11,
+        48: .1
+    }
 washington // davis
     id: 39,
     latitude: 37.7961860,
     longitude: -122.39815,
-
+    options: {
+        37: 0.21,
+        29: .1,
+        38: .11,
+        47: .09
+    }
 clay // grant
     id: 40,
     latitude: 37.794284, 
     longitude: -122.406308
+    options: {
+        31: .1,
+        41: .05,
+        111: .05
+    }
 clay // walter u lum
     id: 41,
     latitude: 37.794337, 
-    longitude: -122.405713
+    longitude: -122.405713,
+    options: {
+        32: .1,
+        40: .05,
+        42: .08
+    }
 clay // kearny
     id: 42,
     latitude: 37.794466, 
-    longitude: -122.404811
+    longitude: -122.404811,
+    options: {
+        34: .1
+        41: .08,
+        43: .15,
+        112: .05
+    }
 clay // montgomery
     id: 43,
     latitude: 37.794676, 
-    longitude: -122.403173
+    longitude: -122.403173,
+    options: {
+        35: .1,
+        42: .15,
+        44: .07,
+        113: .05
+    }
 clay // leidesdorff
     id: 44,
     latitude: 37.794766, 
-    longitude: -122.402380
+    longitude: -122.402380,
+    options: {
+        43: .07,
+        45: .08,
+        114: .05
+    }
 clay // sansome
     id: 45,
     latitude: 37.794862, 
-    longitude: -122.401509
+    longitude: -122.401509,
+    options: {
+        36: .1,
+        44: .08,
+        46: .1,
+        115: .05
+    }
 clay // battery
     id: 46,
     latitude: 37.795005, 
-    longitude: -122.400364
+    longitude: -122.400364,
+    options: {
+        37: .1,
+        45: .1,
+        55: .1,
+        49: .1
+    }
 clay // davis
     id: 47,
     latitude: 37.795345, 
-    longitude: -122.397998
+    longitude: -122.397998,
+    options: {
+        49: .1,
+        48: .1,
+        39: .09,
+        56: .1
+    }
 clay // drumm
     id: 48,
     latitude: 37.795490, 
-    longitude: -122.396801
+    longitude: -122.396801,
+    options: {
+        38: .1,
+        47: .1,
+        57: .1
+    }
 clay // front
     id: 49,
     latitude: 37.7951633,
     longitude: -122.39914,
+    options: {
+        46: .1,
+        47: .1,
+        116: .1
+    }
 
-sacremento // grant
+sacramento // grant
     id: 50,
     latitude: 37.793387, 
-    long: -122.406148
-sacremento // kearny
+    long: -122.406148,
+    options: {
+        111: .05,
+        51: .14,
+        59: .1
+    }
+sacramento // kearny
     id: 51,
     latitude: 37.793579, 
-    longitude: -122.404629
-sacremento // montgomery
+    longitude: -122.404629,
+    options: {
+        50: .14,
+        112: .05,
+        58: .05,
+        62: .1
+    }
+sacramento // spring
+    id: 58,
+    latitude: 37.793650, 
+    longitude: -122.404032,
+    options: {
+        51: .05,
+        52: .1,
+        69: .1
+    }
+
+sacramento // montgomery
     id: 52,
     latitude: 37.7937798,
     longitude: -122.40295,
-sacremento // leidesdorff
+    options: {
+        58: .1,
+        113: .05,
+        63: .1,
+        53: .07
+    }
+sacramento // leidesdorff
     id: 53,
     latitude: 37.793891, 
-    longitude: -122.402164
-sacremento // sansome
+    longitude: -122.402164,
+    options: {
+        52: .07,
+        54: .08,
+        114: .05,
+        106: .05
+    }
+sacramento // sansome
     id: 54,
     latitude: 37.7939870,
     longitude: -122.40131,
-sacremento // battery
+    options: {
+        115: .05,
+        53: .08,
+        107: .05,
+        55: .1
+    }
+sacramento // battery
     id: 55,
     latitude: 37.7941342,
     longitude: -122.40014,
-sacremento // davis
+    options: {
+        54: .1,
+        46: .1,
+        108: .05,
+        116: .1
+    }
+sacramento // front
+    id: 116,
+    latitude: 37.794288, 
+    longitude: -122.398991,
+    options: {
+        109: .05,
+        55: .1,
+        56: .1,
+        49: .1
+    }
+sacramento // davis
     id: 56,
     latitude: 37.7944340,
     longitude: -122.39779,
-sacremento // drumm
+    options: {
+        116: .1,
+        67: .1,
+        57: .1,
+        47: .1
+    }
+sacramento // drumm
     id: 57,
     latitude: 37.7945882,
     longitude: -122.39658,
-sacremento // spring
-    id: 58,
-    latitude: 37.793650, 
-    longitude: -122.404032
+    options: {
+        56: .1,
+        48: .1,
+        68: .1
+    }
 
 california // grant
     id: 59,
     latitude: 37.792451, 
-    longitude: -122.405952
+    longitude: -122.405952,
+    options: {
+        60: .02,
+        50: .1,
+        70: .11
+    }
 california // quincy
     id: 60,
     latitude: 37.792500, 
-    longitude: -122.405676
+    longitude: -122.405676,
+    options: {
+        62: .11,
+        59: .02,
+        71: .11
+    }
 california // leidesdorff
     id: 61,
     latitude: 37.7929543,
     longitude: -122.40195,
+    options: {
+        106: 0.06,
+        63: .07,
+        64: .07,
+        117: .1
+    }
 california // kearny
     id: 62,
     latitude: 37.7926386,
     longitude: -122.40441,
-california // montgomery
-    id: 63,
-    latitude: 37.7928512,
-    longitude: -122.40276,
-california // sansome
-    id: 64,
-    latitude: 37.7930603,
-    longitude: -122.40112,
-california // battery
-    id: 65,
-    latitude: 37.7932091,
-    longitude: -122.39995,
-california // front
-    id: 66,
-    latitude: 37.793373, 
-    longitude: -122.398802
-california // davis
-    id: 67,
-    latitude: 37.7935086,
-    longitude: -122.39760,
-california // drumm
-    id: 68,
-    latitude: 37.793674, 
-    longitude: -122.396474
+    options: {
+        60: .11,
+        72: .11,
+        51: .1,
+        69: .05
+    }
 california // spring
     id: 69,
     latitude: 37.7927171,
     longitude: -122.40382,
+    options: {
+        62: .05,
+        63: .09,
+        58: .1
+    }
+california // montgomery
+    id: 63,
+    latitude: 37.7928512,
+    longitude: -122.40276,
+    options: {
+        69: .09,
+        52: .1,
+        74: .11,
+        61: .07
+    }
+california // sansome
+    id: 64,
+    latitude: 37.7930603,
+    longitude: -122.40112,
+    options: {
+        107: 0.05,
+        65: 0.1,
+        61: 0.07,
+        75: .11
+    }
+california // battery
+    id: 65,
+    latitude: 37.7932091,
+    longitude: -122.39995,
+    options: {
+        108: 0.06, 
+        66:  0.1,
+        76: 0.11,
+        64: 0.1,
+    }
+california // front
+    id: 66,
+    latitude: 37.793373, 
+    longitude: -122.398802,
+    options: {
+        109: 0.05, 
+        65: 0.1,
+        77: 0.11,
+        67: 0.11
+    }
+california // davis
+    id: 67,
+    latitude: 37.7935086,
+    longitude: -122.39760,
+    options: {
+        66: 0.11,
+        68: 0.1,
+        56: 0.1,
+        78: 0.11
+    }
+california // drumm
+    id: 68,
+    latitude: 37.793674, 
+    longitude: -122.396474,
+    options: {
+        105: 0.04,
+        57: .1,
+        67: .1
+    }
 
 pine // grant
     id: 70,
     latitude: 37.791509, 
-    longitude: -122.405765
+    longitude: -122.405765,
+    options: {
+        71: .03,
+        59: .11,
+        80: .1
+    }
 pine // quincy
     id: 71,
     latitude: 37.791552, 
-    longitude: -122.405453
+    longitude: -122.405453,
+    options: {
+        60: .11,
+        70: .03,
+        79: .08
+    }
 pine // kearny
     id: 72,
     latitude: 37.791689, 
-    longitude: -122.404256
+    longitude: -122.404256,
+    options: {
+        62: .11,
+        73: .04,
+        79: .02,
+        81: .1,
+    }
 pine // belden
     id: 73,
     latitude: 37.7917349,
     longitude: -122.40386,
+    options: {
+        72: .04,
+        82: .01,
+        74: .11
+    }
 pine // montgomery
     id: 74,
     latitude: 37.7918989,
     longitude: -122.40257,
+    options: {
+        63: .11,
+        73: 0.11,
+        83: 0.1,
+        117: 0.07
+    }
 pine // sansome
     id: 75,
     latitude: 37.7921084,
     longitude: -122.40093,
+    options: {
+        84: 0.1,
+        64: .11,
+        117: 0.08,
+        76: 0.1
+    }
 pine // battery
     id: 76,
     latitude: 37.792265, 
-    longitude: -122.399807
+    longitude: -122.399807,
+    options: {
+        85: 0.11,
+        65: 0.11,
+        77: .1,
+        75: .1
+    }
 pine // front
     id: 77,
     latitude: 37.7924082,
     longitude: -122.39858,
+    options: {
+        76: .1,
+        104: 0.08,
+        78: .11,
+        66: .11
+    }
 pine // davis // market
     id: 78,
     latitude: 37.792547, 
-    longitude: -122.397378
+    longitude: -122.397378,
+    options: {
+        77: .11,
+        67: .11,
+        105: .13,
+        104: .12
+    }
 pine // saint george aly
     id: 79,
     latitude: 37.7916520,
     longitude: -122.40452,
+    options: {
+        71: .08,
+        72: 0.02,
+        86: 0.1
+    }
 bush // grant
     id: 80,
     latitude: 37.790586, 
-    longitude: -122.405571
+    longitude: -122.405571,
+    options: {
+        70: 0.1,
+        86: 0.11,
+        87: 0.11
+    }
 bush // kearny
     id: 81,
     latitude: 37.790760, 
-    longitude: -122.404066
+    longitude: -122.404066,
+    options: {
+        82: 0.03,
+        72: 0.1,
+        88: 0.11,
+        86: 0.02
+    }
 bush // belden
     id: 82,
     latitude: 37.790846, 
-    longitude: -122.403706
+    longitude: -122.403706,
+    options: {
+        81:  0.03,
+        83:  0.12,
+        73:  0.1
+    }
 bush // montgomery
     id: 83,
     latitude: 37.7909686,
     longitude: -122.40238,
+    options: {
+        82: 0.12,
+        84: 0.15,
+        89: 0.1,
+        74: 0.1
+    }
 bush // sansome
     id: 84,
     latitude: 37.7911771,
     longitude: -122.40074,
+    options: {
+        83: 0.15,
+        75: 0.1,
+        90: 0.1,
+        85: 0.1
+    }
 bush // battery
     id: 85,
     latitude: 37.7913265,
     longitude: -122.39957,
+    options: {
+        84: 0.1,
+        76: 0.11,
+        103: 0.06
+    }
 bush // saint george aly
     id: 86,
     latitude: 37.7907219,
     longitude: -122.40433,
+    options: {
+        81: 0.02,
+        80: 0.11,
+        79: 0.1
+    }
 
 sutter // grant
     id: 87,
     latitude: 37.7896315,
     longitude: -122.40539,
+    options: {
+        80: 0.11,
+        88: 0.14,
+        92: 0.11
+    }
 sutter // kearny
     id: 88,
     latitude: 37.7898293,
     longitude: -122.40384,
+    options: {
+        81: 0.11,
+        93: .11,
+        87: 0.14,
+        89: 0.14
+    }
 sutter // montgomery
     id: 89,
     latitude: 37.790041, 
-    longitude: -122.402222
+    longitude: -122.402222,
+    options: {
+        83: 0.1,
+        88: 0.14,
+        90: 0.15,
+        94: 0.1
+    }
 sutter // sansome
     id: 90,
     latitude: 37.790269, 
-    longitude: -122.400583
+    longitude: -122.400583,
+    options: {
+        84: 0.1,
+        89: 0.15,
+        91: 0.04
+    }
 sutter // market
     id: 91,
     latitude: 37.790345, 
-    longitude: -122.400090
+    longitude: -122.400090,
+    options: {
+        90: 0.04,
+        103: 0.07,
+        102: 0.25
+    }
 
 post // grant
     id: 92,
     latitude: 37.7886939,
     longitude: -122.40522,
+    options: {
+        87: 0.11,
+        95: 0.05,
+        93: 0.14
+    }
 post // kearny 
     id: 93,
     latitude: 37.788703, 
-    longitude: -122.405247
+    longitude: -122.405247,
+    options: {
+        92: 0.14,
+        88: 0.11,
+        94: 0.14,
+        96: 0.05
+    }
 post // montgomery
     id: 94,
     latitude: 37.789110, 
-    longitude: -122.402038
+    longitude: -122.402038,
+    options: {
+        93: 0.14,
+        89: 0.1,
+        102: 0.04
+    }
 
 maiden // grant
     id: 95,
     latitude: 37.7882302,
     longitude: -122.40513,
+    options: {
+        92: 0.05,
+        97: 0.05,
+        96: 0.14
+    }
 maiden // kearny
     id: 96,
     latitude: 37.7884272,
     longitude: -122.40357,
+    options: {
+        95: 0.14,
+        93: 0.05,
+        98: 0.05
+    }
 geary // grant
     id: 97,
     latitude: 37.787775, 
-    longitude: -122.405064
+    longitude: -122.405064,
+    options: {
+        95: 0.05,
+        100: 0.12,
+        98: 0.14
+    }
 geary // kearny
     id: 98,
     latitude: 37.7879630,
     longitude: -122.40349,
+    options: {
+        97: 0.14,
+        99: 0.03,
+        96: 0.05,
+        101: 0.03
+    }
 geary // market
     id: 99,
     latitude: 37.788011, 
-    longitude: -122.403133
+    longitude: -122.403133,
+    options: {
+        101: 0.05,
+        102: 0.12,
+        98: 0.03
+    }
 
 market // grant
     id: 100,
-    latitude: 37.786746, 
-    longitude: -122.404625
+    latitude: 37.786764, 
+    longitude: -122.404625,
+    options: {
+        97: 0.12,
+        101: 0.15
+    }
 market // kearny
     id: 101,
     latitude: 37.787688, 
-    longitude: -122.403454
+    longitude: -122.403454,
+    options: {
+        100: 0.15,
+        98: 0.03,
+        99: 0.05
+    }
 market // montgomery
     id: 102,
     latitude: 37.7887211,
     longitude: -122.40206,
+    options: {
+        94: 0.04,
+        99: 0.12,
+        91: 0.25
+    }
 market // battery
     id: 103,
     latitude: 37.790794, 
-    longitude: -122.399527
+    longitude: -122.399527,
+    options: {
+        85: 0.06,
+        91: 0.07,
+        104: 0.15
+    }
 market // front
     id: 104,
     latitude: 37.791722, 
-    longitude: -122.398324
+    longitude: -122.398324,
+    options: {
+        103: 0.15,
+        77: 0.08,
+        78: 0.12
+    }
 market // drumm
     id: 105,
     latitude: 37.793329, 
-    longitude: -122.396331
+    longitude: -122.396331,
+    options: {
+        78: 0.13,
+        67: 0.04
+    }
 
 halleck // leidesdorff
     id: 106,
     latitude: 37.793463, 
-    longitude: -122.402085
+    longitude: -122.402085,
+    options: {
+        53: 0.05,
+        61: 0.06,
+        107: 0.08
+    }
 halleck // sansome
     id: 107,
     latitude: 37.7935442,
     longitude: -122.40122,
+    options: {
+        54: 0.05,
+        64: 0.05,
+        106: 0.08,
+        108: 0.1
+    }
 halleck // battery
     id: 108,
     latitude: 37.793700, 
-    longitude: -122.400088
+    longitude: -122.400088,
+    options: {
+        55: 0.05,
+        65: 0.06,
+        107: 0.1,
+        109: 0.11
+    }
 halleck // front
     id: 109,
     latitude: 37.7938436,
     longitude: -122.39888,
+    options: {
+        116: 0.05,
+        66: 0.05,
+        108: 0.11
+    }
+washington // hotaling
+    id: 110,
+    latitude: 37.795612, 
+    longitude: -122.402765,
+    options: {
+        25: 0.1,
+        35: 0.05,
+        36: 0.1
+    }
+commercial // grant
+    id: 111,
+    latitude: 37.793835, 
+    longitude: -122.406230,
+    options: {
+        40: .05,
+        50: .05,
+        112: .14
+    }
+commercial // kearny
+    id: 112,
+    latitude: 37.794021,
+    longitude: -122.404727,
+    options: {
+        42: .05,
+        51: .05,
+        111: .14,
+        113: .15
+    }
+
+commercial // montgomery
+    id: 113,
+    latitude: 37.794235, 
+    longitude: -122.403075,
+    options: {
+        43: .05,
+        112: .15,
+        114: .07,
+        52: .05
+    }
+
+commercial // leidesdorff
+    id: 114,
+    latitude: 37.794344,
+    longitude: -122.402293,
+    options: {
+        44: .05
+        113: .07,
+        53: .05,
+        115: .08
+    }
+
+commercial // sansome
+    id: 115,
+    latitude: 37.794440, 
+    longitude: -122.401449,
+    options: {
+        45: .05
+        114: .08,
+        54: .05
+    }
+
+pine // leidesdorff {
+    id: 117,
+    latitude: 37.792024, 
+    longitude: -122.401791,
+    options: {
+       75: .08,
+       74: .07,
+       61: .1
+    }
+}
