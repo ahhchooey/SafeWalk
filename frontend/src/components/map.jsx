@@ -1,31 +1,85 @@
-import React from 'react'
+import React from 'react';
 import { Component } from 'react';
-import ReactMapGL from 'react-map-gl';
-import MAP_STYLE from './map-style'
+import ReactMapGL, { GeolocateControl } from 'react-map-gl';
+import MAP_STYLE from './map-style';
+// import Geocoder from "react-map-gl-geocoder";
+
+// import bbox from '@turf/bbox';
+
+
 const TOKEN = 'pk.eyJ1Ijoia2F5bjAyIiwiYSI6ImNrMHduZmNrMTAyZHMzbnM5enVmdDN0dWkifQ._BNoD6MIe93DBi-0R-pCkQ';
+const maxLongitude = -122.371415;
+const minLongitude = -122.429477;
+const minLatitude = 37.775111;
+const maxLatitude = 37.816064;
+
+const geolocateStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    margin: 10
+};
 
 class Map extends Component {
-
-    state = {
-        viewport: {
-            width: 400,
-            height: 400,
-            latitude: 37.794418,
-            longitude: -122.401672,
-            zoom: 14, 
-            bearing: 0,
-            pitch: 0
+    constructor(props) {
+        super(props);
+        this.state = {
+            viewport: {
+                latitude: 37.794418,
+                longitude: -122.401672,
+                zoom: 14,
+                bearing: 0,
+                pitch: 0,
+                minZoom: 11
+            }
+        };
+        this._map = React.createRef();
+        this._updateViewport = this._updateViewport.bind(this);
+        this._updateViewportUser = this._updateViewportUser.bind(this);
+    }
+    _updateViewport(viewport) {
+        if (viewport.longitude < minLongitude) {
+            viewport.longitude = minLongitude;
         }
-    };
-
+        else if (viewport.longitude > maxLongitude) {
+            viewport.longitude = maxLongitude;
+        }
+        if (viewport.latitude < minLatitude) {
+            viewport.latitude = minLatitude;
+        }
+        else if (viewport.latitude > maxLatitude) {
+            viewport.latitude = maxLatitude;
+        }
+        // debugger
+        if(viewport.zoom > 14) viewport.zoom = 14
+        this.setState({
+            viewport: { ...this.state.viewport, ...viewport }
+        });
+    }
+    _updateViewportUser(viewport) {
+        if (viewport.zoom > 14) viewport.zoom = 14
+        this.setState({
+            viewport: { ...this.state.viewport, ...viewport }
+        });
+    }
     render() {
         return (
             <ReactMapGL
+                ref={this._map}
                 mapStyle={MAP_STYLE}
+                width="100vw"
+                height="100vh"
                 {...this.state.viewport}
-                onViewportChange={(viewport) => this.setState({ viewport })}
+                onViewportChange={this._updateViewport}
                 mapboxApiAccessToken={TOKEN}
-            />
+            >
+                <GeolocateControl
+                    style={geolocateStyle}
+                    positionOptions={{ enableHighAccuracy: true }}
+                    onViewportChange={this._updateViewportUser}
+                    trackUserLocation={true}
+                />
+            </ReactMapGL>
         );
     }
 }
