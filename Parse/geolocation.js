@@ -36,16 +36,17 @@ function closest(pos) {
         // console.log(Object.values(seed)[temp])
         let dist = Math.pow((Math.pow((pos.latitude - Object.values(seed)[temp].latitude), 2) + Math.pow((pos.longitude - Object.values(seed)[temp].longitude), 2)), .5);
         blah.push(dist)
-        console.log(dist)
+        // console.log(dist)
         // console.log(seed[intersection]);
         // console.log(dist);
     }
-    console.log(blah);
+    // console.log(blah);
     // let bloo = Math.min(blah)
-    console.log(Math.min(...blah))
+    let bloo = Math.min(...blah)
+    return blah.indexOf(bloo) + 1;
 }
 
 let pos =  {latitude: 37.7987445, longitude: -122.40145999999999}
 
 // navigator.geolocation.getCurrentPosition(success, error, options);
-closest(pos);
+console.log(closest(pos));
