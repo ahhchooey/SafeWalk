@@ -19,7 +19,7 @@ router.route("/shortest").get((req, res) => {
       intersections.forEach(inter => {
         map.addNode(String(inter.custid), inter.options)
       })
-      res.json(map.path("1", "18", {cost: true}))
+      res.json(map.path("1", "100", {cost: true}))
     })
     .catch(err => res.status(404).json({message: "intersections cannot be found"}))
 })
