@@ -22,6 +22,7 @@ export default class SearchForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this)
         this.showDropdown = this.showDropdown.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.back = this.back.bind(this)
     }
     showDropdown(e){
         e.target.nextElementSibling.classList.add('show')
@@ -74,6 +75,11 @@ export default class SearchForm extends React.Component{
             console.log('failure')
         })
     }
+    back(e){
+        document.querySelector('.search-link').firstChild.classList.remove('hide')
+        document.querySelector(".search-form").classList.remove('show')
+        document.querySelector('.map').classList.remove('fix')
+    }
 
 
     render(){
@@ -82,8 +88,9 @@ export default class SearchForm extends React.Component{
         
         return(
             <div className="search-form">
-            
+                <button onClick={this.back}> X </button>
                 <form onSubmit={this.handleSubmit}>
+                    
                     <label htmlFor="">From:
                     <br/>
                         <input type="text" onChange={this.handleInput('start')} onFocus={this.showDropdown} onBlur={this.hideDropdown} value={this.state.start} />

@@ -28,6 +28,7 @@ class Map extends Component {
         document.querySelector(".search-form").classList.add('show')
         document.querySelector('.map').classList.add('fix')
     }
+    
     render() {
         return (
             <div className='map'>
