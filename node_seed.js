@@ -571,7 +571,7 @@ const seed = {
   50: {
     custid: 50,
     latitude: 37.793387, 
-    long: -122.406148,
+    longitude: -122.406148,
     options: {
         111: .05,
         51: .14,
