@@ -7,6 +7,7 @@ const seed = {
         2: .03,
         11: .11
     },
+    crimeRating: 0,
     name: "broadway // grant ave"
   },
   2: {
@@ -72,6 +73,7 @@ const seed = {
         8: .1,
         16: .1
     },
+    crimeRating: 192,
     name: "broadway // sansome st"
   },
   8: {
@@ -83,6 +85,7 @@ const seed = {
         9: .1,
         17: .11
     },
+    crimeRating: 50,
     name: "broadway // battery st"
   },
   9: {
@@ -104,6 +107,7 @@ const seed = {
         9: .11,
         29: .2,
     },
+    crimeRating: 101,
     name: "broadway // davis"
   },
   11: {
@@ -187,6 +191,7 @@ const seed = {
         18: .1,
         27: .1
     },
+    crimeRating: 50,
     name: "pacific // battery"
   },
   18: {
@@ -198,6 +203,7 @@ const seed = {
         17: .1,
         28: .1
     },
+    crimeRating: 50,
     name: "pacific // front"
   },
   19: {
@@ -313,6 +319,7 @@ const seed = {
         27: .1,
         29: .1
     },
+    crimeRating: 14,
     name: "jackson // front"
   }, 
   29: {
@@ -325,6 +332,7 @@ const seed = {
         30: .1,
         39: 0.1
     },
+    crimeRating: 120,
     name: "jackson // davis"
   },
   30: {
@@ -428,6 +436,7 @@ const seed = {
         39: .11,
         48: .1
     },
+    crimeRating: 167,
     name: "washington // drumm"
   },
   39: {
@@ -440,6 +449,7 @@ const seed = {
         38: .11,
         47: .09
     }, 
+    crimeRating: 50,
     name: "washington // davis"
   },
   40: {
@@ -555,6 +565,7 @@ const seed = {
         47: .1,
         116: .1
     },
+    crimeRating: 100,
     name: "clay // front"
   },
   50: {
@@ -601,6 +612,7 @@ const seed = {
         63: .1,
         53: .07
     },
+    crimeRating: 60,
     name: "sacramento // montgomery"
   },
   53: {
@@ -625,6 +637,7 @@ const seed = {
         107: .05,
         55: .1
     },
+    crimeRating: 51,
     name: "sacramento // sansome"
   },
   55: {
@@ -637,6 +650,7 @@ const seed = {
         108: .05,
         116: .1
     },
+    crimeRating: 71,
     name: "sacramento // battery"
   },
   116: {
@@ -661,6 +675,7 @@ const seed = {
         57: .1,
         47: .1
     },
+    crimeRating: 161,
     name: "sacramento // davis"
   },
   57: {
@@ -672,6 +687,7 @@ const seed = {
         48: .1,
         68: .1
     },
+    crimeRating: 262,
     name: "sacramento // drumm"
   },
   59: {
@@ -706,6 +722,7 @@ const seed = {
         64: .07,
         117: .1
     },
+    crimeRating: 51,
     name: "california // leidesdorff"
   },
   62: {
@@ -718,6 +735,7 @@ const seed = {
         51: .1,
         69: .05
     },
+    crimeRating: 62,
     name: "california // kearny"
   },
   69: {
@@ -729,6 +747,7 @@ const seed = {
         63: .09,
         58: .1
     },
+    crimeRating: 90,
     name: "california // spring"
   },
   63: {
@@ -741,6 +760,7 @@ const seed = {
         74: .11,
         61: .07
     },
+    crimeRating: 107,
     name: "california // montgomery"
   },
   64: {
@@ -753,6 +773,7 @@ const seed = {
         61: 0.07,
         75: .11
     },
+    crimeRating: 50,
     name: "california // sansome"
   },
   65: {
@@ -765,6 +786,7 @@ const seed = {
         76: 0.11,
         64: 0.1,
     },
+    crimeRating: 51,
     name: "california // battery"
   },
   66: {
@@ -788,7 +810,8 @@ const seed = {
         68: 0.1,
         56: 0.1,
         78: 0.11
-    },
+    }, 
+    crimeRating: 61,
     name: "california // davis"
   },
   68: {
@@ -845,6 +868,7 @@ const seed = {
         82: .01,
         74: .11
     },
+    crimeRating: 81,
     name: "pine // belden"
   },
   74: {
@@ -857,6 +881,7 @@ const seed = {
         83: 0.1,
         117: 0.07
     },
+    crimeRating: 71,
     name: "pine // montgomery"
   },
   75: {
@@ -869,6 +894,7 @@ const seed = {
         117: 0.08,
         76: 0.1
     },
+    crimeRating: 272,
     name: "pine // sansome"
   },
   76: {
@@ -893,6 +919,7 @@ const seed = {
         78: .11,
         66: .11
     },
+    crimeRating: 51,
     name: "pine // front"
   },
   78: {
@@ -916,6 +943,7 @@ const seed = {
         72: 0.02,
         86: 0.1
     },
+    crimeRating: 72,
     name: "pine // saint george aly"
   },
   80: {
@@ -962,6 +990,7 @@ const seed = {
         89: 0.1,
         74: 0.1
     },
+    crimeRating: 92,
     name: "bush // montgomery"
   },
   84: {
@@ -974,6 +1003,7 @@ const seed = {
         90: 0.1,
         85: 0.1
     },
+    crimeRating: 162,
     name: "bush // sansome"
   },
   85: {
@@ -985,6 +1015,7 @@ const seed = {
         76: 0.11,
         103: 0.06
     },
+    crimeRating: 51,
     name: "bush // battery"
   },
   86: {
@@ -996,6 +1027,7 @@ const seed = {
         80: 0.11,
         79: 0.1
     },
+    crimeRating: 201,
     name: "bush // saint george aly"
   },
   87: {
@@ -1007,6 +1039,7 @@ const seed = {
         88: 0.14,
         92: 0.11
     },
+    crimeRating: 111,
     name: "sutter // grant"
   },
   88: {
@@ -1019,6 +1052,7 @@ const seed = {
         87: 0.14,
         89: 0.14
     },
+    crimeRating: 112,
     name: "sutter // kearny"
   },
   89: {
@@ -1031,6 +1065,7 @@ const seed = {
         90: 0.15,
         94: 0.1
     },
+    crimeRating: 141,
     name: "sutter // montgomery"
   },
   90: {
@@ -1042,6 +1077,7 @@ const seed = {
         89: 0.15,
         91: 0.04
     },
+    crimeRating: 227,
     name: "sutter // sansome"
   },
   91: {
@@ -1064,6 +1100,7 @@ const seed = {
         95: 0.05,
         93: 0.14
     },
+    crimeRating: 327,
     name: "post // grant"
   },
   93: {
@@ -1087,6 +1124,7 @@ const seed = {
         89: 0.1,
         102: 0.04
     },
+    crimeRating: 51,
     name: "post // montgomery"
   },
   95: {
@@ -1098,6 +1136,7 @@ const seed = {
         97: 0.05,
         96: 0.14
     },
+    crimeRating: 61,
     name: "maiden // grant"
   },
   96: {
@@ -1109,6 +1148,7 @@ const seed = {
         93: 0.05,
         98: 0.05
     },
+    crimeRating: 61,
     name: "maiden // kearny"
   },
   97: {
@@ -1132,6 +1172,7 @@ const seed = {
         96: 0.05,
         101: 0.03
     },
+    crimeRating: 51,
     name: "geary // kearny"
   },
   99: {
@@ -1175,6 +1216,7 @@ const seed = {
         99: 0.12,
         91: 0.25
     },
+    crimeRating: 163,
     name: "market // montgomery"
   },
   103: {
@@ -1197,6 +1239,7 @@ const seed = {
         77: 0.08,
         78: 0.12
     },
+    crimeRating: 52,
     name: "market // front"
   },
   105: {
@@ -1230,6 +1273,7 @@ const seed = {
         106: 0.08,
         108: 0.1
     },
+    crimeRating: 51,
     name: "halleck // sansome"
   },
   108: {
@@ -1253,6 +1297,7 @@ const seed = {
         66: 0.05,
         108: 0.11
     },
+    crimeRating: 142,
     name: "halleck // front"
   },
   110: {
