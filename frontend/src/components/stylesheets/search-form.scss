@@ -6,6 +6,10 @@
 .search-form {
     justify-content: center;
     z-index: 3;
+    display: none
+}
+.show{
+    display: block
 }
 
 .search-form > form label{

@@ -7,26 +7,32 @@ const TOKEN = 'pk.eyJ1Ijoia2F5bjAyIiwiYSI6ImNrMHduZmNrMTAyZHMzbnM5enVmdDN0dWkifQ
 
 class Map extends Component {
 
-    state = {
-        viewport: {
-            // width: 400,
-            // height: 400,
-            latitude: 37.794418,
-            longitude: -122.401672,
-            zoom: 14, 
-            bearing: 0,
-            pitch: 0
-        }
-    };
-    componentDidMount(){
-        let el = document.querySelector('.mapbox') 
-        let parent = el.parentElement.parentElement
-        // $(parent).attr('height', '100%')
+    constructor(props) {
+        super(props)
+        this.state = {
+            viewport: {
+                // width: 400,
+                // height: 400,
+                latitude: 37.794418,
+                longitude: -122.401672,
+                zoom: 14,
+                bearing: 0,
+                pitch: 0
+            }
+        };
+        this.handleClick = this.handleClick.bind(this)
     }
 
+    handleClick(e){
+        e.target.classList.add('hide')
+        document.querySelector(".search-form").classList.add('show')
+    }
     render() {
         return (
             <div className='map'>
+                <div className='search-link'>
+                    <input type="text" placeholder='Where to?' onFocus={this.handleClick} onBlur={this.hide}/>
+                </div>
             <ReactMapGL
                 className='mapbox'
                 width='100vw'

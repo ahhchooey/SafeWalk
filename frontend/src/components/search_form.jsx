@@ -82,9 +82,7 @@ export default class SearchForm extends React.Component{
         
         return(
             <div className="search-form">
-                    <div>   
-                <h2>Welcome to SafeWalk</h2>
-                    </div>
+            
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="">From:
                     <br/>
