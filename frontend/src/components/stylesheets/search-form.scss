@@ -5,7 +5,7 @@
 }
 .search-form {
     justify-content: center;
-
+    z-index: 3;
 }
 
 .search-form > form label{
@@ -17,7 +17,7 @@
     color:black;
     display: none;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
 .show {
     display: flex
@@ -42,4 +42,8 @@
     border: 1px solid lightgray;
     background-color: white;
     margin-left: 5px
+}
+
+.search-form > h2 {
+  
 }

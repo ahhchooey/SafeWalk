@@ -46,6 +46,7 @@ export default class SearchForm extends React.Component{
                 query: val,
                 proximity: [-122.401672, 37.794418],
                 // bbox: [-122.398198, 37.798924, -122.395208, 37.794190],
+                bbox: [-122.398198, 37.794190, -122.395208, 37.798924],
                   countries: ['us'],
                 limit: 5,
                 types: ['address']
@@ -81,8 +82,11 @@ export default class SearchForm extends React.Component{
         
         return(
             <div className="search-form">
+                    <div>   
+                <h2>Welcome to SafeWalk</h2>
+                    </div>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="">Start:
+                    <label htmlFor="">From:
                     <br/>
                         <input type="text" onChange={this.handleInput('start')} onFocus={this.showDropdown} onBlur={this.hideDropdown} value={this.state.start} />
                         <div className="locations-dropdown">
@@ -92,7 +96,7 @@ export default class SearchForm extends React.Component{
                         </div>
                     </label>
                     <br/>
-                    <label onFocus={this.showDropdown} onBlur={this.hideDropdown} > Destination:
+                    <label onFocus={this.showDropdown} onBlur={this.hideDropdown} > To:
                         <br/>
                         <input type="text" onChange={this.handleInput('destination')} value={this.state.destination} />
                         <div className="locations-dropdown">

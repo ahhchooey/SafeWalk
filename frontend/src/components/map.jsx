@@ -2,14 +2,15 @@ import React from 'react'
 import { Component } from 'react';
 import ReactMapGL from 'react-map-gl';
 import MAP_STYLE from './map-style'
+import './stylesheets/map.scss'
 const TOKEN = 'pk.eyJ1Ijoia2F5bjAyIiwiYSI6ImNrMHduZmNrMTAyZHMzbnM5enVmdDN0dWkifQ._BNoD6MIe93DBi-0R-pCkQ';
 
 class Map extends Component {
 
     state = {
         viewport: {
-            width: 400,
-            height: 400,
+            // width: 400,
+            // height: 400,
             latitude: 37.794418,
             longitude: -122.401672,
             zoom: 14, 
@@ -17,15 +18,25 @@ class Map extends Component {
             pitch: 0
         }
     };
+    componentDidMount(){
+        let el = document.querySelector('.mapbox') 
+        let parent = el.parentElement.parentElement
+        // $(parent).attr('height', '100%')
+    }
 
     render() {
         return (
+            <div className='map'>
             <ReactMapGL
+                className='mapbox'
+                width='100vw'
+                height='100vh'
                 mapStyle={MAP_STYLE}
                 {...this.state.viewport}
                 onViewportChange={(viewport) => this.setState({ viewport })}
                 mapboxApiAccessToken={TOKEN}
             />
+            </div>
         );
     }
 }
