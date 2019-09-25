@@ -10,8 +10,28 @@
     width: 100%;
     color: black;
     position: relative;
-    padding-top: 15px
+    padding-top: 15px;
+    animation-name: slide;
+    animation-duration: 0.5s
 }
+p {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slide {
+  from {
+    margin-left: 100%;
+    
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+In
+
 .search-form > button {
     position: absolute;
     top: 0;
