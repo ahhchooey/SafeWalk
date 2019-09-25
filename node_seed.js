@@ -201,7 +201,7 @@ const seed = {
     name: "pacific // front"
   },
   19: {
-    id: 19,
+    custid: 19,
     latitude: 37.796041, 
     longitude: -122.406678,
     options: {
@@ -212,7 +212,7 @@ const seed = {
     name: "jackson // grant"
   },
   20: {
-    id: 20,
+    custid: 20,
     latitude: 37.796081, 
     longitude: -122.406372,
     options: {
@@ -223,7 +223,7 @@ const seed = {
     name: "jackson // beckett"
   },
   21: {
-    id: 21,
+    custid: 21,
     latitude: 37.796090, 
     longitude: -122.406254,
     options: {
@@ -234,7 +234,7 @@ const seed = {
     name: "jackson // wentworth"
   },
   22: {
-    id: 22,
+    custid: 22,
     latitude: 37.796221, 
     longitude: -122.405170,
     options: {
@@ -246,7 +246,7 @@ const seed = {
     name: "jackson // kearny"
   },
   23: {
-    id: 23,
+    custid: 23,
     latitude: 37.796316, 
     longitude: -122.404443,
     options: {
@@ -258,7 +258,7 @@ const seed = {
     name: "jackson // columbus"
   },
   24: {
-    id: 24,
+    custid: 24,
     latitude: 37.796428, 
     longitude: -122.403509,
     options: {
@@ -270,7 +270,7 @@ const seed = {
     name: "jackson // montgomery"
   }, 
   25: {
-    id: 25,
+    custid: 25,
     latitude: 37.796496, 
     longitude: -122.402937,
     options: {
@@ -281,7 +281,7 @@ const seed = {
     name: "jackson // hotaling"
   },
   26: {
-    id: 26,
+    custid: 26,
     latitude: 37.796638, 
     longitude: -122.401875,
     options: {
@@ -293,7 +293,7 @@ const seed = {
     name: "jackson // sansome"
   },
   27: {
-    id: 27,
+    custid: 27,
     latitude: 37.796793, 
     longitude: -122.400705,
     options: {
@@ -305,7 +305,7 @@ const seed = {
     name: "jackson // battery"
   },
   28: {
-    id: 28,
+    custid: 28,
     latitude: 37.7969264,
     longitude: -122.39950,
     options: {
@@ -316,7 +316,7 @@ const seed = {
     name: "jackson // front"
   }, 
   29: {
-    id: 29,
+    custid: 29,
     latitude: 37.7970920,
     longitude: -122.39833,
     options: {
@@ -328,7 +328,7 @@ const seed = {
     name: "jackson // davis"
   },
   30: {
-    id: 30,
+    custid: 30,
     latitude: 37.797244, 
     longitude: -122.397167,
     options: {
@@ -338,7 +338,7 @@ const seed = {
     name: "jackson // drumm"
   },
   31: {
-    id: 31,
+    custid: 31,
     latitude: 37.795161, 
     longitude: -122.406491,
     options: {
@@ -349,7 +349,7 @@ const seed = {
     name: "washington // grant"
   },
   32: {
-    id: 32,
+    custid: 32,
     latitude: 37.795229, 
     longitude: -122.405876,
     options: {
@@ -360,7 +360,7 @@ const seed = {
     name: "washington // walter u lum"
   },
   33: {
-    id: 33,
+    custid: 33,
     latitude: 37.795195, 
     longitude: -122.406072,
     options: {
@@ -371,7 +371,7 @@ const seed = {
     name: "washington // wentworth"
   },
   34: {
-    id: 34,
+    custid: 34,
     latitude: 37.795337, 
     longitude: -122.404975,
     options: {
@@ -383,7 +383,7 @@ const seed = {
     name: "washington // kearny"
   },
   35: {
-    id: 35,
+    custid: 35,
     latitude: 37.795545, 
     longitude: -122.403334,
     options: {
@@ -396,7 +396,7 @@ const seed = {
     name: "washington // columbus // montgomery"
   },
   36: {
-    id: 36,
+    custid: 36,
     latitude: 37.795750, 
     longitude: -122.401697,
     options: {
@@ -408,7 +408,7 @@ const seed = {
     name: "washington // sansome"
   },
   37: {
-    id: 37,
+    custid: 37,
     latitude: 37.795884, 
     longitude: -122.400531,
     options: {
@@ -420,7 +420,7 @@ const seed = {
     name: "washington // battery"
   }, 
   38: {
-    id: 38,
+    custid: 38,
     latitude: 37.7963468,
     longitude: -122.39695,
     options: {
@@ -431,7 +431,7 @@ const seed = {
     name: "washington // drumm"
   },
   39: {
-    id: 39,
+    custid: 39,
     latitude: 37.7961860,
     longitude: -122.39815,
     options: {
@@ -443,7 +443,7 @@ const seed = {
     name: "washington // davis"
   },
   40: {
-    id: 40,
+    custid: 40,
     latitude: 37.794284, 
     longitude: -122.406308,
     options: {
@@ -454,7 +454,7 @@ const seed = {
     name: "clay // grant"
   },
   41: {
-    id: 41,
+    custid: 41,
     latitude: 37.794337, 
     longitude: -122.405713,
     options: {
@@ -465,7 +465,7 @@ const seed = {
     name: "clay // walter u lum"
   },
   42: {
-    id: 42,
+    custid: 42,
     latitude: 37.794466, 
     longitude: -122.404811,
     options: {
@@ -477,7 +477,7 @@ const seed = {
     name: "clay // kearny"
   },
   43: {
-    id: 43,
+    custid: 43,
     latitude: 37.794676, 
     longitude: -122.403173,
     options: {
@@ -489,7 +489,7 @@ const seed = {
     name: "clay // montgomery"
   },
   44: {
-    id: 44,
+    custid: 44,
     latitude: 37.794766, 
     longitude: -122.402380,
     options: {
@@ -500,7 +500,7 @@ const seed = {
     name: "clay // leidesdorff"
   }, 
   45: {
-    id: 45,
+    custid: 45,
     latitude: 37.794862, 
     longitude: -122.401509,
     options: {
@@ -512,7 +512,7 @@ const seed = {
     name: "clay // sansome"
   },
   46: {
-    id: 46,
+    custid: 46,
     latitude: 37.795005, 
     longitude: -122.400364,
     options: {
@@ -524,7 +524,7 @@ const seed = {
     name: "clay // battery"
   },
   47: {
-    id: 47,
+    custid: 47,
     latitude: 37.795345, 
     longitude: -122.397998,
     options: {
@@ -536,7 +536,7 @@ const seed = {
     name: "clay // davis"
   },
   48: {
-    id: 48,
+    custid: 48,
     latitude: 37.795490, 
     longitude: -122.396801,
     options: {
@@ -547,7 +547,7 @@ const seed = {
     name: "clay // drumm"
   },
   49: {
-    id: 49,
+    custid: 49,
     latitude: 37.7951633,
     longitude: -122.39914,
     options: {
@@ -558,7 +558,7 @@ const seed = {
     name: "clay // front"
   },
   50: {
-    id: 50,
+    custid: 50,
     latitude: 37.793387, 
     long: -122.406148,
     options: {
@@ -569,7 +569,7 @@ const seed = {
     name: "sacramento // grant"
   }, 
   51: {
-    id: 51,
+    custid: 51,
     latitude: 37.793579, 
     longitude: -122.404629,
     options: {
@@ -581,7 +581,7 @@ const seed = {
     name: "sacramento // kearny"
   }, 
   58: {
-    id: 58,
+    custid: 58,
     latitude: 37.793650, 
     longitude: -122.404032,
     options: {
@@ -592,7 +592,7 @@ const seed = {
     name: "sacramento // spring"
   }, 
   52: {
-    id: 52,
+    custid: 52,
     latitude: 37.7937798,
     longitude: -122.40295,
     options: {
@@ -604,7 +604,7 @@ const seed = {
     name: "sacramento // montgomery"
   },
   53: {
-    id: 53,
+    custid: 53,
     latitude: 37.793891, 
     longitude: -122.402164,
     options: {
@@ -616,7 +616,7 @@ const seed = {
     name: "sacramento // leidesdorff"
   },
   54: {
-    id: 54,
+    custid: 54,
     latitude: 37.7939870,
     longitude: -122.40131,
     options: {
@@ -628,7 +628,7 @@ const seed = {
     name: "sacramento // sansome"
   },
   55: {
-    id: 55,
+    custid: 55,
     latitude: 37.7941342,
     longitude: -122.40014,
     options: {
@@ -640,7 +640,7 @@ const seed = {
     name: "sacramento // battery"
   },
   116: {
-    id: 116,
+    custid: 116,
     latitude: 37.794288, 
     longitude: -122.398991,
     options: {
@@ -652,7 +652,7 @@ const seed = {
     name: "sacramento // front"
   },
   56: {
-    id: 56,
+    custid: 56,
     latitude: 37.7944340,
     longitude: -122.39779,
     options: {
@@ -664,7 +664,7 @@ const seed = {
     name: "sacramento // davis"
   },
   57: {
-    id: 57,
+    custid: 57,
     latitude: 37.7945882,
     longitude: -122.39658,
     options: {
@@ -675,7 +675,7 @@ const seed = {
     name: "sacramento // drumm"
   },
   59: {
-    id: 59,
+    custid: 59,
     latitude: 37.792451, 
     longitude: -122.405952,
     options: {
@@ -686,7 +686,7 @@ const seed = {
     name: "california // grant"
   },
   60: {
-    id: 60,
+    custid: 60,
     latitude: 37.792500, 
     longitude: -122.405676,
     options: {
@@ -697,7 +697,7 @@ const seed = {
     name: "california // quincy"
   },
   61: {
-    id: 61,
+    custid: 61,
     latitude: 37.7929543,
     longitude: -122.40195,
     options: {
@@ -709,7 +709,7 @@ const seed = {
     name: "california // leidesdorff"
   },
   62: {
-    id: 62,
+    custid: 62,
     latitude: 37.7926386,
     longitude: -122.40441,
     options: {
@@ -721,7 +721,7 @@ const seed = {
     name: "california // kearny"
   },
   69: {
-    id: 69,
+    custid: 69,
     latitude: 37.7927171,
     longitude: -122.40382,
     options: {
@@ -732,7 +732,7 @@ const seed = {
     name: "california // spring"
   },
   63: {
-    id: 63,
+    custid: 63,
     latitude: 37.7928512,
     longitude: -122.40276,
     options: {
@@ -744,7 +744,7 @@ const seed = {
     name: "california // montgomery"
   },
   64: {
-    id: 64,
+    custid: 64,
     latitude: 37.7930603,
     longitude: -122.40112,
     options: {
@@ -756,7 +756,7 @@ const seed = {
     name: "california // sansome"
   },
   65: {
-    id: 65,
+    custid: 65,
     latitude: 37.7932091,
     longitude: -122.39995,
     options: {
@@ -768,7 +768,7 @@ const seed = {
     name: "california // battery"
   },
   66: {
-    id: 66,
+    custid: 66,
     latitude: 37.793373, 
     longitude: -122.398802,
     options: {
@@ -780,7 +780,7 @@ const seed = {
     name: "california // front"
   },
   67: {
-    id: 67,
+    custid: 67,
     latitude: 37.7935086,
     longitude: -122.39760,
     options: {
@@ -792,7 +792,7 @@ const seed = {
     name: "california // davis"
   },
   68: {
-    id: 68,
+    custid: 68,
     latitude: 37.793674, 
     longitude: -122.396474,
     options: {
@@ -803,7 +803,7 @@ const seed = {
     name: "california // drumm"
   },
   70: {
-    id: 70,
+    custid: 70,
     latitude: 37.791509, 
     longitude: -122.405765,
     options: {
@@ -814,7 +814,7 @@ const seed = {
     name: "pine // grant"
   },
   71: {
-    id: 71,
+    custid: 71,
     latitude: 37.791552, 
     longitude: -122.405453,
     options: {
@@ -825,7 +825,7 @@ const seed = {
     name: "pine // quincy"
   },
   72: {
-    id: 72,
+    custid: 72,
     latitude: 37.791689, 
     longitude: -122.404256,
     options: {
@@ -837,7 +837,7 @@ const seed = {
     name: "pine // kearny"
   },
   73: {
-    id: 73,
+    custid: 73,
     latitude: 37.7917349,
     longitude: -122.40386,
     options: {
@@ -848,7 +848,7 @@ const seed = {
     name: "pine // belden"
   },
   74: {
-    id: 74,
+    custid: 74,
     latitude: 37.7918989,
     longitude: -122.40257,
     options: {
@@ -860,7 +860,7 @@ const seed = {
     name: "pine // montgomery"
   },
   75: {
-    id: 75,
+    custid: 75,
     latitude: 37.7921084,
     longitude: -122.40093,
     options: {
@@ -872,7 +872,7 @@ const seed = {
     name: "pine // sansome"
   },
   76: {
-    id: 76,
+    custid: 76,
     latitude: 37.792265, 
     longitude: -122.399807,
     options: {
@@ -884,7 +884,7 @@ const seed = {
     name: "pine // battery"
   },
   77: {
-    id: 77,
+    custid: 77,
     latitude: 37.7924082,
     longitude: -122.39858,
     options: {
@@ -896,7 +896,7 @@ const seed = {
     name: "pine // front"
   },
   78: {
-    id: 78,
+    custid: 78,
     latitude: 37.792547, 
     longitude: -122.397378,
     options: {
@@ -908,7 +908,7 @@ const seed = {
     name: "pine // davis // market"
   },
   79: {
-    id: 79,
+    custid: 79,
     latitude: 37.7916520,
     longitude: -122.40452,
     options: {
@@ -919,7 +919,7 @@ const seed = {
     name: "pine // saint george aly"
   },
   80: {
-    id: 80,
+    custid: 80,
     latitude: 37.790586, 
     longitude: -122.405571,
     options: {
@@ -930,7 +930,7 @@ const seed = {
     name: "bush // grant"
   },
   81: {
-    id: 81,
+    custid: 81,
     latitude: 37.790760, 
     longitude: -122.404066,
     options: {
@@ -942,7 +942,7 @@ const seed = {
     name: "bush // kearny"
   },
   82: {
-    id: 82,
+    custid: 82,
     latitude: 37.790846, 
     longitude: -122.403706,
     options: {
@@ -953,7 +953,7 @@ const seed = {
     name: "bush // belden"
   },
   83: {
-    id: 83,
+    custid: 83,
     latitude: 37.7909686,
     longitude: -122.40238,
     options: {
@@ -965,7 +965,7 @@ const seed = {
     name: "bush // montgomery"
   },
   84: {
-    id: 84,
+    custid: 84,
     latitude: 37.7911771,
     longitude: -122.40074,
     options: {
@@ -977,7 +977,7 @@ const seed = {
     name: "bush // sansome"
   },
   85: {
-    id: 85,
+    custid: 85,
     latitude: 37.7913265,
     longitude: -122.39957,
     options: {
@@ -988,7 +988,7 @@ const seed = {
     name: "bush // battery"
   },
   86: {
-    id: 86,
+    custid: 86,
     latitude: 37.7907219,
     longitude: -122.40433,
     options: {
@@ -999,7 +999,7 @@ const seed = {
     name: "bush // saint george aly"
   },
   87: {
-    id: 87,
+    custid: 87,
     latitude: 37.7896315,
     longitude: -122.40539,
     options: {
@@ -1010,7 +1010,7 @@ const seed = {
     name: "sutter // grant"
   },
   88: {
-    id: 88,
+    custid: 88,
     latitude: 37.7898293,
     longitude: -122.40384,
     options: {
@@ -1022,7 +1022,7 @@ const seed = {
     name: "sutter // kearny"
   },
   89: {
-    id: 89,
+    custid: 89,
     latitude: 37.790041, 
     longitude: -122.402222,
     options: {
@@ -1034,7 +1034,7 @@ const seed = {
     name: "sutter // montgomery"
   },
   90: {
-    id: 90,
+    custid: 90,
     latitude: 37.790269, 
     longitude: -122.400583,
     options: {
@@ -1045,7 +1045,7 @@ const seed = {
     name: "sutter // sansome"
   },
   91: {
-    id: 91,
+    custid: 91,
     latitude: 37.790345, 
     longitude: -122.400090,
     options: {
@@ -1056,7 +1056,7 @@ const seed = {
     name: "sutter // market"
   },
   92: {
-    id: 92,
+    custid: 92,
     latitude: 37.7886939,
     longitude: -122.40522,
     options: {
@@ -1067,7 +1067,7 @@ const seed = {
     name: "post // grant"
   },
   93: {
-    id: 93,
+    custid: 93,
     latitude: 37.788703, 
     longitude: -122.405247,
     options: {
@@ -1079,7 +1079,7 @@ const seed = {
     name: "post // kearny" 
   },
   94: {
-    id: 94,
+    custid: 94,
     latitude: 37.789110, 
     longitude: -122.402038,
     options: {
@@ -1090,7 +1090,7 @@ const seed = {
     name: "post // montgomery"
   },
   95: {
-    id: 95,
+    custid: 95,
     latitude: 37.7882302,
     longitude: -122.40513,
     options: {
@@ -1101,7 +1101,7 @@ const seed = {
     name: "maiden // grant"
   },
   96: {
-    id: 96,
+    custid: 96,
     latitude: 37.7884272,
     longitude: -122.40357,
     options: {
@@ -1112,7 +1112,7 @@ const seed = {
     name: "maiden // kearny"
   },
   97: {
-    id: 97,
+    custid: 97,
     latitude: 37.787775, 
     longitude: -122.405064,
     options: {
@@ -1123,7 +1123,7 @@ const seed = {
     name: "geary // grant"
   },
   98: {
-    id: 98,
+    custid: 98,
     latitude: 37.7879630,
     longitude: -122.40349,
     options: {
@@ -1135,7 +1135,7 @@ const seed = {
     name: "geary // kearny"
   },
   99: {
-    id: 99,
+    custid: 99,
     latitude: 37.788011, 
     longitude: -122.403133,
     options: {
@@ -1146,7 +1146,7 @@ const seed = {
     name: "geary // market"
   },
   100: {
-    id: 100,
+    custid: 100,
     latitude: 37.786764, 
     longitude: -122.404625,
     options: {
@@ -1156,7 +1156,7 @@ const seed = {
     name: "market // grant"
   },
   101: {
-    id: 101,
+    custid: 101,
     latitude: 37.787688, 
     longitude: -122.403454,
     options: {
@@ -1167,7 +1167,7 @@ const seed = {
     name: "market // kearny"
   },
   102: {
-    id: 102,
+    custid: 102,
     latitude: 37.7887211,
     longitude: -122.40206,
     options: {
@@ -1178,7 +1178,7 @@ const seed = {
     name: "market // montgomery"
   },
   103: {
-    id: 103,
+    custid: 103,
     latitude: 37.790794, 
     longitude: -122.399527,
     options: {
@@ -1189,7 +1189,7 @@ const seed = {
     name: "market // battery"
   },
   104: {
-    id: 104,
+    custid: 104,
     latitude: 37.791722, 
     longitude: -122.398324,
     options: {
@@ -1200,7 +1200,7 @@ const seed = {
     name: "market // front"
   },
   105: {
-    id: 105,
+    custid: 105,
     latitude: 37.793329, 
     longitude: -122.396331,
     options: {
@@ -1210,7 +1210,7 @@ const seed = {
     name: "market // drumm"
   },
   106: {
-    id: 106,
+    custid: 106,
     latitude: 37.793463, 
     longitude: -122.402085,
     options: {
@@ -1221,7 +1221,7 @@ const seed = {
     name: "halleck // leidesdorff"
   },
   107: {
-    id: 107,
+    custid: 107,
     latitude: 37.7935442,
     longitude: -122.40122,
     options: {
@@ -1233,7 +1233,7 @@ const seed = {
     name: "halleck // sansome"
   },
   108: {
-    id: 108,
+    custid: 108,
     latitude: 37.793700, 
     longitude: -122.400088,
     options: {
@@ -1245,7 +1245,7 @@ const seed = {
     name: "halleck // battery"
   },
   109: {
-    id: 109,
+    custid: 109,
     latitude: 37.7938436,
     longitude: -122.39888,
     options: {
@@ -1256,7 +1256,7 @@ const seed = {
     name: "halleck // front"
   },
   110: {
-    id: 110,
+    custid: 110,
     latitude: 37.795612, 
     longitude: -122.402765,
     options: {
@@ -1267,7 +1267,7 @@ const seed = {
     name: "washington // hotaling"
   },
   111: {
-    id: 111,
+    custid: 111,
     latitude: 37.793835, 
     longitude: -122.406230,
     options: {
@@ -1278,7 +1278,7 @@ const seed = {
     name: "commercial // grant"
   },
   112: {
-    id: 112,
+    custid: 112,
     latitude: 37.794021,
     longitude: -122.404727,
     options: {
@@ -1290,7 +1290,7 @@ const seed = {
     name: "commercial // kearny"
   },
   113: {
-    id: 113,
+    custid: 113,
     latitude: 37.794235, 
     longitude: -122.403075,
     options: {
@@ -1302,7 +1302,7 @@ const seed = {
     name: "commercial // montgomery"
   },
   114: {
-    id: 114,
+    custid: 114,
     latitude: 37.794344,
     longitude: -122.402293,
     options: {
@@ -1314,7 +1314,7 @@ const seed = {
     name: "commercial // leidesdorff"
   },
   115: {
-    id: 115,
+    custid: 115,
     latitude: 37.794440, 
     longitude: -122.401449,
     options: {
@@ -1325,7 +1325,7 @@ const seed = {
     name: "commercial // sansome"
   },
   117: {
-    id: 117,
+    custid: 117,
     latitude: 37.792024, 
     longitude: -122.401791,
     options: {
