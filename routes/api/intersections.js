@@ -30,7 +30,9 @@ router.route("/safest").get((req, res) => {
       const map = new Graph();
       intersections.forEach(inter => {
         //change the options hash
+        map.addNode(String(inter.custid), inter.options)
       })
+      res.json(map.path("1", "18", {cost: true}))
     })
     .catch(err => res.status(404).json({message: "intersections cannot be found"}))
 })
