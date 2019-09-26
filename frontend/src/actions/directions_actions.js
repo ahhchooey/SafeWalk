@@ -19,7 +19,7 @@ const receiveErrors = (errors) => ({
   errors: errors
 })
 
-const fetchRoute = (route, query) => dispatch => {
+export const fetchRoute = (route, query) => dispatch => {
   return APIUtil.fetchRoute(route, query)
     .then(nodes => {
       let directions = nodes.map(node => {

@@ -10,3 +10,5 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchRoute: (route, query) => dispatch(fetchRoute(route, query))
 })
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
