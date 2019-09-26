@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const store = configStore();
   const root = document.getElementById("root");
 
+  window.getState = store.getState;
+
   ReactDOM.render(<App store={store} />, root)
 })
 
