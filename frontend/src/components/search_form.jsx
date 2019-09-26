@@ -66,18 +66,22 @@ export default class SearchForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         let query = { start: this.state.startCoordinates, destination: this.state.destinationCoordinates }
-        $.ajax({
-            url: '/api/intersections/shortest',
-            method: 'GET',
-            data: {
-                query
-            }
-        }).then((res) => {
-            console.log(res)
-            this.setState({ start: "", destination: "" })
-        }, (res) => {
-            console.log('failure')
-        })
+      //        $.ajax({
+      //      url: '/api/intersections/shortest',
+      //      method: 'GET',
+      //      data: {
+      //          query
+      //      }
+      //  }).then((res) => {
+      //      console.log(res)
+      //      this.setState({ start: "", destination: "" })
+      //  }, (res) => {
+      //      console.log('failure')
+      //  })
+      this.props.fetchRoute("shortest", query)
+        .then(res => this.setState({start: "", destination: ""}))
+        .fail(err => console.log("failure"))
+
     }
 
     back(e) {
