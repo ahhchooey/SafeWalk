@@ -25,9 +25,9 @@ const seed = require('../node_seed');
 //     console.warn(`ERROR(${err.code}): ${err.message}`);
 // }
 
-function closest(pos) {
+ const closest = (pos) => {
     let blah = [];
-    console.log(pos);
+    // console.log(pos);
     for (let intersection in Object.values(seed)) {
         temp = intersection.toString();
         // console.log(typeof temp);
@@ -45,8 +45,9 @@ function closest(pos) {
     let bloo = Math.min(...blah)
     return blah.indexOf(bloo) + 1;
 }
+// export default closest
+module.exports = closest
+// let pos =  {latitude: 37.7987445, longitude: -122.40145999999999}
 
-let pos =  {latitude: 37.7987445, longitude: -122.40145999999999}
-
-// navigator.geolocation.getCurrentPosition(success, error, options);
-console.log(closest(pos));
+// // navigator.geolocation.getCurrentPosition(success, error, options);
+// console.log(closest(pos));

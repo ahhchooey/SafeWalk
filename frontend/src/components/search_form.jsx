@@ -32,7 +32,7 @@ export default class SearchForm extends React.Component{
     }
     handleClick(str, place){
         let coord = (str === 'destination') ? 'destinationCoordinates' : 'startCoordinates'
-        this.setState({ [coord]: place.geometry.coordinates, [str]: place.place_name})
+        this.setState({ [coord]: { longitude: place.geometry.coordinates[0], latitude: place.geometry.coordinates[1] }, [str]: place.place_name})
         console.log(this.state)
     }
 
@@ -61,15 +61,15 @@ export default class SearchForm extends React.Component{
         e.preventDefault()
         let query = {start: this.state.startCoordinates, destination: this.state.destinationCoordinates}
         $.ajax({
-            url: '/api/intersections/fastest',
+            url: '/api/intersections/shortest',
             method: 'GET',
             data: {
                 query
             }
-        }).then(() => {
-            console.log('success')
+        }).then((res) => {
+            console.log(res)
             this.setState({ start: "", destination: "" })
-        }, () => {
+        }, (res) => {
             console.log('failure')
         })
     }
