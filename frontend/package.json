@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@turf/bbox": "^6.0.1",
+    "@mapbox/mapbox-sdk": "^0.7.0",
     "ajax": "0.0.4",
     "ajax-request": "^1.2.3",
     "jquery": "^3.4.1",
