@@ -25,12 +25,16 @@ export default class SearchForm extends React.Component {
         this.handleClick = this.handleClick.bind(this)
         this.back = this.back.bind(this)
     }
-    showDropdown(e) {
-        e.target.nextElementSibling.classList.add('show')
+    showDropdown(str) {
+        let dd = (str === 'destination') ? 'destination-dropdown' : 'start-dropdown'
+        document.querySelector(`#${dd}`).classList.add('show')
+        // e.target.nextElementSibling.classList.add('show')
 
     }
-    hideDropdown(e) {
-        e.target.nextElementSibling.classList.remove('show')
+    hideDropdown(str) {
+        let dd = (str === 'destination') ? 'destination-dropdown' : 'start-dropdown'
+        document.querySelector(`#${dd}`).classList.remove('show')
+        // e.target.nextElementSibling.classList.remove('show')
     }
     handleClick(str, place) {
         let coord = (str === 'destination') ? 'destinationCoordinates' : 'startCoordinates'
@@ -78,7 +82,8 @@ export default class SearchForm extends React.Component {
 
     back(e) {
         document.querySelector('.search-link').firstChild.classList.remove('hide')
-        document.querySelector(".search-form").classList.remove('show')
+        document.querySelector(".search-form").classList.remove('reveal')
+        document.querySelector(".search-form").classList.add('slide-out')
         document.querySelector('#map').classList.remove('fix')
     }
 
@@ -93,7 +98,7 @@ export default class SearchForm extends React.Component {
 
                     <label htmlFor="">From:
                     <br />
-                        <input type="text" onChange={this.handleInput('start')} onFocus={this.showDropdown} onBlur={this.hideDropdown} value={this.state.start} />
+                        <input type="text" onChange={this.handleInput('start')} onFocus={() => this.showDropdown('start')} onBlur={() => this.hideDropdown('start')} value={this.state.start} />
                         <div className="locations-dropdown">
                             <ul>
                                 {this.state.startPlaces.map((place, idx) => <li key={idx} onPointerDown={() => this.handleClick('start', place)}>{place.place_name}</li>)}
@@ -101,7 +106,7 @@ export default class SearchForm extends React.Component {
                         </div>
                     </label>
                     <br />
-                    <label onFocus={this.showDropdown} onBlur={this.hideDropdown} > To:
+                    <label onFocus={() => this.showDropdown('destination')} onBlur={() => this.hideDropdown('destination')} > To:
                         <br />
                         <input type="text" onChange={this.handleInput('destination')} value={this.state.destination} />
                         <div className="locations-dropdown">
@@ -112,13 +117,22 @@ export default class SearchForm extends React.Component {
                     <button type="submit" >Create Routes</button>
                 </form>
                 <br/>
-                    <div className="start-dropdown">
+                    <div className="search-dd" id="start-dropdown">
                         <ul>
                             {this.state.startPlaces.map((place, idx) => <div>
                                 <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt=""/>
                                 <li key={idx} onPointerDown={() => this.handleClick('start', place)}>{place.place_name}</li>
                             </div>
                                 )}
+                        </ul>
+                    </div>
+                    <div className="search-dd" id="destination-dropdown">
+                        <ul>
+                            {this.state.destinationPlaces.map((place, idx) => <div>
+                                <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt="" />
+                                <li key={idx} onPointerDown={() => this.handleClick('destination', place)}>{place.place_name}</li>
+                            </div>
+                            )}
                         </ul>
                     </div>
             </div>
