@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Intersection = require("../../models/intersection.model.js");
 const Graph = require("node-dijkstra");
 
+
 router.route("/test").get((req, res) => {
   res.json({msg: "this is a test"})
 })
@@ -14,36 +15,63 @@ router.route("/all").get((req, res) => {
 
 router.route("/shortest").get((req, res) => {
   Intersection.find()
-    .then(intersections => {
+    .then(async intersections => {
       const map = new Graph();
       intersections.forEach(inter => {
         map.addNode(String(inter.custid), inter.options)
       })
-      let path = map.path("1", "100"); 
-      return path
+      const path = map.path("1", "100");
+
+      const fetchIntersection = id => {
+        return Promise.resolve(Intersection.findOne({custid: id}))
+      }
+
+      const asyncFunction = async (id) => {
+        return await fetchIntersection(id);
+      }
+
+      const getData = async(array) => {
+        return await Promise.all(array.map(id => (
+          asyncFunction(parseInt(id))
+        )))
+      }
+
+      const route = await getData(path);
+      res.json(route);
     })
-    .then(path => {
-      let route = path.map(id => {
-        let int;
-        Intersection.findOne({custid: parseInt(id)}).then(i => {
-          return i;
-        }).then(i => int = i)
-      })
-      return route;
-    })
-    .then(route => res.json(route))
-    .catch(err => res.status(404).json({message: "intersections cannot be found"}))
+    .catch(err => res.status(400).json({message: "intersections cannot be found"}))
 })
 
 router.route("/safest").get((req, res) => {
-  Intersetion.find()
-    .then((intersections) => {
+  Intersection.find()
+    .then(async (intersections) => {
       const map = new Graph();
       intersections.forEach(inter => {
-        //change the options hash
-        map.addNode(String(inter.custid), inter.options)
+        let newOptions = Object.assign({}, inter.options)
+        let keys = Object.keys(newOptions);
+        keys.forEach(key => {
+          newOptions[key] = newOptions[key] * 1 + (inter.crimeRating || 0);
+        })
+        map.addNode(String(inter.custid), newOptions)
       })
-      res.json(map.path("1", "18", {cost: true}))
+      const path = map.path("1", "100");
+
+      const fetchIntersection = id => {
+        return Promise.resolve(Intersection.findOne({custid: id}))
+      }
+
+      const asyncFunction = async (id) => {
+        return await fetchIntersection(id);
+      }
+
+      const getData = async(array) => {
+        return await Promise.all(array.map(id => (
+          asyncFunction(parseInt(id))
+        )))
+      }
+
+      const route = await getData(path);
+      res.json(route);
     })
     .catch(err => res.status(404).json({message: "intersections cannot be found"}))
 })
