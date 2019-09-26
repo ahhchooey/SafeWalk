@@ -92,7 +92,6 @@ export default class SearchForm extends React.Component {
         let places = this.state.places || []
 
         return (
-            <div>
             <div className="search-form">
                 <button onClick={this.back}> X </button>
                 <form onSubmit={this.handleSubmit}>
@@ -136,8 +135,6 @@ export default class SearchForm extends React.Component {
                             )}
                         </ul>
                     </div>
-            </div>
-                
             </div>
         )
     }
