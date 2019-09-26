@@ -82,7 +82,16 @@ router.route("/shortest").get((req, res) => {
         .then(response => {
           let directions = []
           response.body.matchings[0].legs.forEach(leg => {
-            directions.push(leg.steps)
+            leg.steps.forEach(step => {
+              let obj = {
+                location: step.maneuver.location,
+                instruction: step.maneuver.instruction,
+                distance: step.distance,
+                duration: step.duration
+              }
+              directions.push(obj)
+            })
+            // directions.push(leg.steps)
           })
            res.json(directions)
         })

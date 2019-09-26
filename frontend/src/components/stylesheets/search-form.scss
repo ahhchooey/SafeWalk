@@ -1,12 +1,14 @@
 .search-form > form input{
    margin-bottom: 5px;
    margin-left: 5px;
-   border: 1px solid lightgray
+   border: 1px solid lightgray;
+   width: 80%
 }
 .search-form {
     display: none;
     background-color: white;
     width: 100%;
+    max-height: 300px;
     color: black;
     position: absolute;
     top: 0;
@@ -14,19 +16,14 @@
     animation-name: slide;
     animation-duration: 0.5s;
     padding-left: 30px;
-    padding-bottom: 10px
-}
-p {
-  animation-duration: 3s;
-  animation-name: slidein;
+    padding-bottom: 10px;
+    box-sizing: border-box;
 }
 
 @keyframes slide {
   from {
     margin-left: 100%;
-    
   }
-
   to {
     margin-left: 0%;
     width: 100%;
@@ -36,12 +33,11 @@ p {
 
 .search-form > button {
     position: absolute;
-    top: 0;
-    left: -5px
+    top: 5px;
+    right: 35px;
+    padding: 10px
 }
-.show{
-    display: block
-}
+
 
 .search-form > form label{
     position: relative;
@@ -58,9 +54,14 @@ p {
     position: absolute;
    z-index: 2;
 }
-.show {
-    display: flex
+
+.reveal {
+    display: flex;
+  
 }
+
+
+
 .search-form  ul{
     padding: 0;
     margin: 0;
@@ -87,23 +88,30 @@ p {
 .search-form > h2 {
   
 }
-.start-dropdown{
+.search-dd{
     position: absolute;
     top: 125px;
     left: 0;
-    background-color: white
+    background-color: white;
+    display: none
 }
-.start-dropdown  div {
+.search-dd div {
     display: flex
 }
-.start-dropdown li {
+.search-dd li {
     border-bottom: 1px solid lightblue;
     padding: 5px;
     padding-right: 40px;
     width: 100%
 }
-.start-dropdown img {
+.search-dd img {
     width: 30px;
     height: 30px;
     margin-top: 10px
+}
+.destination-dropdown{
+    display: none
+}
+.show{
+    display: block
 }
