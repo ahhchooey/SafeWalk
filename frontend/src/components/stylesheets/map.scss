@@ -6,4 +6,30 @@ body {
 #map {
     width: 100vw;
     height: 100vh;
+    position: relative;
+}
+.mapboxgl-canvas{
+    width: 100vw;
+    height: 100vh;
+}
+.search-link{
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+.search-link > input{
+    background-color: lightgray;
+    padding: 3px;
+    border: none;
+    width: 60%
+}
+.hide{
+    display: none
+}
+.fix{
+    position: fixed;
+    z-index: -1
 }
