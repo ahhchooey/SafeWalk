@@ -1,5 +1,6 @@
 // import _ from 'lodash';
 let json = require('./crimes.json');
+const crimeRating = require("../crime_rating.js");
 
 let crimes = [];
 
@@ -23,8 +24,67 @@ crimes = json.map((ele) => ({
 map = crimes.filter(el => {
     // console.log(el);
     // (parseFloat(el.latitude) >= 37.7879) && (parseFloat(el.latitude) <= 37.7989) && (parseFloat(el.longitude) >= -122.4055) && (parseFloat(el.longitude) < -122.3965 )
-    return ((parseFloat(el.latitude) >= 37.7879) && (parseFloat(el.latitude) <= 37.7989) && (parseFloat(el.longitude) >= -122.4055) && (parseFloat(el.longitude) < -122.3965) && el.intersection.includes('HALLECK'))
+    return ((parseFloat(el.latitude) >= 37.7879) && (parseFloat(el.latitude) <= 37.7989) && (parseFloat(el.longitude) >= -122.4055) && (parseFloat(el.longitude) < -122.3965)
+    )});
+
+
+const categories = ["Lost", "Theft", "Stolen", "Malicious Mischief", "Theft", 
+"Miscellaneous", "Robbery", "Assault", "Suspicious", "Fraud", "Traffic", "Disorderly", 
+"Weapons", "Burglary", "Drug", "Warrant", "Missing", "Offences", "Embezzlement", 
+"Forgery", "Vandalism", "Intimination", "Liquor", "Other"]
+
+let counter = {};
+
+map.forEach(thing => {
+  if (counter[thing.intersection] === undefined) {
+    counter[thing.intersection] = {};
+    categories.forEach(crime => {
+      counter[thing.intersection][crime] = 0
+    })
+  };
+  
+  for (let i = 0; i < categories.length; i++) {
+    if (thing.category.includes(categories[i])) {
+      counter[thing.intersection][categories[i]]++
+    }
+    if (thing.sub_category.includes(categories[i])) {
+      counter[thing.intersection][categories[i]]++
+    }
+  }
+})
+let keys = Object.keys(counter);
+keys.forEach(key => {
+  let innerKeys = Object.keys(counter[key]);
+  innerKeys.filter(innerKey => {
+    if (counter[key][innerKey] === 0) delete counter[key][innerKey];
+  })
 })
 
+console.log("crimes by intersection", counter);
 
-console.log(map)
+for (intersection in counter) {
+  let total = 0;
+  let crimes = Object.keys(counter[intersection]);
+  crimes.forEach(crime => {
+    total += crimeRating[crime] || 0;
+  })
+  counter[intersection] = total
+}
+
+console.log("crimeRating by intersection", counter);
+
+//let counter2 = {};
+//categories.forEach(crime => {
+//  counter2[crime] = 0
+//})
+//
+//
+//map.forEach(thing => {
+//  for (let i = 0; i < categories.length; i++) {
+//    if (thing.category.includes(categories[i])) {
+//      counter2[categories[i]]++;
+//    }
+//  }
+//})
+//
+//console.log("crime counter", counter2);
