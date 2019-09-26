@@ -33,7 +33,6 @@ export default class SearchForm extends React.Component{
     handleClick(str, place){
         let coord = (str === 'destination') ? 'destinationCoordinates' : 'startCoordinates'
         this.setState({ [coord]: { longitude: place.geometry.coordinates[0], latitude: place.geometry.coordinates[1] }, [str]: place.place_name})
-        console.log(this.state)
     }
 
     handleInput(str) {
