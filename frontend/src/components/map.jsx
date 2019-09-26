@@ -15,7 +15,8 @@ class Map extends Component {
     }
     handleClick(e) {
         e.target.classList.add('hide')
-        document.querySelector(".search-form").classList.add('show')
+        document.querySelector(".search-form").classList.remove('slide-out')
+        document.querySelector(".search-form").classList.add('reveal')
         document.querySelector('#map').classList.add('fix')
     }
     componentDidMount(){
