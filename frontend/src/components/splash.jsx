@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchForm from './search_form'
 import './stylesheets/splash.scss'
-
+import Map from './map'
 
 
 export default class Splash extends React.Component{
@@ -12,11 +12,11 @@ export default class Splash extends React.Component{
 
     render(){
         return(
-          
             <div className="splash">
-                <div>
-                <h2>Welcome to SafeWalk</h2>
-                <SearchForm />
+                <div className='home'>
+                    {/* <h2>Welcome to SafeWalk</h2>  */}
+                    <Map />
+                     <SearchForm />
                 </div>
             </div>
         )

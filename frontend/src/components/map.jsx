@@ -11,6 +11,12 @@ class Map extends Component {
             map: "",
             routeLine: []
         }
+        this.handleClick = this.handleClick.bind(this)
+    }
+    handleClick(e) {
+        e.target.classList.add('hide')
+        document.querySelector(".search-form").classList.add('show')
+        document.querySelector('#map').classList.add('fix')
     }
     componentDidMount(){
         const centerRoute = [-122.401672, 37.794418];
@@ -65,7 +71,11 @@ class Map extends Component {
     }
     render() {
         return (
-            <div id='map'></div>
+            <div id='map'>
+                <div className='search-link'>
+                    <input type="text" placeholder='Where to?' onFocus={this.handleClick} onBlur={this.hide} />
+                </div>
+            </div>
         )
     }
 }
