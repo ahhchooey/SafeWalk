@@ -8,6 +8,7 @@ const baseClient = mbxClient({ accessToken: 'pk.eyJ1IjoidGhlby1icm93bmUiLCJhIjoi
 const geocodingClient = mbxGeocoding(baseClient);
 
 
+
 export default class SearchForm extends React.Component {
     constructor(props) {
         super(props)
