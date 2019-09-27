@@ -53,7 +53,8 @@ router.route("/shortest").get((req, res) => {
       let waypoints = []
       // let start = {
       //   coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude) ],
-      //   waypointName: 'Start'
+      //   waypointName: 'point-a',
+      //   isWaypoint: true
       // }
       
       // waypoints.push(start)
@@ -63,14 +64,16 @@ router.route("/shortest").get((req, res) => {
           coordinates: [node.longitude, node.latitude],
           waypointName: node.name
         }
+       
         waypoints.push(point)
       })
       // let destination = {
       //   coordinates: [parseFloat(req.query.query.destination.longitude), parseFloat(req.query.query.destination.latitude)],
-      //   waypointName: 'Destination'
+      //   isWaypoint: true,
+      //   waypointName: 'point-o'
       // }
       // waypoints.push(destination)
-
+      // console.log(waypoints)
       mapMatchingClient.getMatch({
         points: waypoints,
         tidy: false,
@@ -91,8 +94,9 @@ router.route("/shortest").get((req, res) => {
               }
               directions.push(obj)
             })
-            // directions.push(leg.steps)
+            directions.push(leg.steps)
           })
+          console.log(directions)
            res.json(directions)
         })
     })
