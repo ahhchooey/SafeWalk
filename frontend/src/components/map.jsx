@@ -3,22 +3,33 @@ import { Component } from 'react';
 import mapboxgl from 'mapbox-gl'
 import './stylesheets/map.scss'
 import SF_NEIGHBORHOODS from '../data/feature-example-sf'
+const safeColor = "#67CF9A";
+const fastColor = "red";
 
 class Map extends Component {
     constructor(props){
         super(props);
         this.state = {
             map: "",
-            safestRoute: [],
-            fastestRoute: [],
-            selectedRoute: "NONE",
+            // safestRoute: [],
+            // fastestRoute: [],
+            // selectedRoute: "NONE",
             userLocation: []
         }
         this.receiveCurrentLocation = this.props.receiveCurrentLocation;
         this.handleClick = this.handleClick.bind(this);
         this.createMap = this.createMap.bind(this);
         this.updateRoutes = this.updateRoutes.bind(this);
+        this.renderLineLayer = this.renderLineLayer.bind(this);
         this.addLineLayer = this.addLineLayer.bind(this);
+    }
+    componentDidMount() {
+        this.createMap();
+    }
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            this.updateRoutes(this.props.safestRoute, this.props.fastestRoute, this.props.setRoute);
+        }
     }
     createMap() {
         const receiveCurrentLocation = this.props.receiveCurrentLocation;
@@ -124,29 +135,29 @@ class Map extends Component {
         document.querySelector(".search-form").classList.add('reveal')
         document.querySelector('#map').classList.add('fix')
     }
-    componentDidMount() {
-        this.createMap();
-    }
-    componentDidUpdate(prevProps){
-        if (prevProps !== this.props) {
-            this.setState({ safestRoute: this.props.safestRoute, fastestRoute: this.props.fastestRoute }, this.updateRoutes(this.props.safestRoute, this.props.fastestRoute));
-        }
-    }
-    updateRoutes(safestRoute, fastestRoute){
+    updateRoutes(safestRoute, fastestRoute, setRoute){
         const map = this.map;
-        const safeColor = "#67CF9A";
-        const fastColor = "red";
-        this.addLineLayer("safestRoute", map, safestRoute, safeColor, 2);
-        this.addLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
-        // const center = route.slice().sort()[Math.floor(route.length / 2)];
-        // const zoom = 14;
-        // map.flyTo({ center, zoom });
+        if( setRoute === null ) {
+            this.renderLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
+            this.renderLineLayer("safestRoute", map, safestRoute, safeColor, 2);
+        } else if ( setRoute === "safest" ) {
+            this.renderLineLayer("fastestRoute", map, [], fastColor, 0);
+            this.renderLineLayer("safestRoute", map, safestRoute, safeColor, 0);
+        } else if ( setRoute === "fastest") {
+            this.renderLineLayer("safestRoute", map, [], fastColor, 0);
+            this.renderLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
+        }
+        const center = safestRoute.slice().sort()[Math.floor(safestRoute.length / 2)];
+        const zoom = 14.5;
+        map.flyTo({ center, zoom });
     }
 
-    
-    addLineLayer(id, map,route,color,offset){
+    renderLineLayer(id, map,route,color,offset){
         map.removeLayer(id);
         map.removeSource(id);
+        this.addLineLayer(id, map, route, color, offset)
+    }
+    addLineLayer(id, map, route, color, offset){
         map.addLayer({
             id: id,
             type: "line",

@@ -4,16 +4,13 @@ import { receiveCurrentLocation } from '../actions/directions_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-    // const route = state.entities.route;
-    // return ({
-    //     route
-    // })
-
     const safestRoute = state.entities.safest.route;
     const fastestRoute = state.entities.fastest.route;
+    const setRoute = state.ui.setRoute;
     return ({
         safestRoute,
-        fastestRoute
+        fastestRoute,
+        setRoute
     })
 }
 
