@@ -14,10 +14,6 @@
     box-sizing: border-box;
 }
 
-// .tripinfoshow {
-//     display: flex;
-// }
-
 .tripstats {
     padding-left: 10px;
     font-size: 20px;
@@ -42,4 +38,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.danger {
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.safe {
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
+    background-color: green;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tripdanger {
+    z-index: 3;
+    background-color: #555;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    height: 80px;
+    width: 100vw;
+    box-shadow: 0px -2px 3px 0px rgb(49, 128, 210);
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: sans-serif;
+    box-sizing: border-box;
 }

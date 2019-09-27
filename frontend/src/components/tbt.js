@@ -64,7 +64,7 @@ export default class TBT extends React.Component {
         if (this.state.directions[i + 1].instruction.includes("arrived")
           && i !== this.state.directions.length -2) return null;
         return (
-          <div className="tbt-dropdown-item">
+          <div key={i} className="tbt-dropdown-item">
             {(dir.instruction.includes("left"))
                 ? <img src="https://img.icons8.com/ios/50/000000/left2.png" alt="left" />
                 : (dir.instruction.includes("right"))
