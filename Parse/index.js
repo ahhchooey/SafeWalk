@@ -60,7 +60,7 @@ keys.forEach(key => {
   })
 })
 
-console.log("crimes by intersection", counter);
+// console.log("crimes by intersection", counter);
 
 for (intersection in counter) {
   let total = 0;
@@ -71,7 +71,7 @@ for (intersection in counter) {
   counter[intersection] = total
 }
 
-console.log("crimeRating by intersection", counter);
+// console.log("crimeRating by intersection", counter);
 
 //let counter2 = {};
 //categories.forEach(crime => {
