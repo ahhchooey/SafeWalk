@@ -80,8 +80,8 @@ export default class SearchForm extends React.Component {
       //  })
       this.props.fetchRoute("shortest", query)
         .then(res => this.setState({start: "", destination: ""}))
-        .fail(err => console.log("failure"))
-
+        .fail(err => console.log("failure"));
+        this.props.toggleTripInfo()
     }
 
     back(e) {
@@ -98,13 +98,13 @@ export default class SearchForm extends React.Component {
         return (
             <div className="search-form">
                 <div></div>
-                <button id="formbutt" onClick={this.back}>X</button>
-                <form onSubmit={this.handleSubmit}>
+                {/* <button id="formbutt" onClick={this.back}>X</button> */}
+                <form className="formsies" onSubmit={this.handleSubmit}>
 
-                    <label htmlFor="">From:
-                    <br />
+                    <label htmlFor="">
                     <input 
                       type="text" 
+                      placeholder="From:"
                       required 
                       onChange={this.handleInput('start')} 
                       onFocus={() => this.showDropdown('start')} 
@@ -117,11 +117,10 @@ export default class SearchForm extends React.Component {
                             </ul>
                         </div>
                     </label>
-                    <br />
-                    <label onFocus={() => this.showDropdown('destination')} onBlur={() => this.hideDropdown('destination')} > To:
-                        <br />
+                    <label onFocus={() => this.showDropdown('destination')} onBlur={() => this.hideDropdown('destination')} >
                         <input 
                           type="text" 
+                          placeholder="To:"
                           required
                           onChange={this.handleInput('destination')} 
                           value={this.state.destination} 
@@ -130,10 +129,8 @@ export default class SearchForm extends React.Component {
                             
                         </div>
                     </label>
-                    <br />
                     <button type="submit" >Create Routes</button>
                 </form>
-                <br/>
                     <div className="search-dd" id="start-dropdown">
                         <ul>
                             {this.state.startPlaces.map((place, idx) => <div>
