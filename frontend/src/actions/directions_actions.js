@@ -31,7 +31,7 @@ export const clearRoutes = () => ({
 export const fetchRoute = (query) => dispatch => {
   return APIUtil.fetchRoute(query)
     .then(route => {
-      console.log("route", route)
+      // console.log("route", route)
       let routeKeys = Object.keys(route);
       let ents = {};
       routeKeys.forEach(routeName => {
