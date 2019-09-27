@@ -1,6 +1,5 @@
 .search-form > form input{
     margin-bottom: 5px;
-    // margin-left: 5px;
     background-color: #888;
     border-top: 1px;
     border-left: 1px;
@@ -9,22 +8,26 @@
     height: 20px;
     color: white;
     font-size: 20px;
-    // border: 1px solid red;
+    margin-top: 10px;
+}
+
+.search-form > form input::placeholder{
+    color: lightgray;
 }
 
 .search-form {
     background-color: #888;
     width: 90%;
     margin-top: 10px;
-    color: black;
     position: absolute;
     padding-top: 10px;
     animation-name: slide;
     animation-duration: 0.5s;
     box-sizing: border-box;
-    box-shadow: 0px 1px 1px 1px rgb(49, 128, 210);
+    box-shadow: 0px 1px 1px 1px rgba(102, 255, 153, .5);
     border-radius: 10px;
     height: 125px;
+    color: black;
 }
 
 .search-form > form {
@@ -42,14 +45,6 @@
     width: 100%;
   }
 }
-
-.search-form > button {
-    position: absolute;
-    top: 5px;
-    right: 35px;
-    padding: 10px
-}
-
 .search-form > form label{
     position: relative;
 }
@@ -71,9 +66,12 @@
 }
 
 .search-form  ul{
+    background-color: #888;
+    border-radius: 5px;
     padding: 0;
     margin: 0;
     list-style: none;
+    color: white;
 }
 .search-form > form li{
     list-style: none;
@@ -84,29 +82,39 @@
     border-bottom: 1px solid black;
 }
 .search-form > form ul:last-child{
-   border-bottom: none
+   border-bottom: none;
 }
 
 .search-form > form button {
-    border: 1px solid lightgray;
-    margin-left: 5px
+    // border: 1px solid #66ff99;
+    border: 1px solid #fff;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #777;
 }
 
 .search-dd{
+    border-top: 1px solid #66ff99;
     position: absolute;
-    top: 125px;
+    top: 120px;
     left: 0;
-    background-color: white;
-    display: none
+    background-color: #888;
+    display: none;
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    box-shadow: 0px 1px 1px 1px rgba(102, 255, 153, .5);
 }
 .search-dd div {
-    display: flex
+    display: flex;
+    border-bottom: 1px solid #66ff99;
 }
 .search-dd li {
-    border-bottom: 1px solid lightblue;
     padding: 5px;
     padding-right: 40px;
-    width: 100%
+    width: 100%;
+    background-color: transparent;
 }
 .search-dd img {
     width: 30px;
