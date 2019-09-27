@@ -24,20 +24,24 @@ export const clearRoutes = () => ({
   type: CLEAR_ROUTES
 })
 
-export const fetchRoute = (route, query) => dispatch => {
-  return APIUtil.fetchRoute(route, query)
-    .then(nodes => {
-      let directions = nodes.map(node => {
-        let obj = {
-          duration: node.duration,
-          distance: node.distance,
-          instruction: node.instruction
-        };
-        return obj;
+export const fetchRoute = (query) => dispatch => {
+  return APIUtil.fetchRoute(query)
+    .then(route => {
+      let routeKeys = Object.keys(route);
+      let ents = {};
+      routeKeys.forEach(routeName => {
+        ents[routeName].directions = route[routeName].map(node => { 
+          let obj = {
+            duration: node.duration,
+            distance: node.distance,
+            instruction: node.instruction
+          }
+          return obj;
+        })
+        ents[routeName].route = route[routeName].map(node => node.location);
       })
-      let route = nodes.map(node => node.location);
-      dispatch(receiveDirections(directions));
-      dispatch(receiveRoute(route));
+
+      dispatch(receiveDirections(ents));
     })
     .fail(errors => dispatch(receiveErrors(errors)));
 }

@@ -1,9 +1,9 @@
 import $ from "jquery";
 
 
-export const fetchRoute = (route, query) => {
+export const fetchRoute = (query) => {
   return $.ajax({
-    url: `api/intersections/${route}`,
+    url: `api/intersections/all`,
     method: "GET",
     data: {
       query: query
