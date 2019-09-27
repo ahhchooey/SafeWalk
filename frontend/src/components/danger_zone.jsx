@@ -4,7 +4,8 @@ import {toggleAllDirections,
         toggleDangerZone, 
         toggleShowSearch, 
         toggleTurnByTurn, 
-        toggleTripInfo} from '../actions/ui_actions'
+        toggleTripInfo,
+        setRoute} from '../actions/ui_actions'
 
 class DangerZone extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class DangerZone extends React.Component {
         this.props.toggleDangerZone();
         this.props.toggleTripInfo();
         this.props.toggleTurnByTurn();
+        this.props.setRoute('fastest');
     }
 
     handleSafe(e) {
@@ -25,6 +27,7 @@ class DangerZone extends React.Component {
         this.props.toggleDangerZone();
         this.props.toggleTripInfo();
         this.props.toggleTurnByTurn();
+        this.props.setRoute('safest');
     }
 
     render() {
@@ -51,7 +54,8 @@ const mdtp = dispatch => ({
     toggleDangerZone: () => dispatch(toggleDangerZone()),
     toggleShowSearch: () => dispatch(toggleShowSearch()),
     toggleTurnByTurn: () => dispatch(toggleTurnByTurn()),
-    toggleTripInfo: () => dispatch(toggleTripInfo())
+    toggleTripInfo: () => dispatch(toggleTripInfo()),
+    setRoute: str => dispatch(setRoute(str))
 })
 
 export default connect(mstp, mdtp)(DangerZone);
