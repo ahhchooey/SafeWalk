@@ -14,7 +14,7 @@ let defaultState = {
 
 const uiReducer = (state = defaultState, action) => {
     Object.freeze(state)
-    let newState = Object.assign({}, defaultState);
+    let newState = Object.assign({}, state);
     switch (action.type) {
         case TOGGLE_SHOW_SEARCH:
             newState.showSearch = !newState.showSearch;

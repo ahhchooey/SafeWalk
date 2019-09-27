@@ -65,7 +65,24 @@ class Map extends Component {
                 },
                 trackUserLocation: true
             }));
+            map.addLayer({
+                id: "route",
+                type: "line",
+                zoom: 11,
+                source: {
+                    type: "geojson",
+                    data: {
+                        type: "Feature",
+                        properties: {},
+                        geometry: {
+                            type: "LineString",
+                            coordinates: []
+                        }
+                    }
+                },
+            });
         })
+    
     }
     handleClick(e) {
         e.target.classList.add('hide')
@@ -89,6 +106,9 @@ class Map extends Component {
         //will probably need to remove layer, need to test once global coordinates state added
         // map.on('load', function () {
             map.flyTo({ center, zoom });
+            map.removeLayer("route");
+            map.removeSource("route");
+
             map.addLayer({
                 id: "route",
                 type: "line",

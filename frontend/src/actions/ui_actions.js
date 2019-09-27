@@ -4,17 +4,17 @@ export const TOGGLE_TRIP_INFO = "TOGGLE_TRIP_INFO";
 export const TOGGLE_TURN_BY_TURN = "TOGGLE_TURN_BY_TURN";
 
 export const toggleShowSearch = () => ({
-    action: TOGGLE_SHOW_SEARCH
+    type: TOGGLE_SHOW_SEARCH
 })
 
 export const toggleAllDirections = () => ({
-    action: TOGGLE_ALL_DIRECTIONS
+    type: TOGGLE_ALL_DIRECTIONS
 })
 
 export const toggleTripInfo = () => ({
-    action: TOGGLE_TRIP_INFO
+    type: TOGGLE_TRIP_INFO
 })
 
 export const toggleTurnByTurn = () => ({
-    action: TOGGLE_TURN_BY_TURN
+    type: TOGGLE_TURN_BY_TURN
 })
