@@ -30,13 +30,13 @@ router.route("/shortest").get((req, res) => {
 
         fastmap.addNode(String(inter.custid), inter.options)
         
-
+        let op = Object.assign({}, inter)
         let newOptions = Object.assign({}, inter.options)
         let keys = Object.keys(newOptions);
         keys.forEach(key => {
-          newOptions[key] = newOptions[key] * 1 + (inter.crimeRating || 0);
+          newOptions[key] = newOptions[key] * 1 + 10 * (op._doc.crimeRating || 0);
         })
-        // console.log(newOptions)
+  
         safemap.addNode(String(inter.custid), newOptions)
       })
       const fastpath = fastmap.path(String(start), String(destination));
@@ -125,7 +125,7 @@ router.route("/shortest").get((req, res) => {
            return points 
          }).then(points => {
              (fastPath.then((fpoints) => {
-             console.log({ 'safest': points, 'fastest': fpoints })
+            //  console.log({ 'safest': points, 'fastest': fpoints })
              res.json({ 'safest': points, 'fastest': fpoints })
            }))
          })
