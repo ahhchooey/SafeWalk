@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {toggleTripInfo, toggleAllDirections, toggleShowSearch, toggleTurnByTurn} from '../actions/ui_actions';
 import {clearRoutes} from '../actions/directions_actions';
 import './stylesheets/tripinfo.scss'
-import { STATUS_CODES } from 'http';
 
 
 class TripInfo extends React.Component {
