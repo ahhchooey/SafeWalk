@@ -11,13 +11,13 @@ router.route("/test").get((req, res) => {
   res.json({msg: "this is a test"})
 })
 
-router.route("/all").get((req, res) => {
+router.route("/").get((req, res) => {
   Intersection.find()
     .then(intersections => res.json(intersections))
     .catch(err => res.status(404).json({message: "intersections cannot be found"}))
 })
 
-router.route("/shortest").get((req, res) => {
+router.route("/all").get((req, res) => {
 
   let start = closest(req.query.query.start)
   let destination = closest(req.query.query.destination)
