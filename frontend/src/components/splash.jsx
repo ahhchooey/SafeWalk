@@ -4,6 +4,7 @@ import './stylesheets/splash.scss'
 import MapContainer from './map_container'
 // import Map from './map'
 import TripInfo from './duration';
+import TBTContainer from "./tbt_container.js";
 
 export default class Splash extends React.Component{
     constructor(props){
@@ -19,6 +20,7 @@ export default class Splash extends React.Component{
                     <MapContainer />
                     <SearchFormContainer />
                     <TripInfo />
+                    <TBTContainer />
                 </div>
             </div>
         )

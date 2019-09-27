@@ -3,6 +3,7 @@ import * as APIUtil from "../util/api_directions_util.js";
 export const RECEIVE_DIRECTIONS = "RECEIVE_DIRECTIONS";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const CLEAR_ROUTES = "CLEAR_ROUTES";
 
 const receiveDirections = (directions) => ({
   type: RECEIVE_DIRECTIONS,
@@ -17,6 +18,10 @@ const receiveRoute = (route) => ({
 const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors: errors
+})
+
+export const clearRoutes = () => ({
+  type: CLEAR_ROUTES
 })
 
 export const fetchRoute = (route, query) => dispatch => {
