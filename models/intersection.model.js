@@ -78,8 +78,6 @@ const generatePath = (rating) => {
   let start = closest(req.query.query.start)
   let destination = closest(req.query.query.destination)
   let directions
-  // res.json(start)
-  // console.log(req)
   Intersection.find()
     .then(async intersections => {
       const map = new Graph();
