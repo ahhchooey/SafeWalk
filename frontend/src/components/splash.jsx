@@ -5,20 +5,17 @@ import MapContainer from './map_container'
 // import Map from './map'
 import TripInfo from './duration';
 import TBTContainer from "./tbt_container.js";
+import DangerZone from './danger_zone';
 
 export default class Splash extends React.Component{
-    constructor(props){
-        super(props)
-    }
-
 
     render(){
         return(
             <div className="splash">
                 <div className='home'>
-                    {/* <h2>Welcome to SafeWalk</h2>  */}
                     <MapContainer />
                     <SearchFormContainer />
+                    <DangerZone />
                     <TripInfo />
                     <TBTContainer />
                 </div>

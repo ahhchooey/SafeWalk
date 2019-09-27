@@ -19,7 +19,7 @@
   font-size: 20px;
   box-sizing: border-box;
   padding: 0px 10px;
-
+  text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +27,7 @@
 
 .tbt-focus img {
   -webkit-filter: invert(100%);
+  height: 50%;
 }
 
 .tbt-dropdown {
@@ -71,6 +72,7 @@
 
 .tbt-dropdown-item img {
   -webkit-filter: invert(100%);
+  height: 50%;
 }
 
 .tbt-dropdown-close {

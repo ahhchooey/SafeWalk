@@ -83,8 +83,7 @@ export default class SearchForm extends React.Component {
         this.props.toggleTripInfo();
         this.props.toggleAllDirections();
         this.props.toggleSearch();
-        this.props.toggleTurnByTurn();
-
+        // this.props.toggleTurnByTurn();
     }
 
     back(e) {
