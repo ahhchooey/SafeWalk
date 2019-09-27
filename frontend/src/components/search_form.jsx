@@ -80,8 +80,9 @@ export default class SearchForm extends React.Component {
         this.props.fetchRoute(query)
           .then(res => this.setState({start: "", destination: ""}))
           .fail(err => console.log("failure"));
-        this.props.toggleTripInfo();
-        this.props.toggleAllDirections();
+        //this.props.toggleTripInfo();
+        this.props.toggleDangerZone();
+        //this.props.toggleAllDirections();
         this.props.toggleSearch();
         // this.props.toggleTurnByTurn();
     }
@@ -121,12 +122,13 @@ export default class SearchForm extends React.Component {
                         <div className="locations-dropdown">
                             <ul>
                               {this.state.startPlaces.map((place, idx) => {
-                                return 
+                                return (
                                   <li key={idx} 
                                     onPointerDown={() => this.handleClick('start', place)}
                                   >
                                     {place.place_name}
                                   </li>
+                                )
                               })}
                             </ul>
                         </div>
@@ -151,8 +153,8 @@ export default class SearchForm extends React.Component {
                     <div className="search-dd" id="start-dropdown">
                         <ul>
                           {this.state.startPlaces.map((place, idx) => {
-                            console.log(idx)
-                            return <div key={idx} >
+                            return (
+                              <div key={idx} >
                                 <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt=""/>
                                 <li 
                                   onPointerDown={() => this.handleClick('start', place)}
@@ -160,15 +162,16 @@ export default class SearchForm extends React.Component {
                                   {place.place_name}
                                 </li>
                             </div>
+                            )
                           }
                                 )}
                         </ul>
                     </div>
                     <div className="search-dd" id="destination-dropdown">
                         <ul>
-                            {this.state.destinationPlaces.map((place, idx) => <div>
+                            {this.state.destinationPlaces.map((place, idx) => <div key={idx}>
                                 <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt="" />
-                                <li key={idx} 
+                                <li 
                                   onPointerDown={() => this.handleClick('destination', place)}
                                 >
                                   {place.place_name}

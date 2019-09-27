@@ -2,8 +2,8 @@ import {RECEIVE_DIRECTIONS, RECEIVE_ROUTE, CLEAR_ROUTES} from "../actions/direct
 
 
 const _nullState = {
-  directions: [],
-  route: []
+  safest: {},
+  fastest: {}
 }
 
 const directionsReducer = (state = _nullState, action) => {
