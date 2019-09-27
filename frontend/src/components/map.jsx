@@ -33,8 +33,9 @@ class Map extends Component {
     }
     createMap() {
         const receiveCurrentLocation = this.props.receiveCurrentLocation;
+        const addLineLayer = this.addLineLayer;
 
-        const centerOnLoad = [-122.401334, 37.793987]; //random center
+        const centerOnLoad = [-122.401334, 37.793987]; //center in middle of fidi
         const zoom = 14;
         const bounds = [
             [-122.553040, 37.651051], // Southwest coordinates
@@ -91,41 +92,9 @@ class Map extends Component {
                 const position = [lon, lat];
                 console.log(position);
                 receiveCurrentLocation(position);
-                // this.setState({userLocation: position})
             });
-
-            map.addLayer({
-                id: "fastestRoute",
-                type: "line",
-                zoom: 11,
-                source: {
-                    type: "geojson",
-                    data: {
-                        type: "Feature",
-                        properties: {},
-                        geometry: {
-                            type: "LineString",
-                            coordinates: []
-                        }
-                    }
-                },
-            });
-            map.addLayer({
-                id: "safestRoute",
-                type: "line",
-                zoom: 11,
-                source: {
-                    type: "geojson",
-                    data: {
-                        type: "Feature",
-                        properties: {},
-                        geometry: {
-                            type: "LineString",
-                            coordinates: []
-                        }
-                    }
-                },
-            });
+            addLineLayer("fastestRoute", map, [], fastColor, 0)
+            addLineLayer("safestRoute", map, [], safeColor, 0)
         })
     
     }
@@ -137,18 +106,25 @@ class Map extends Component {
     }
     updateRoutes(safestRoute, fastestRoute, setRoute){
         const map = this.map;
+        let center;
+        let zoom;
+
         if( setRoute === null ) {
             this.renderLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
             this.renderLineLayer("safestRoute", map, safestRoute, safeColor, 2);
+            center = safestRoute.slice().sort()[Math.floor(safestRoute.length / 2)];
+            zoom = 14.5;
         } else if ( setRoute === "safest" ) {
             this.renderLineLayer("fastestRoute", map, [], fastColor, 0);
             this.renderLineLayer("safestRoute", map, safestRoute, safeColor, 0);
+            center = safestRoute[0];
+            zoom = 16;
         } else if ( setRoute === "fastest") {
             this.renderLineLayer("safestRoute", map, [], fastColor, 0);
             this.renderLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
+            center = fastestRoute[0];
+            zoom = 16;
         }
-        const center = safestRoute.slice().sort()[Math.floor(safestRoute.length / 2)];
-        const zoom = 14.5;
         map.flyTo({ center, zoom });
     }
 
@@ -161,7 +137,6 @@ class Map extends Component {
         map.addLayer({
             id: id,
             type: "line",
-            zoom: 11,
             source: {
                 type: "geojson",
                 data: {
