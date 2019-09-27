@@ -1,3 +1,4 @@
+
 {
   "name": "safewalk",
   "version": "1.0.0",
@@ -7,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "server": "nodemon app.js",
-    "server:debug": "nodemon --inspect app.js"
+    "server:debug": "nodemon --inspect app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
