@@ -5,7 +5,7 @@ import TBT from "./tbt.js";
 const mapStateToProps = (state) => ({
   entities: state.entities,
   showTurnByTurn: state.ui.showTurnByTurn,
-  setRoute: state.ui.setRoute
+  setRoute: state.ui.setRoute || ""
 })
 
 const mapDispatchToProps = (dispatch) => ({
