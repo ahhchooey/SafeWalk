@@ -70,6 +70,10 @@
   border-top: 1px solid white;
 }
 
+.tbt-dropdown-item:last-child {
+  text-transform: uppercase;
+}
+
 .tbt-dropdown-item img {
   -webkit-filter: invert(100%);
   height: 50%;
