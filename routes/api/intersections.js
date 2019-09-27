@@ -41,6 +41,7 @@ router.route("/all").get((req, res) => {
       })
       const fastpath = fastmap.path(String(start), String(destination));
       const safepath = safemap.path(String(start), String(destination));
+      
       const fetchIntersection = id => {
         return Promise.resolve(Intersection.findOne({custid: id}))
       }
@@ -91,7 +92,7 @@ router.route("/all").get((req, res) => {
        fastwaypoints.push(destination)
        safewaypoints.push(destination)
        
-
+       console.log(safewaypoints)
        const fetchDirections = async(waypoints) => {
          return await mapMatchingClient.getMatch({
            points: waypoints,
@@ -125,7 +126,7 @@ router.route("/all").get((req, res) => {
            return points 
          }).then(points => {
              (fastPath.then((fpoints) => {
-            //  console.log({ 'safest': points, 'fastest': fpoints })
+             console.log({points})
              res.json({ 'safest': points, 'fastest': fpoints })
            }))
          })
