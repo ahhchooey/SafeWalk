@@ -56,10 +56,11 @@ router.route("/shortest").get((req, res) => {
         waypointName: 'point',
     
       }
-      // waypoints.push(dummy)
+      waypoints.push(dummy)
       let a = {
         coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude) ],
         waypointName: 'point // a',
+        isWaypoint: true
       }
       
       waypoints.push(a)
