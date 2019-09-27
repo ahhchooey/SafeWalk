@@ -51,7 +51,7 @@ export default class SearchForm extends React.Component {
             geocodingClient.forwardGeocode({
                 query: val,
                 proximity: [-122.401672, 37.794418],
-                // bbox: [-122.398198, 37.798924, -122.395208, 37.794190],
+                // bbox: [-122.398198, -122.395208, 37.794190, 37.798924],
                 countries: ['us'],
                 limit: 5,
                 types: ['address']
