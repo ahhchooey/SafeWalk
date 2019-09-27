@@ -16,7 +16,7 @@ app.use("/api/intersections", intersections);
 app.use(express.json());
 
 
-app.get("/", (req, res) => res.send(seed));
+// app.get("/", (req, res) => res.send(seed));
 
 //Intersection.insertMany(Object.values(seed), (err) => {
 //  if (err) throw err;
