@@ -102,6 +102,7 @@ class Map extends Component {
         const map = this.map;
         const route = this.state.route;
         const center = route.slice().sort()[Math.floor(route.length / 2)];
+        // const center = route.slice()[Math.floor(route.length / 2)];
         const zoom = 14;
         //will probably need to remove layer, need to test once global coordinates state added
         // map.on('load', function () {

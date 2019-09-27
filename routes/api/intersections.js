@@ -51,10 +51,15 @@ router.route("/shortest").get((req, res) => {
     })
     .then((route) => {
       let waypoints = []
+      let dummy = {
+        coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude)],
+        waypointName: 'point',
+    
+      }
+      // waypoints.push(dummy)
       let a = {
         coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude) ],
-        waypointName: 'point-a',
-        isWaypoint: true
+        waypointName: 'point // a',
       }
       
       waypoints.push(a)
@@ -62,18 +67,24 @@ router.route("/shortest").get((req, res) => {
       route.forEach(node => {
         let point = {
           coordinates: [node.longitude, node.latitude],
-          waypointName: node.name
+          waypointName: node.name,
+          isWaypoint: true
         }
-       
         waypoints.push(point)
       })
       let b = {
         coordinates: [parseFloat(req.query.query.destination.longitude), parseFloat(req.query.query.destination.latitude)],
-        isWaypoint: true,
-        waypointName: 'point-o'
-      }
-      waypoints.push(b)
 
+        waypointName: 'point // o'
+      }
+      let dummy2 = {
+        coordinates: [parseFloat(req.query.query.destination.longitude), parseFloat(req.query.query.destination.latitude)],
+        waypointName: 'point',
+
+      }
+      
+      // waypoints.push(b)
+      // waypoints.push(dummy2)
       console.log(waypoints)
       mapMatchingClient.getMatch({
         points: waypoints,
@@ -84,6 +95,7 @@ router.route("/shortest").get((req, res) => {
       })
       .send()
         .then(response => {
+          // console.log(response.body.matchings[0])
           let directions = []
           response.body.matchings[0].legs.forEach(leg => {
             leg.steps.forEach(step => {

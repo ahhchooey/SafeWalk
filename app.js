@@ -4,6 +4,7 @@ const db = require('./config/keys').mongoURI;
 const intersections = require("./routes/api/intersections.js");
 const Intersection = require("./models/intersection.model.js");
 const seed = require("./node_seed.js");
+const mapping = require("./routes/api/mapping")
 
 
 const app = express();
@@ -13,6 +14,7 @@ mongoose
   .catch(err => console.log(err));
 
 app.use("/api/intersections", intersections);
+app.use("/api/mapping", mapping )
 app.use(express.json());
 
 
