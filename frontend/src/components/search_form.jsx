@@ -81,7 +81,11 @@ export default class SearchForm extends React.Component {
       this.props.fetchRoute("shortest", query)
         .then(res => this.setState({start: "", destination: ""}))
         .fail(err => console.log("failure"));
-        this.props.toggleTripInfo()
+        this.props.toggleTripInfo();
+        this.props.toggleAllDirections();
+        this.props.toggleSearch();
+        this.props.toggleTurnByTurn();
+
     }
 
     back(e) {
@@ -94,6 +98,11 @@ export default class SearchForm extends React.Component {
     render() {
 
         let places = this.state.places || []
+
+        if (!this.props.showSearch) {
+            return <div></div>
+        }
+
 
         return (
             <div className="search-form">

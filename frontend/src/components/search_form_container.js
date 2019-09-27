@@ -4,7 +4,7 @@ import {fetchRoute} from "../actions/directions_actions.js";
 import {toggleShowSearch, toggleAllDirections, toggleTripInfo, toggleTurnByTurn} from '../actions/ui_actions';
 
 const mapStateToProps = (state) => ({
-
+  showSearch: state.ui.showSearch
 })
 
 const mapDispatchToProps = (dispatch) => ({

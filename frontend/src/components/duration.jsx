@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {toggleTripInfo} from '../actions/ui_actions';
+import {toggleTripInfo, toggleAllDirections, toggleShowSearch, toggleTurnByTurn} from '../actions/ui_actions';
 import {clearRoutes} from '../actions/directions_actions';
 import './stylesheets/tripinfo.scss'
 import { STATUS_CODES } from 'http';
@@ -14,6 +14,10 @@ class TripInfo extends React.Component {
 
     handleClear() {
         this.props.clearRoutes();
+        this.props.toggleTripInfo();
+        this.props.toggleAllDirections();
+        this.props.toggleTurnByTurn();
+        this.props.toggleShowSearch();
     }
 
     render() {
@@ -25,6 +29,7 @@ class TripInfo extends React.Component {
         } else {
             dist = null;
             duration = null;
+            return <div></div>
         }
         
         if (this.props.showTripInfo) {
@@ -80,6 +85,9 @@ const mstp = (state) => {
 
 const mdtp = (dispatch) => ({
     toggleTripInfo: () => dispatch(toggleTripInfo()),
+    toggleAllDirections: () => dispatch(toggleAllDirections()),
+    toggleShowSearch: () => dispatch(toggleShowSearch()),
+    toggleTurnByTurn: () => dispatch(toggleTurnByTurn()),
     clearRoutes: () => dispatch(clearRoutes())
 })
 
