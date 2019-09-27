@@ -5,3 +5,7 @@
   margin: 0;
   font-family: 'Questrial', sans-serif;
 }
+
+:focus {
+  outline: 0;
+}
