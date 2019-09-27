@@ -1,9 +1,9 @@
-import {RECEIVE_DIRECTIONS, RECEIVE_ROUTE} from "../actions/directions_actions.js";
+import {RECEIVE_DIRECTIONS, RECEIVE_ROUTE, CLEAR_ROUTES} from "../actions/directions_actions.js";
 
 
 const _nullState = {
-  directions: null,
-  route: null
+  directions: [],
+  route: []
 }
 
 const directionsReducer = (state = _nullState, action) => {
@@ -14,6 +14,8 @@ const directionsReducer = (state = _nullState, action) => {
       return Object.assign({}, state, {directions: action.directions})
     case RECEIVE_ROUTE:
       return Object.assign({}, state, {route: action.route})
+    case CLEAR_ROUTES:
+      return _nullState;
     default: 
       return state;
   }
