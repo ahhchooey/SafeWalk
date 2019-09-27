@@ -96,7 +96,7 @@ export default class SearchForm extends React.Component {
 
     render() {
 
-        let places = this.state.places || []
+      //let places = this.state.places || []
 
         if (!this.props.showSearch) {
             return <div></div>
