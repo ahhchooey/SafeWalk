@@ -1,9 +1,21 @@
 .tripinfo {
     z-index: 3;
-    background-color: aliceblue;
+    background-color: #555;
     bottom: 0;
     position: fixed;
     display: flex;
-    height: 100px;
+    height: 80px;
     width: 100vw;
+    box-shadow: 0px -2px 3px 0px rgb(49, 128, 210);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+#formbutt {
+    border: 3px solid red;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
 }
