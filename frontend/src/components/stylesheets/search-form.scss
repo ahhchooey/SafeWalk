@@ -1,7 +1,7 @@
 .search-form > form input{
     margin-bottom: 5px;
     // margin-left: 5px;
-    background-color: #555;
+    background-color: #888;
     border-top: 1px;
     border-left: 1px;
     border-right: 1px;
@@ -13,7 +13,7 @@
 }
 
 .search-form {
-    background-color: #555;
+    background-color: #888;
     width: 90%;
     margin-top: 10px;
     color: black;
@@ -22,9 +22,9 @@
     animation-name: slide;
     animation-duration: 0.5s;
     box-sizing: border-box;
-    box-shadow: 0px 2px 2px 2px rgb(49, 128, 210);
+    box-shadow: 0px 1px 1px 1px rgb(49, 128, 210);
     border-radius: 10px;
-    max-height: 150px;
+    height: 125px;
 }
 
 .search-form > form {
@@ -59,7 +59,7 @@
 }
 
 .locations-dropdown {
-    background-color: #555;
+    background-color: #888;
     color:white;
     display: none;
     position: absolute;

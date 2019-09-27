@@ -139,9 +139,9 @@ class Map extends Component {
     render() {
         return (
             <div id='map'>
-                <div className='search-link'>
+                {/* <div className='search-link'>
                     <input type="text" placeholder='Where to?' onFocus={this.handleClick} onBlur={this.hide} />
-                </div>
+                </div> */}
             </div>
         )
     }
