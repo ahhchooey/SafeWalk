@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import {connect} from 'react-redux';
 import {toggleAllDirections, 
         toggleDangerZone, 
@@ -12,6 +13,7 @@ class DangerZone extends React.Component {
         super(props);
         this.handleDanger = this.handleDanger.bind(this);
         this.handleSafe = this.handleSafe.bind(this);
+        this.toggleHold = this.toggleHold.bind(this);
     }
 
     handleDanger(e) {
@@ -30,6 +32,11 @@ class DangerZone extends React.Component {
         this.props.setRoute('safest');
     }
 
+    toggleHold(e) {
+        e.preventDefault();
+        $(e.currentTarget).toggleClass('hold');
+    }
+
     render() {
         if (!this.props.showDZ) {
             return <div></div>
@@ -37,8 +44,8 @@ class DangerZone extends React.Component {
 
         return(
             <div className="tripdanger">
-                <button className="safe" onClick={this.handleSafe}>Safest Route</button>
-                <button className="danger" onClick={this.handleDanger}>Fastest Route</button>
+                <button className="safe" onMouseEnter={this.toggleHold} onMouseLeave={this.toggleHold} onClick={this.handleSafe}>Safest Route</button>
+                <button className="danger" onMouseEnter={this.toggleHold} onMouseLeave={this.toggleHold} onClick={this.handleDanger}>Fastest Route</button>
             </div>
         )
     }
