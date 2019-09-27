@@ -97,7 +97,8 @@ export default class SearchForm extends React.Component {
 
         return (
             <div className="search-form">
-                <button onClick={this.back}> X </button>
+                <div></div>
+                <button id="formbutt" onClick={this.back}>X</button>
                 <form onSubmit={this.handleSubmit}>
 
                     <label htmlFor="">From:
