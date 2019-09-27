@@ -97,12 +97,20 @@ export default class SearchForm extends React.Component {
 
         return (
             <div className="search-form">
-                <button onClick={this.back}> X </button>
+                <div></div>
+                <button id="formbutt" onClick={this.back}>X</button>
                 <form onSubmit={this.handleSubmit}>
 
                     <label htmlFor="">From:
                     <br />
-                        <input type="text" onChange={this.handleInput('start')} onFocus={() => this.showDropdown('start')} onBlur={() => this.hideDropdown('start')} value={this.state.start} />
+                    <input 
+                      type="text" 
+                      required 
+                      onChange={this.handleInput('start')} 
+                      onFocus={() => this.showDropdown('start')} 
+                      onBlur={() => this.hideDropdown('start')} 
+                      value={this.state.start} 
+                    />
                         <div className="locations-dropdown">
                             <ul>
                                 {this.state.startPlaces.map((place, idx) => <li key={idx} onPointerDown={() => this.handleClick('start', place)}>{place.place_name}</li>)}
@@ -112,7 +120,12 @@ export default class SearchForm extends React.Component {
                     <br />
                     <label onFocus={() => this.showDropdown('destination')} onBlur={() => this.hideDropdown('destination')} > To:
                         <br />
-                        <input type="text" onChange={this.handleInput('destination')} value={this.state.destination} />
+                        <input 
+                          type="text" 
+                          required
+                          onChange={this.handleInput('destination')} 
+                          value={this.state.destination} 
+                        />
                         <div className="locations-dropdown">
                             
                         </div>
