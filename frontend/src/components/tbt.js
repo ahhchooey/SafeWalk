@@ -7,17 +7,27 @@ export default class TBT extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      directions: []
+      directions: [],
+      setRoute: "",
     }
   }
 
   componentDidMount() {
-    this.setState({directions: this.props.directions || []})  
+    this.setState({setRoute: this.props.setRoute || ""});
+    if (this.state.setRoute !== "") {
+      this.setState({directions: this.props.entities[this.state.setRoute].directions || []})  
+    }
   }
 
   componentDidUpdate() {
-    if (this.state.directions !== this.props.directions) {
-      this.setState({directions: this.props.directions})
+    if (this.state.setRoute !== this.props.setRoute) {
+      this.setState({setRoute: this.props.setRoute || ""})
+    }
+    if (this.state.setRoute !== "") {
+      console.log(this.state.setRoute)
+      if (this.state.directions !== this.props.entities[this.state.setRoute].directions) {
+        this.setState({directions: this.props.entities[this.props.setRoute].directions})
+      }
     }
   }
 
