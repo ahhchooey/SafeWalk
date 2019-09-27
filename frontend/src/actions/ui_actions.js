@@ -3,6 +3,7 @@ export const TOGGLE_ALL_DIRECTIONS = "TOGGLE_ALL_DIRECTIONS";
 export const TOGGLE_TRIP_INFO = "TOGGLE_TRIP_INFO";
 export const TOGGLE_TURN_BY_TURN = "TOGGLE_TURN_BY_TURN";
 export const TOGGLE_DZ = "TOGGLE_DZ";
+export const SET_ROUTE = "SET_ROUTE";
 
 export const toggleShowSearch = () => ({
     type: TOGGLE_SHOW_SEARCH
@@ -22,4 +23,9 @@ export const toggleTurnByTurn = () => ({
 
 export const toggleDangerZone = () => ({
     type: TOGGLE_DZ
+})
+
+export const setRoute = str => ({
+    type: SET_ROUTE,
+    str: str
 })
