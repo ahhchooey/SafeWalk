@@ -2,7 +2,7 @@ import {RECEIVE_DIRECTIONS, RECEIVE_ROUTE} from "../actions/directions_actions.j
 
 
 const _nullState = {
-  directions: null,
+  directions: [],
   route: null
 }
 

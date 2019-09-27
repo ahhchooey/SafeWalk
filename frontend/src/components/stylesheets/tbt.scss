@@ -1,0 +1,32 @@
+
+.tbt {
+  position: fixed;
+  background-color: white;
+  border-radius: 4px;
+  padding: 5px;
+  width: 80vw;
+  height: 10vh;
+
+  top: 5vh;
+  left: 10vw;
+}
+
+.tbt-focus {
+  position: relative;
+
+}
+
+.tbt-dropdown {
+  display: none;
+  position: relative;
+  flex-direction: column;
+}
+
+.tbt-dropdown-item {
+  height: 10vh;
+  width: 100%;
+}
+
+.visible {
+  display: flex;
+}

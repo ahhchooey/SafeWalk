@@ -6,8 +6,8 @@ const mapStateToProps = (state) => ({
   directions: state.entities.directions
 })
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => ({
 
-}
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(TBT);
