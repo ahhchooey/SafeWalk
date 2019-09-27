@@ -1,22 +1,25 @@
 import { connect } from 'react-redux';
 import Map from './map';
+import { receiveCurrentLocation } from '../actions/directions_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-////Placeholder route for testing
-    // const route = [[-122.401872, 37.796638], [-122.401152, 37.793067], [-122.407584, 37.792256]];
-/////////////////////////////////
-    const route = state.entities.route;
+    const safestRoute = state.entities.safest.route;
+    const fastestRoute = state.entities.fastest.route;
+    const setRoute = state.ui.setRoute;
     return ({
-        route 
+        safestRoute,
+        fastestRoute,
+        setRoute
     })
 }
 
 
-// const mapDispatchToProps = (dispatch) => ({
-// })
+const mapDispatchToProps = (dispatch) => ({
+    receiveCurrentLocation: (currentLocation) => dispatch(receiveCurrentLocation(currentLocation))
+})
 
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(Map);

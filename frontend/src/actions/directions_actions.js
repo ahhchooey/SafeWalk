@@ -4,6 +4,7 @@ export const RECEIVE_DIRECTIONS = "RECEIVE_DIRECTIONS";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ROUTES = "CLEAR_ROUTES";
+export const RECEIVE_CURRENT_LOCATION = "RECEIVE_CURRENT_LOCATION";
 
 const receiveDirections = (directions) => ({
   type: RECEIVE_DIRECTIONS,
@@ -19,7 +20,10 @@ const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors: errors
 })
-
+export const receiveCurrentLocation = (currentLocation) => ({
+  type: RECEIVE_CURRENT_LOCATION,
+  currentLocation
+})
 export const clearRoutes = () => ({
   type: CLEAR_ROUTES
 })
