@@ -3,7 +3,8 @@ import TBT from "./tbt.js";
 
 
 const mapStateToProps = (state) => ({
-  directions: state.entities.directions
+  directions: state.entities.directions,
+  showTurnByTurn: state.ui.showTurnByTurn
 })
 
 const mapDispatchToProps = (dispatch) => ({
