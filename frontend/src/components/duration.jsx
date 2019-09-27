@@ -61,7 +61,7 @@ const mstp = (state) => {
         })
         currentDist = sum;
     } else {
-        return null;
+        return {};
     }
 
     if (state.entities.directions) {
@@ -71,7 +71,7 @@ const mstp = (state) => {
         })
         tripTime = sum;
     } else {
-        return null;
+        return {};
     }
 
     return {

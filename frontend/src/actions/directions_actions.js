@@ -11,10 +11,11 @@ const receiveDirections = (directions) => ({
   directions: directions
 })
 
-const receiveRoute = (route) => ({
-  type: RECEIVE_ROUTE,
-  route: route
-})
+//const receiveRoute = (route) => ({
+//  type: RECEIVE_ROUTE,
+//  route: route
+//})
+
 const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors: errors
