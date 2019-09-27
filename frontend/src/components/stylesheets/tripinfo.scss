@@ -41,18 +41,25 @@
 }
 
 .danger {
-    height: 70px;
-    width: 70px;
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
     background-color: red;
     border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .safe {
-    height: 70px;
-    width: 70px;
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
     background-color: green;
     border: none;
-    // border: 3px solid green;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .tripdanger {

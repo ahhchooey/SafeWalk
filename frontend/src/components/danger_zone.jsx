@@ -16,8 +16,8 @@ class DangerZone extends React.Component {
     handleDanger(e) {
         e.preventDefault();
         this.props.toggleDangerZone();
-        this.toggleTripInfo();
-        this.toggleTurnByTurn();
+        this.props.toggleTripInfo();
+        this.props.toggleTurnByTurn();
     }
 
     handleSafe(e) {
@@ -25,7 +25,6 @@ class DangerZone extends React.Component {
         this.props.toggleDangerZone();
         this.props.toggleTripInfo();
         this.props.toggleTurnByTurn();
-
     }
 
     render() {
@@ -35,8 +34,8 @@ class DangerZone extends React.Component {
 
         return(
             <div className="tripdanger">
-                <button className="safe" onClick={this.handleSafe}></button>
-                <button className="danger" onClick={this.handleDanger}></button>
+                <button className="safe" onClick={this.handleSafe}>Safest Route</button>
+                <button className="danger" onClick={this.handleDanger}>Fastest Route</button>
             </div>
         )
     }
