@@ -9,20 +9,22 @@ class Map extends Component {
         super(props);
         this.state = {
             map: "",
-            route: []
+            route: [],
+            userLocation: []
         }
+        this.receiveCurrentLocation = this.props.receiveCurrentLocation;
         this.handleClick = this.handleClick.bind(this);
         this.createMap = this.createMap.bind(this);
         this.updateRoute = this.updateRoute.bind(this);
     }
     createMap() {
-        // const centerOnLoad = [-122.401672, 37.794418];
+        const receiveCurrentLocation = this.props.receiveCurrentLocation;
 
-        const centerOnLoad = [-122.440066, 37.749422]; //random center
-        const zoom = 10;
+        const centerOnLoad = [-122.401334, 37.793987]; //random center
+        const zoom = 14;
         const bounds = [
-            [-123.676849, 36.506627], // Southwest coordinates
-            [-121.366776, 38.868049]  // Northeast coordinates 
+            [-122.553040, 37.651051], // Southwest coordinates
+            [-122.317891, 37.890488]  // Northeast coordinates 
         ];
 
         mapboxgl.accessToken = 'pk.eyJ1Ijoia2F5bjAyIiwiYSI6ImNrMHduZmNrMTAyZHMzbnM5enVmdDN0dWkifQ._BNoD6MIe93DBi-0R-pCkQ';
@@ -59,12 +61,25 @@ class Map extends Component {
                     'line-color': 'white'
                 }
             });
-            map.addControl(new mapboxgl.GeolocateControl({
+            const geolocate = new mapboxgl.GeolocateControl({
                 positionOptions: {
                     enableHighAccuracy: true
                 },
                 trackUserLocation: true
-            }));
+            });
+
+            map.addControl(geolocate);
+            geolocate.on('geolocate', function (e) {
+                // debugger
+                // console.log(e)                
+                const lon = e.coords.longitude;
+                const lat = e.coords.latitude;
+                const position = [lon, lat];
+                console.log(position);
+                receiveCurrentLocation(position);
+                // this.setState({userLocation: position})
+            });
+
             map.addLayer({
                 id: "route",
                 type: "line",
