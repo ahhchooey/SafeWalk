@@ -9,13 +9,16 @@ class Map extends Component {
         super(props);
         this.state = {
             map: "",
-            route: [],
+            safestRoute: [],
+            fastestRoute: [],
+            selectedRoute: "NONE",
             userLocation: []
         }
         this.receiveCurrentLocation = this.props.receiveCurrentLocation;
         this.handleClick = this.handleClick.bind(this);
         this.createMap = this.createMap.bind(this);
-        this.updateRoute = this.updateRoute.bind(this);
+        this.updateRoutes = this.updateRoutes.bind(this);
+        this.addLineLayer = this.addLineLayer.bind(this);
     }
     createMap() {
         const receiveCurrentLocation = this.props.receiveCurrentLocation;
@@ -81,7 +84,23 @@ class Map extends Component {
             });
 
             map.addLayer({
-                id: "route",
+                id: "fastestRoute",
+                type: "line",
+                zoom: 11,
+                source: {
+                    type: "geojson",
+                    data: {
+                        type: "Feature",
+                        properties: {},
+                        geometry: {
+                            type: "LineString",
+                            coordinates: []
+                        }
+                    }
+                },
+            });
+            map.addLayer({
+                id: "safestRoute",
                 type: "line",
                 zoom: 11,
                 source: {
@@ -109,48 +128,51 @@ class Map extends Component {
         this.createMap();
     }
     componentDidUpdate(prevProps){
-        if(prevProps.route !== this.props.route) {
-            this.setState({ route: this.props.route }, this.updateRoute);
+        if (prevProps !== this.props) {
+            this.setState({ safestRoute: this.props.safestRoute, fastestRoute: this.props.fastestRoute }, this.updateRoutes(this.props.safestRoute, this.props.fastestRoute));
         }
-     }
-    updateRoute() {
+    }
+    updateRoutes(safestRoute, fastestRoute){
         const map = this.map;
-        const route = this.state.route;
-        const center = route.slice().sort()[Math.floor(route.length / 2)];
-        const zoom = 14;
-        //will probably need to remove layer, need to test once global coordinates state added
-        // map.on('load', function () {
-            map.flyTo({ center, zoom });
-            map.removeLayer("route");
-            map.removeSource("route");
-
-            map.addLayer({
-                id: "route",
-                type: "line",
-                zoom: 11,
-                source: {
-                    type: "geojson",
-                    data: {
-                        type: "Feature",
-                        properties: {},
-                        geometry: {
-                            type: "LineString",
-                            coordinates: route
-                        }
-                    }
-                },
-                layout: {
-                    "line-join": "round",
-                    "line-cap": "round"
-                },
-                paint: {
-                    "line-color": "#67CF9A",
-                    "line-width": 4
-                }
-            });
-        // })
+        const safeColor = "#67CF9A";
+        const fastColor = "red";
+        this.addLineLayer("safestRoute", map, safestRoute, safeColor, 2);
+        this.addLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
+        // const center = route.slice().sort()[Math.floor(route.length / 2)];
+        // const zoom = 14;
+        // map.flyTo({ center, zoom });
     }
 
+    
+    addLineLayer(id, map,route,color,offset){
+        map.removeLayer(id);
+        map.removeSource(id);
+        map.addLayer({
+            id: id,
+            type: "line",
+            zoom: 11,
+            source: {
+                type: "geojson",
+                data: {
+                    type: "Feature",
+                    properties: {},
+                    geometry: {
+                        type: "LineString",
+                        coordinates: route
+                    }
+                }
+            },
+            layout: {
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            paint: {
+                "line-color": color,
+                "line-width": 4,
+                // "line-offset": offset
+            }
+        });
+    }
     render() {
         return (
             <div id='map'>

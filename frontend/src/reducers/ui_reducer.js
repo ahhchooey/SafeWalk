@@ -2,14 +2,16 @@ import {
     TOGGLE_SHOW_SEARCH,
     TOGGLE_ALL_DIRECTIONS,
     TOGGLE_TRIP_INFO,
-    TOGGLE_TURN_BY_TURN
+    TOGGLE_TURN_BY_TURN,
+    TOGGLE_DZ
 } from '../actions/ui_actions';
 
 let defaultState = {
     showSearch: true,
     showAllDirections: false,
     showTripInfo: false,
-    showTurnByTurn: false
+    showTurnByTurn: false,
+    showDZ: false,
 }
 
 const uiReducer = (state = defaultState, action) => {
@@ -27,6 +29,9 @@ const uiReducer = (state = defaultState, action) => {
             return newState;
         case TOGGLE_TURN_BY_TURN:
             newState.showTurnByTurn = !newState.showTurnByTurn;
+            return newState;
+        case TOGGLE_DZ:
+            newState.showDZ = !newState.showDZ;
             return newState;
         default:
             return state;

@@ -2,9 +2,8 @@ import { RECEIVE_DIRECTIONS, RECEIVE_ROUTE, RECEIVE_CURRENT_LOCATION, CLEAR_ROUT
 
 
 const _nullState = {
-  directions: [],
-  route: [],
-  currentLocation: []
+  safest: {},
+  fastest: {}
 }
 
 const directionsReducer = (state = _nullState, action) => {
@@ -12,7 +11,10 @@ const directionsReducer = (state = _nullState, action) => {
 
   switch(action.type) {
     case RECEIVE_DIRECTIONS:
-      return Object.assign({}, state, {directions: action.directions})
+      return Object.assign({}, state, {
+        safest: action.directions.safest,
+        fastest: action.directions.fastest 
+      })
     case RECEIVE_ROUTE:
       return Object.assign({}, state, {route: action.route})
     case RECEIVE_CURRENT_LOCATION:

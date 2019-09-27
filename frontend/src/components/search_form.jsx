@@ -1,6 +1,5 @@
 
 import React from 'react'
-import $ from 'jquery'
 import './stylesheets/search-form.scss'
 const mbxClient = require('@mapbox/mapbox-sdk');
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding')
@@ -78,14 +77,14 @@ export default class SearchForm extends React.Component {
       //  }, (res) => {
       //      console.log('failure')
       //  })
-      this.props.fetchRoute("shortest", query)
-        .then(res => this.setState({start: "", destination: ""}))
-        .fail(err => console.log("failure"));
-        this.props.toggleTripInfo();
-        this.props.toggleAllDirections();
+        this.props.fetchRoute(query)
+          .then(res => this.setState({start: "", destination: ""}))
+          .fail(err => console.log("failure"));
+        //this.props.toggleTripInfo();
+        this.props.toggleDangerZone();
+        //this.props.toggleAllDirections();
         this.props.toggleSearch();
-        this.props.toggleTurnByTurn();
-
+        // this.props.toggleTurnByTurn();
     }
 
     back(e) {
@@ -122,11 +121,22 @@ export default class SearchForm extends React.Component {
                     />
                         <div className="locations-dropdown">
                             <ul>
-                                {this.state.startPlaces.map((place, idx) => <li key={idx} onPointerDown={() => this.handleClick('start', place)}>{place.place_name}</li>)}
+                              {this.state.startPlaces.map((place, idx) => {
+                                return (
+                                  <li key={idx} 
+                                    onPointerDown={() => this.handleClick('start', place)}
+                                  >
+                                    {place.place_name}
+                                  </li>
+                                )
+                              })}
                             </ul>
                         </div>
                     </label>
-                    <label onFocus={() => this.showDropdown('destination')} onBlur={() => this.hideDropdown('destination')} >
+                    <label 
+                      onFocus={() => this.showDropdown('destination')} 
+                      onBlur={() => this.hideDropdown('destination')} 
+                    >
                         <input 
                           type="text" 
                           placeholder="To:"
@@ -142,18 +152,30 @@ export default class SearchForm extends React.Component {
                 </form>
                     <div className="search-dd" id="start-dropdown">
                         <ul>
-                            {this.state.startPlaces.map((place, idx) => <div>
+                          {this.state.startPlaces.map((place, idx) => {
+                            return (
+                              <div key={idx} >
                                 <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt=""/>
-                                <li key={idx} onPointerDown={() => this.handleClick('start', place)}>{place.place_name}</li>
+                                <li 
+                                  onPointerDown={() => this.handleClick('start', place)}
+                                >
+                                  {place.place_name}
+                                </li>
                             </div>
+                            )
+                          }
                                 )}
                         </ul>
                     </div>
                     <div className="search-dd" id="destination-dropdown">
                         <ul>
-                            {this.state.destinationPlaces.map((place, idx) => <div>
+                            {this.state.destinationPlaces.map((place, idx) => <div key={idx}>
                                 <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt="" />
-                                <li key={idx} onPointerDown={() => this.handleClick('destination', place)}>{place.place_name}</li>
+                                <li 
+                                  onPointerDown={() => this.handleClick('destination', place)}
+                                >
+                                  {place.place_name}
+                                </li>
                             </div>
                             )}
                         </ul>

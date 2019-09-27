@@ -73,6 +73,87 @@ const generateDirections = (nodes) => {
     
 }
 
+const generatePath = (rating) => {
+  // console.log(req)
+  let start = closest(req.query.query.start)
+  let destination = closest(req.query.query.destination)
+  let directions
+  // res.json(start)
+  // console.log(req)
+  Intersection.find()
+    .then(async intersections => {
+      const map = new Graph();
+      intersections.forEach(inter => {
+        map.addNode(String(inter.custid), inter.options)
+      })
+      const path = map.path(String(start), String(destination));
+      const fetchIntersection = id => {
+        return Promise.resolve(Intersection.findOne({ custid: id }))
+      }
+
+      const asyncFunction = async (id) => {
+        return await fetchIntersection(id);
+      }
+
+      const getData = async (array) => {
+        return await Promise.all(array.map(id => (
+          asyncFunction(parseInt(id))
+        )))
+      }
+
+      const route = await getData(path);
+      // res.json(route);
+      return route
+    })
+    .then((route) => {
+      let waypoints = []
+      let start = {
+        coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude)],
+        waypointName: 'Start'
+      }
+
+      waypoints.push(start)
+
+      route.forEach(node => {
+        let point = {
+          coordinates: [node.longitude, node.latitude],
+          waypointName: node.name
+        }
+        waypoints.push(point)
+      })
+      let destination = {
+        coordinates: [parseFloat(req.query.query.destination.longitude), parseFloat(req.query.query.destination.latitude)],
+        waypointName: 'Destination'
+      }
+      waypoints.push(destination)
+
+      mapMatchingClient.getMatch({
+        points: waypoints,
+        tidy: false,
+        steps: true,
+        overview: "full",
+        profile: 'walking'
+      })
+        .send()
+        .then(response => {
+          let directions = []
+          response.body.matchings[0].legs.forEach(leg => {
+            leg.steps.forEach(step => {
+              let obj = {
+                location: step.maneuver.location,
+                instruction: step.maneuver.instruction,
+                distance: step.distance,
+                duration: step.duration
+              }
+              directions.push(obj)
+            })
+            // directions.push(leg.steps)
+          })
+          res.json(directions)
+        })
+    })
+   
+}
 
 const Intersection = mongoose.model("Intersection", intersectionSchema);
 
