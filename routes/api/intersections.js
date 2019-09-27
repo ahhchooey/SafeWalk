@@ -27,23 +27,20 @@ router.route("/shortest").get((req, res) => {
       const fastmap = new Graph();
       const safemap = new Graph()
       intersections.forEach(inter => {
-        console.log('--------')
+
         fastmap.addNode(String(inter.custid), inter.options)
-        console.log(inter.options)
+        
+
         let newOptions = Object.assign({}, inter.options)
         let keys = Object.keys(newOptions);
         keys.forEach(key => {
           newOptions[key] = newOptions[key] * 1 + (inter.crimeRating || 0);
         })
-        console.log(newOptions)
+        // console.log(newOptions)
         safemap.addNode(String(inter.custid), newOptions)
       })
-      // const fastpath = fastmap.path(String(start), String(destination));
-      // const safepath = safemap.path(String(start), String(destination));
-      const fastpath = fastmap.path("1", "100");
-      const safepath = safemap.path("1", "100");
-      console.log(safepath)
-      console.log(fastpath)
+      const fastpath = fastmap.path(String(start), String(destination));
+      const safepath = safemap.path(String(start), String(destination));
       const fetchIntersection = id => {
         return Promise.resolve(Intersection.findOne({custid: id}))
       }
@@ -60,9 +57,6 @@ router.route("/shortest").get((req, res) => {
 
       const saferoute = await getData(safepath);
       const fastroute = await getData(fastpath)
-      // console.log(saferoute)
-      // console.log(fastroute)
-      // res.json(saferoute);
       return [saferoute, fastroute]
     })
     .then((route) => {
@@ -131,7 +125,7 @@ router.route("/shortest").get((req, res) => {
            return points 
          }).then(points => {
              (fastPath.then((fpoints) => {
-            //  console.log({ 'safest': points, 'fastest': fpoints })
+             console.log({ 'safest': points, 'fastest': fpoints })
              res.json({ 'safest': points, 'fastest': fpoints })
            }))
          })
