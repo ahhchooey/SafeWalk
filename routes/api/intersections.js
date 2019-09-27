@@ -51,13 +51,13 @@ router.route("/shortest").get((req, res) => {
     })
     .then((route) => {
       let waypoints = []
-      // let start = {
-      //   coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude) ],
-      //   waypointName: 'point-a',
-      //   isWaypoint: true
-      // }
+      let a = {
+        coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude) ],
+        waypointName: 'point-a',
+        isWaypoint: true
+      }
       
-      // waypoints.push(start)
+      waypoints.push(a)
      
       route.forEach(node => {
         let point = {
@@ -67,13 +67,14 @@ router.route("/shortest").get((req, res) => {
        
         waypoints.push(point)
       })
-      // let destination = {
-      //   coordinates: [parseFloat(req.query.query.destination.longitude), parseFloat(req.query.query.destination.latitude)],
-      //   isWaypoint: true,
-      //   waypointName: 'point-o'
-      // }
-      // waypoints.push(destination)
-      // console.log(waypoints)
+      let b = {
+        coordinates: [parseFloat(req.query.query.destination.longitude), parseFloat(req.query.query.destination.latitude)],
+        isWaypoint: true,
+        waypointName: 'point-o'
+      }
+      waypoints.push(b)
+
+      console.log(waypoints)
       mapMatchingClient.getMatch({
         points: waypoints,
         tidy: false,
@@ -86,6 +87,7 @@ router.route("/shortest").get((req, res) => {
           let directions = []
           response.body.matchings[0].legs.forEach(leg => {
             leg.steps.forEach(step => {
+              // if (!step.duration) return
               let obj = {
                 location: step.maneuver.location,
                 instruction: step.maneuver.instruction,
@@ -94,9 +96,9 @@ router.route("/shortest").get((req, res) => {
               }
               directions.push(obj)
             })
-            directions.push(leg.steps)
+            // directions.push(leg.steps)
           })
-          console.log(directions)
+          // console.log(directions)
            res.json(directions)
         })
     })
