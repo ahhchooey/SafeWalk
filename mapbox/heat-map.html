@@ -32,7 +32,7 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
             center: [-122.401672, 37.794418], // starting position [lng, lat]
-            zoom: 16
+            zoom: 13
         });
         map.on('load', function () {
             // Add a geojson point source.
@@ -71,12 +71,12 @@
                         "interpolate",
                         ["linear"],
                         ["heatmap-density"],
-                        0, "rgba(0,0,0,0)",
-                        0.2, "rgb(103,169,207)",
-                        0.4, "rgb(209,229,240)",
-                        0.6, "rgb(253,219,199)",
-                        0.8, "rgb(239,138,98)",
-                        1, "rgb(250,250,250)"
+                        0, "rgba(0, 250,250 ,0.3)",
+                        0.2, "rgb(250,200,200)",
+                        0.4, "rgb(250,150,150)",
+                        0.6, "rgb(253,100,100)",
+                        0.8, "rgb(250,50,50)",
+                        1, "rgb(250,0,0)"
                     ],
                     // Adjust the heatmap radius by zoom level
                     "heatmap-radius": [
@@ -84,7 +84,7 @@
                         ["linear"],
                         ["zoom"],
                         1, 1,
-                        3, 50
+                        3, 20
                     ],
                     // Transition from heatmap to circle layer by zoom level
                     "heatmap-opacity": [
