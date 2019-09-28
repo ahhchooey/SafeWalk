@@ -92,7 +92,7 @@ router.route("/all").get((req, res) => {
        fastwaypoints.push(destination)
        safewaypoints.push(destination)
        
-       console.log(safewaypoints)
+      //  console.log(safewaypoints)
        const fetchDirections = async(waypoints) => {
          return await mapMatchingClient.getMatch({
            points: waypoints,
@@ -126,7 +126,7 @@ router.route("/all").get((req, res) => {
            return points 
          }).then(points => {
              (fastPath.then((fpoints) => {
-             console.log({points})
+            //  console.log({points})
              res.json({ 'safest': points, 'fastest': fpoints })
            }))
          })
