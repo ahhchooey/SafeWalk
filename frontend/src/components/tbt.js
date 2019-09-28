@@ -23,7 +23,7 @@ export default class TBT extends React.Component {
     if (this.state.setRoute !== this.props.setRoute) {
       this.setState({setRoute: this.props.setRoute || ""})
     }
-    if (this.state.setRoute !== "") {
+    if (this.state.setRoute !== "" && this.props.entities[this.props.setRoute]) {
       if (this.state.directions !== this.props.entities[this.state.setRoute].directions) {
         this.setState({directions: this.props.entities[this.props.setRoute].directions})
       }
@@ -91,14 +91,14 @@ export default class TBT extends React.Component {
 
     return (
       <div className="tbt">
-        <div className="tbt-focus" onPointerDown={this.toggleDropdown}>
+        <div className="tbt-focus" onMouseDown={this.toggleDropdown}>
           {head}
         </div>
         <div className="tbt-dropdown">
           <div className="tbt-dropdown-index">
             {dd}
           </div>
-          <div className="tbt-dropdown-close" onClick={this.hideDropdown}>CLOSE</div>
+          <div className="tbt-dropdown-close" onMouseDown={this.hideDropdown}>CLOSE</div>
         </div>
       </div>
     )

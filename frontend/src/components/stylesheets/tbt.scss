@@ -23,6 +23,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+}
+
+.tbt-focus:hover {
+  cursor: pointer;
 }
 
 .tbt-focus img {
@@ -85,10 +90,14 @@
   width: 100%;
   color: white;
   border-top: 1px solid white;
-
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tbt-dropdown-close:hover {
+  cursor: pointer;
 }
 
 .corners {

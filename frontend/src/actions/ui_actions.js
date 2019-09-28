@@ -1,3 +1,5 @@
+
+export const CLEAR_ROUTE = "CLEAR_ROUTE";
 export const TOGGLE_SHOW_SEARCH = "TOGGLE_SHOW_SEARCH";
 export const TOGGLE_ALL_DIRECTIONS = "TOGGLE_ALL_DIRECTIONS";
 export const TOGGLE_TRIP_INFO = "TOGGLE_TRIP_INFO";
@@ -33,4 +35,8 @@ export const toggleHeat = () => ({
 export const setRoute = str => ({
     type: SET_ROUTE,
     str: str
+})
+
+export const clearRoute = () => ({
+    type: CLEAR_ROUTE
 })

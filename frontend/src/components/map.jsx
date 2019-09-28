@@ -90,7 +90,7 @@ class Map extends Component {
                 const lon = e.coords.longitude;
                 const lat = e.coords.latitude;
                 const position = [lon, lat];
-                console.log(position);
+                // console.log(position);
                 receiveCurrentLocation(position);
             });
             addLineLayer("fastestRoute", map, [], fastColor, 0)
@@ -104,7 +104,7 @@ class Map extends Component {
         document.querySelector(".search-form").classList.add('reveal')
         document.querySelector('#map').classList.add('fix')
     }
-    updateRoutes(safestRoute, fastestRoute, setRoute){
+    updateRoutes(safestRoute = [], fastestRoute = [], setRoute){
         const map = this.map;
         let center;
         let zoom;

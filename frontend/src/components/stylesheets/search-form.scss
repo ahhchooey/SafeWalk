@@ -115,7 +115,13 @@
     padding-right: 40px;
     width: 100%;
     background-color: transparent;
+    cursor: pointer;
 }
+
+.search-dd li:hover {
+    cursor: pointer;
+}
+
 .search-dd img {
     width: 30px;
     height: 30px;
