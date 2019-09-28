@@ -8,17 +8,16 @@ class Authors extends React.Component {
     }
 
     handleSlide(e) {
-        e.preventDefault();
+        e.stopPropagation();
         $('.slideout').toggleClass('slide-active');
         $('.slideout_inner').toggleClass('authors-active');
     }
     
-
     render() {
         return (
 
          <React.Fragment>
-                <div onClick={this.handleSlide} onMouseLeave={this.handleSlide} className="slideout">About Me</div>
+                <div onClick={this.handleSlide} onMouseOut={this.handleSlide} className="slideout">About Me</div>
                     <div className="slideout_inner">
                         <h3>Welcome to SafeWalker!</h3>
                         <br/>
