@@ -124,7 +124,7 @@ export default class SearchForm extends React.Component {
                               {this.state.startPlaces.map((place, idx) => {
                                 return (
                                   <li key={idx} 
-                                    onPointerDown={() => this.handleClick('start', place)}
+                                    onClick={() => this.handleClick('start', place)}
                                   >
                                     {place.place_name}
                                   </li>
@@ -157,7 +157,7 @@ export default class SearchForm extends React.Component {
                               <div key={idx} >
                                 <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt=""/>
                                 <li 
-                                  onPointerDown={() => this.handleClick('start', place)}
+                                  onClick={() => this.handleClick('start', place)}
                                 >
                                   {place.place_name}
                                 </li>
@@ -172,7 +172,7 @@ export default class SearchForm extends React.Component {
                             {this.state.destinationPlaces.map((place, idx) => <div key={idx}>
                                 <img src="https://image.flaticon.com/icons/svg/76/76865.svg" alt="" />
                                 <li 
-                                  onPointerDown={() => this.handleClick('destination', place)}
+                                  onClick={() => this.handleClick('destination', place)}
                                 >
                                   {place.place_name}
                                 </li>
