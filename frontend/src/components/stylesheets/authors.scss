@@ -19,6 +19,9 @@
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     border-radius: 10px 10px 0px 0px;
+    z-index: 4;
+    border: 1px solid black;
+    border-bottom: 1px solid #888;
 }
 .slideout_inner {
     position: fixed;
@@ -41,6 +44,7 @@
     transition-duration: 0.3s;
     box-sizing: border-box;
     border-radius: 0px 10px 10px 0px;
+    z-index: 4;
 }
 
 .slideout_inner a {
@@ -48,8 +52,28 @@
 }
 
 .slide-active {
-  left: 220px;
+  left: 219px;
 }
 .authors-active {
   left: 0;
+}
+
+.heatToggle {
+    position: fixed;
+    height: 40px;
+    width: 100px;
+    background-color: #888;
+    top: 340px;
+    left: -30px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid black;
 }
