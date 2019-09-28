@@ -7,10 +7,9 @@ const mapMatchingClient = mbxMapMatching(baseClient);
 const Schema = mongoose.Schema;
 
 const intersectionSchema = new Schema({
-  crimeRatingNumber: {
+  crimeRating: {
     type: Number,
-    min: 0,
-    max: 100
+    min: 0
   },
   name: {
     type: String,

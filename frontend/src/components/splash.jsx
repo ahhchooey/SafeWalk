@@ -7,6 +7,7 @@ import TripInfo from './duration';
 import TBTContainer from "./tbt_container.js";
 import DangerZone from './danger_zone';
 import Authors from './authors';
+import HeatToggle from './heattoggle.jsx';
 
 export default class Splash extends React.Component{
 
@@ -20,6 +21,7 @@ export default class Splash extends React.Component{
                     <TripInfo />
                     <TBTContainer />
                     <Authors />
+                    <HeatToggle />
                 </div>
             </div>
         )
