@@ -915,7 +915,7 @@ const seed = {
     longitude: -122.40386,
     options: {
         72: .04,
-        82: .01,
+        82: .1,
         74: .11
     },
     crimeRating: 81,
