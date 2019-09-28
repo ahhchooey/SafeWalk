@@ -104,7 +104,7 @@ class Map extends Component {
         document.querySelector(".search-form").classList.add('reveal')
         document.querySelector('#map').classList.add('fix')
     }
-    updateRoutes(safestRoute, fastestRoute, setRoute){
+    updateRoutes(safestRoute = [], fastestRoute = [], setRoute){
         const map = this.map;
         let center;
         let zoom;

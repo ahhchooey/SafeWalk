@@ -4,7 +4,8 @@ import {
     TOGGLE_TRIP_INFO,
     TOGGLE_TURN_BY_TURN,
     TOGGLE_DZ,
-    SET_ROUTE
+    SET_ROUTE,
+    CLEAR_ROUTE
 } from '../actions/ui_actions';
 
 let defaultState = {
@@ -38,6 +39,8 @@ const uiReducer = (state = defaultState, action) => {
         case SET_ROUTE:
             newState.setRoute = action.str;
             return newState;
+        case CLEAR_ROUTE:
+            return defaultState;
         default:
             return state;
     }
