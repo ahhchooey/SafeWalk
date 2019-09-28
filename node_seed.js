@@ -8,7 +8,7 @@ const seed = {
         11: .11
     },
     crimeRating: 0,
-    name: "broadway // grant ave"
+    name: "BROADWAY \\\\ GRANT AVE"
   },
   2: {
     custid: 2,
@@ -19,7 +19,8 @@ const seed = {
         3: .17,
         13: .14
     },
-    name: "broadway // columbus st" 
+    crimeRating: 0,
+    name: "BROADWAY \\\\ COLUMBUS AVE" 
   },
   3: {
     custid: 3,
@@ -30,7 +31,8 @@ const seed = {
         4: .15,
         13: .11
     },
-    name: "broadway // kearny st"
+    crimeRating: 0,
+    name: "BROADWAY \\\\ KEARNY ST"
   },
   4: {
     custid: 4,
@@ -41,7 +43,8 @@ const seed = {
         14: .11,
         5: .03
     },
-    name: "broadway // montgomery st"
+    crimeRating: 0,
+    name: "BROADWAY \\\\ MONTGOMERY ST"
   },
   5: {
     custid: 5,
@@ -51,7 +54,8 @@ const seed = {
         4: .03,
         6: .04
     },
-    name: "broadway // bartol"
+    crimeRating: 0,
+    name: "BROADWAY \\\\ BARTOL"
   },
   6: {
     custid: 6,
@@ -62,7 +66,8 @@ const seed = {
         7: .08,
         15: .1
     },
-    name: "broadway // osgood st"
+    crimeRating: 0,
+    name: "BROADWAY \\\\ OSGOOD ST"
   },
   7: {
     custid: 7,
@@ -74,7 +79,7 @@ const seed = {
         16: .1
     },
     crimeRating: 192,
-    name: "broadway // sansome st"
+    name: "SANSOME ST \\\\ BROADWAY"
   },
   8: {
     custid: 8,
@@ -86,7 +91,7 @@ const seed = {
         17: .11
     },
     crimeRating: 50,
-    name: "broadway // battery st"
+    name: "BATTERY ST \\\\ BROADWAY"
   },
   9: {
     custid: 9,
@@ -97,7 +102,8 @@ const seed = {
         10: .11,
         18: .11,
     },
-    name: "broadway // front"
+    crimeRating: 0,
+    name: "BROADWAY \\\\ FRONT ST"
   },
   10: {
     custid: 10,
@@ -108,7 +114,7 @@ const seed = {
         29: .2,
     },
     crimeRating: 101,
-    name: "broadway // davis"
+    name: "BROADWAY \\\\ DAVIS ST"
   },
   11: {
     custid: 11,
@@ -119,7 +125,8 @@ const seed = {
         12: .03,
         19: 0.1
     },
-    name: "pacific // grant"
+    crimeRating: 0,
+    name: "PACFIC AVE \\\\ GRANT AVE"
   },
   12: {
     custid: 12,
@@ -130,7 +137,8 @@ const seed = {
         13: .1,
         20: .1
     },
-    name: "pacific // beckett"
+    crimeRating: 0,
+    name: "PACIFIC AVE \\\\ BECKETT"
   },
   13: {
     custid: 13,
@@ -144,7 +152,8 @@ const seed = {
         22: .1,
         23: .12
     },
-    name: "pacific // columbus // kearny"
+    crimeRating: 62,
+    name: "COLUMBUS AVE \\\\ KEARNY ST"
   },
   14: {
     custid: 14,
@@ -156,7 +165,8 @@ const seed = {
         15: .07,
         24: .1
     },
-    name: "pacific // montgomery"
+    crimeRating: 0,
+    name: "PACIFIC AVE \\\\ MONTGOMERY ST"
   },
   15: {
     custid: 15,
@@ -167,7 +177,8 @@ const seed = {
         14: .07,
         16: .07
     },
-    name: "pacific // osgood"
+    crimeRating: 0,
+    name: "PACIFIC AVE \\\\ OSGOOD"
   },
   16: {
     custid: 16,
@@ -179,7 +190,8 @@ const seed = {
         17: .1,
         26: .1
     },
-    name: "pacific // sansome"
+    crimeRating: 162,
+    name: "SANSOME ST \\\\ PACIFIC AVE"
   },
   17: {
     custid: 17,
@@ -192,7 +204,7 @@ const seed = {
         27: .1
     },
     crimeRating: 50,
-    name: "pacific // battery"
+    name: "BATTERY ST \\\\ PACIFIC AVE"
   },
   18: {
     custid: 18,
@@ -204,7 +216,7 @@ const seed = {
         28: .1
     },
     crimeRating: 50,
-    name: "pacific // front"
+    name: "FRONT ST \\\\ PACIFIC AVE"
   },
   19: {
     custid: 19,
@@ -215,7 +227,8 @@ const seed = {
         20: .03,
         31: .1
     },
-    name: "jackson // grant"
+    crimeRating: 0,
+    name: "JACKSON ST \\\\ GRANT AVE"
   },
   20: {
     custid: 20,
@@ -226,7 +239,8 @@ const seed = {
         12: .1,
         21: .01
     },
-    name: "jackson // beckett"
+    crimeRating: 0,
+    name: "JACKSON ST \\\\ BECKETT"
   },
   21: {
     custid: 21,
@@ -237,7 +251,8 @@ const seed = {
         22: .1,
         33: .1
     },
-    name: "jackson // wentworth"
+    crimeRating: 0,
+    name: "JACKSON ST \\\\ WENTWORTH"
   },
   22: {
     custid: 22,
@@ -249,7 +264,8 @@ const seed = {
         23: .06,
         34: .1
     },
-    name: "jackson // kearny"
+    crimeRating: 161,
+    name: "KEARNY ST \\\\ JACKSON ST"
   },
   23: {
     custid: 23,
@@ -261,7 +277,8 @@ const seed = {
         24: .08,
         35: .13
     },
-    name: "jackson // columbus"
+    crimeRating: 152,
+    name: "JACKSON ST \\\\ COLUMBUS AVE"
   },
   24: {
     custid: 24,
@@ -273,7 +290,8 @@ const seed = {
         35: .1,
         25: .05
     },
-    name: "jackson // montgomery"
+    crimeRating: 111,
+    name: "MONTGOMERY ST \\\\ JACKSON ST"
   }, 
   25: {
     custid: 25,
@@ -284,7 +302,8 @@ const seed = {
         26: .09,
         110: .1
     },
-    name: "jackson // hotaling"
+    crimeRating: 112,
+    name: "JACKSON ST \\\\ HOTALING PL"
   },
   26: {
     custid: 26,
@@ -296,7 +315,8 @@ const seed = {
         27: .1,
         36: .1
     },
-    name: "jackson // sansome"
+    crimeRating: 0,
+    name: "JACKSON ST \\\\ SANSOME ST"
   },
   27: {
     custid: 27,
@@ -308,7 +328,8 @@ const seed = {
         28: .1,
         37: .1
     }, 
-    name: "jackson // battery"
+    crimeRating: 60,
+    name: "BATTERY ST \\\\ JACKSON ST"
   },
   28: {
     custid: 28,
@@ -320,7 +341,7 @@ const seed = {
         29: .1
     },
     crimeRating: 14,
-    name: "jackson // front"
+    name: "FRONT ST \\\\ JACKSON ST"
   }, 
   29: {
     custid: 29,
@@ -333,7 +354,7 @@ const seed = {
         39: 0.1
     },
     crimeRating: 120,
-    name: "jackson // davis"
+    name: "DAVIS CT \\\\ DAVIS ST \\\\ JACKSON ST"
   },
   30: {
     custid: 30,
@@ -343,7 +364,8 @@ const seed = {
         29: .1,
         38: .1
     },
-    name: "jackson // drumm"
+    crimeRating: 0,
+    name: "JACKSON ST \\\\ DRUMM ST"
   },
   31: {
     custid: 31,
@@ -354,7 +376,8 @@ const seed = {
         33: .04,
         40: .1
     },
-    name: "washington // grant"
+    crimeRating: 0,
+    name: "WASHINGTON ST \\\\ GRANT AVE"
   },
   32: {
     custid: 32,
@@ -365,7 +388,8 @@ const seed = {
         34: .08,
         41: .1
     },
-    name: "washington // walter u lum"
+    crimeRating: 0,
+    name: "WASHINGTON ST \\\\ WALTER U LUM"
   },
   33: {
     custid: 33,
@@ -376,7 +400,8 @@ const seed = {
         31: .04,
         32: .02
     }, 
-    name: "washington // wentworth"
+    crimeRating: 0,
+    name: "WASHINGTON ST \\\\ WENTWORTH"
   },
   34: {
     custid: 34,
@@ -388,7 +413,8 @@ const seed = {
         35: .15,
         42: .1
     },
-    name: "washington // kearny"
+    crimeRating: 0,
+    name: "WASHINGTON ST \\\\ KEARNY ST"
   },
   35: {
     custid: 35,
@@ -401,7 +427,8 @@ const seed = {
         43: .1,
         110: 0.05
     },
-    name: "washington // columbus // montgomery"
+    crimeRating: 207,
+    name: "MONTGOMERY ST \\\\ COLUMBUS AVE \\\\ WASHINGTON ST"
   },
   36: {
     custid: 36,
@@ -413,7 +440,8 @@ const seed = {
         45: .1,
         110: 0.1
     },
-    name: "washington // sansome"
+    crimeRating: 88,
+    name: "WASHINGTON ST \\\\ SANSOME ST"
   },
   37: {
     custid: 37,
@@ -425,7 +453,8 @@ const seed = {
         39: .21,
         46: .1
     },
-    name: "washington // battery"
+    crimeRating: 0,
+    name: "WASHINGTON ST \\\\ BATTERY ST"
   }, 
   38: {
     custid: 38,
@@ -437,7 +466,7 @@ const seed = {
         48: .1
     },
     crimeRating: 167,
-    name: "washington // drumm"
+    name: "WASHINGTON ST \\\\ DRUMM ST"
   },
   39: {
     custid: 39,
@@ -450,7 +479,7 @@ const seed = {
         47: .09
     }, 
     crimeRating: 50,
-    name: "washington // davis"
+    name: "WASHINGTON ST \\\\ DAVIS ST"
   },
   40: {
     custid: 40,
@@ -461,7 +490,8 @@ const seed = {
         41: .05,
         111: .05
     },
-    name: "clay // grant"
+    crimeRating: 0,
+    name: "CLAY ST \\\\ GRANT AVE"
   },
   41: {
     custid: 41,
@@ -472,7 +502,8 @@ const seed = {
         40: .05,
         42: .08
     },
-    name: "clay // walter u lum"
+    crimeRating: 0,
+    name: "CLAY ST \\\\ WALTER U LUM"
   },
   42: {
     custid: 42,
@@ -484,7 +515,8 @@ const seed = {
         43: .15,
         112: .05
     },
-    name: "clay // kearny"
+    crimeRating: 358,
+    name: "KEARNY ST \\\\ CLAY ST"
   },
   43: {
     custid: 43,
@@ -496,7 +528,8 @@ const seed = {
         44: .07,
         113: .05
     }, 
-    name: "clay // montgomery"
+    crimeRating: 263,
+    name: "CLAY ST \\\\ MONTGOMERY ST"
   },
   44: {
     custid: 44,
@@ -507,7 +540,8 @@ const seed = {
         45: .08,
         114: .05
     },
-    name: "clay // leidesdorff"
+    crimeRating: 3,
+    name: "LEIDESDORFF ST \\\\ CLAY ST"
   }, 
   45: {
     custid: 45,
@@ -519,7 +553,8 @@ const seed = {
         46: .1,
         115: .05
     },
-    name: "clay // sansome"
+    crimeRating: 62,
+    name: "SANSOME ST \\\\ CLAY ST"
   },
   46: {
     custid: 46,
@@ -531,7 +566,8 @@ const seed = {
         55: .1,
         49: .1
     },
-    name: "clay // battery"
+    crimeRating: 0,
+    name: "CLAY ST \\\\ BATTERY ST"
   },
   47: {
     custid: 47,
@@ -543,7 +579,8 @@ const seed = {
         39: .09,
         56: .1
     },
-    name: "clay // davis"
+    crimeRating: 0,
+    name: "CLAY ST \\\\ DAVIS ST"
   },
   48: {
     custid: 48,
@@ -554,7 +591,8 @@ const seed = {
         47: .1,
         57: .1
     },
-    name: "clay // drumm"
+    crimeRating: 0,
+    name: "CLAY ST \\\\ DRUMM ST"
   },
   49: {
     custid: 49,
@@ -566,7 +604,7 @@ const seed = {
         116: .1
     },
     crimeRating: 100,
-    name: "clay // front"
+    name: "FRONT ST \\\\ CLAY ST"
   },
   50: {
     custid: 50,
@@ -577,7 +615,8 @@ const seed = {
         51: .14,
         59: .1
     },
-    name: "sacramento // grant"
+    crimeRating: 0,
+    name: "SACRAMENTO ST \\\\ GRANT AVE"
   }, 
   51: {
     custid: 51,
@@ -589,7 +628,8 @@ const seed = {
         58: .05,
         62: .1
     },
-    name: "sacramento // kearny"
+    crimeRating: 134,
+    name: "SACRAMENTO ST \\\\ KEARNY ST"
   }, 
   58: {
     custid: 58,
@@ -600,7 +640,8 @@ const seed = {
         52: .1,
         69: .1
     },
-    name: "sacramento // spring"
+    crimeRating: 51,
+    name: "SPRING ST \\\\ SACRAMENTO ST"
   }, 
   52: {
     custid: 52,
@@ -613,7 +654,7 @@ const seed = {
         53: .07
     },
     crimeRating: 60,
-    name: "sacramento // montgomery"
+    name: "MONTGOMERY ST \\\\ SACRAMENTO ST"
   },
   53: {
     custid: 53,
@@ -625,7 +666,8 @@ const seed = {
         114: .05,
         106: .05
     },
-    name: "sacramento // leidesdorff"
+    crimeRating: 0,
+    name: "SACRAMENTO ST \\\\ LEIDESDORFF ST"
   },
   54: {
     custid: 54,
@@ -638,7 +680,7 @@ const seed = {
         55: .1
     },
     crimeRating: 51,
-    name: "sacramento // sansome"
+    name: "SANSOME ST \\\\ SACRAMENTO ST"
   },
   55: {
     custid: 55,
@@ -651,7 +693,7 @@ const seed = {
         116: .1
     },
     crimeRating: 71,
-    name: "sacramento // battery"
+    name: "SACRAMENTO ST \\\\ BATTERY ST"
   },
   116: {
     custid: 116,
@@ -663,7 +705,8 @@ const seed = {
         56: .1,
         49: .1
     },
-    name: "sacramento // front"
+    crimeRating: 0,
+    name: "SACRAMENTO ST \\\\ FRONT ST"
   },
   56: {
     custid: 56,
@@ -676,7 +719,7 @@ const seed = {
         47: .1
     },
     crimeRating: 161,
-    name: "sacramento // davis"
+    name: "SACRAMENTO ST \\\\ DAVIS ST"
   },
   57: {
     custid: 57,
@@ -688,7 +731,7 @@ const seed = {
         68: .1
     },
     crimeRating: 262,
-    name: "sacramento // drumm"
+    name: "DRUMM ST \\\\ SACRAMENTO ST"
   },
   59: {
     custid: 59,
@@ -699,7 +742,8 @@ const seed = {
         50: .1,
         70: .11
     },
-    name: "california // grant"
+    crimeRating: 0,
+    name: "CALIFORNIA ST \\\\ GRANT AVE"
   },
   60: {
     custid: 60,
@@ -710,7 +754,8 @@ const seed = {
         59: .02,
         71: .11
     },
-    name: "california // quincy"
+    crimeRating: 0,
+    name: "CALIFORNIA ST \\\\ QUINCY"
   },
   61: {
     custid: 61,
@@ -723,7 +768,7 @@ const seed = {
         117: .1
     },
     crimeRating: 51,
-    name: "california // leidesdorff"
+    name: "LEIDESDORFF ST \\\\ CALIFORNIA ST"
   },
   62: {
     custid: 62,
@@ -736,7 +781,7 @@ const seed = {
         69: .05
     },
     crimeRating: 62,
-    name: "california // kearny"
+    name: "KEARNY ST \\\\ CALIFORNIA ST"
   },
   69: {
     custid: 69,
@@ -748,7 +793,7 @@ const seed = {
         58: .1
     },
     crimeRating: 90,
-    name: "california // spring"
+    name: "SPRING ST \\\\ CALIFORNIA ST"
   },
   63: {
     custid: 63,
@@ -761,7 +806,7 @@ const seed = {
         61: .07
     },
     crimeRating: 107,
-    name: "california // montgomery"
+    name: "MONTGOMERY ST \\\\ CALIFORNIA ST"
   },
   64: {
     custid: 64,
@@ -774,7 +819,7 @@ const seed = {
         75: .11
     },
     crimeRating: 50,
-    name: "california // sansome"
+    name: "CALIFORNIA ST \\\\ SANSOME ST"
   },
   65: {
     custid: 65,
@@ -787,7 +832,7 @@ const seed = {
         64: 0.1,
     },
     crimeRating: 51,
-    name: "california // battery"
+    name: "BATTERY ST \\\\ CALIFORNIA ST"
   },
   66: {
     custid: 66,
@@ -799,7 +844,8 @@ const seed = {
         77: 0.11,
         67: 0.11
     },
-    name: "california // front"
+    crimeRating: 0,
+    name: "CALIFORNIA ST \\\\ FRONT ST"
   },
   67: {
     custid: 67,
@@ -812,7 +858,7 @@ const seed = {
         78: 0.11
     }, 
     crimeRating: 61,
-    name: "california // davis"
+    name: "DAVIS ST \\\\ CALIFORNIA ST"
   },
   68: {
     custid: 68,
@@ -823,7 +869,8 @@ const seed = {
         57: .1,
         67: .1
     },
-    name: "california // drumm"
+    crimeRating: 0,
+    name: "CALIFORNIA ST \\\\ DRUMM ST"
   },
   70: {
     custid: 70,
@@ -834,7 +881,8 @@ const seed = {
         59: .11,
         80: .1
     },
-    name: "pine // grant"
+    crimeRating: 0,
+    name: "PINE ST \\\\ GRANT AVE"
   },
   71: {
     custid: 71,
@@ -845,7 +893,8 @@ const seed = {
         70: .03,
         79: .08
     },
-    name: "pine // quincy"
+    crimeRating: 0,
+    name: "PINE ST \\\\ QUINCY"
   },
   72: {
     custid: 72,
@@ -857,7 +906,8 @@ const seed = {
         79: .02,
         81: .1,
     },
-    name: "pine // kearny"
+    crimeRating: 0,
+    name: "PINE ST \\\\ KEARNY ST"
   },
   73: {
     custid: 73,
@@ -869,7 +919,7 @@ const seed = {
         74: .11
     },
     crimeRating: 81,
-    name: "pine // belden"
+    name: "BELDEN ST \\\\ PINE ST"
   },
   74: {
     custid: 74,
@@ -882,7 +932,7 @@ const seed = {
         117: 0.07
     },
     crimeRating: 71,
-    name: "pine // montgomery"
+    name: "PINE ST \\\\ MONTGOMERY ST"
   },
   75: {
     custid: 75,
@@ -895,7 +945,7 @@ const seed = {
         76: 0.1
     },
     crimeRating: 272,
-    name: "pine // sansome"
+    name: "PINE ST \\\\ SANSOME ST"
   },
   76: {
     custid: 76,
@@ -907,7 +957,8 @@ const seed = {
         77: .1,
         75: .1
     },
-    name: "pine // battery"
+    crimeRating: 0,
+    name: "PINE ST \\\\ BATTERY ST"
   },
   77: {
     custid: 77,
@@ -920,7 +971,7 @@ const seed = {
         66: .11
     },
     crimeRating: 51,
-    name: "pine // front"
+    name: "FRONT ST \\\\ PINE ST"
   },
   78: {
     custid: 78,
@@ -932,7 +983,8 @@ const seed = {
         105: .13,
         104: .12
     },
-    name: "pine // davis // market"
+    crimeRating: 0,
+    name: "PINE ST \\\\ DAVIS ST \\\\ MARKET ST"
   },
   79: {
     custid: 79,
@@ -944,7 +996,7 @@ const seed = {
         86: 0.1
     },
     crimeRating: 72,
-    name: "pine // saint george aly"
+    name: "SAINT GEORGE ALY \\\\ PINE ST"
   },
   80: {
     custid: 80,
@@ -955,7 +1007,8 @@ const seed = {
         86: 0.11,
         87: 0.11
     },
-    name: "bush // grant"
+    crimeRating: 0,
+    name: "BUSH ST \\\\ GRANT AVE"
   },
   81: {
     custid: 81,
@@ -967,7 +1020,8 @@ const seed = {
         88: 0.11,
         86: 0.02
     },
-    name: "bush // kearny"
+    crimeRating: 0,
+    name: "BUSH ST \\\\ KEARNY ST"
   },
   82: {
     custid: 82,
@@ -978,7 +1032,8 @@ const seed = {
         83:  0.12,
         73:  0.1
     },
-    name: "bush // belden"
+    crimeRating: 0,
+    name: "BUSH ST \\\\ BELDEN ST"
   },
   83: {
     custid: 83,
@@ -991,7 +1046,7 @@ const seed = {
         74: 0.1
     },
     crimeRating: 92,
-    name: "bush // montgomery"
+    name: "MONTGOMERY ST \\\\ BUSH ST"
   },
   84: {
     custid: 84,
@@ -1004,7 +1059,7 @@ const seed = {
         85: 0.1
     },
     crimeRating: 162,
-    name: "bush // sansome"
+    name: "BUSH ST \\\\ SANSOME ST"
   },
   85: {
     custid: 85,
@@ -1016,7 +1071,7 @@ const seed = {
         103: 0.06
     },
     crimeRating: 51,
-    name: "bush // battery"
+    name: "BATTERY ST \\\\ BUSH ST"
   },
   86: {
     custid: 86,
@@ -1028,7 +1083,7 @@ const seed = {
         79: 0.1
     },
     crimeRating: 201,
-    name: "bush // saint george aly"
+    name: "SAINT GEORGE ALY \\\\ BUSH ST"
   },
   87: {
     custid: 87,
@@ -1040,7 +1095,7 @@ const seed = {
         92: 0.11
     },
     crimeRating: 111,
-    name: "sutter // grant"
+    name: "SUTTER ST \\\\ GRANT AVE"
   },
   88: {
     custid: 88,
@@ -1053,7 +1108,7 @@ const seed = {
         89: 0.14
     },
     crimeRating: 112,
-    name: "sutter // kearny"
+    name: "SUTTER ST \\\\ KEARNY ST"
   },
   89: {
     custid: 89,
@@ -1066,7 +1121,7 @@ const seed = {
         94: 0.1
     },
     crimeRating: 141,
-    name: "sutter // montgomery"
+    name: "SUTTER ST \\\\ MONTGOMERY ST"
   },
   90: {
     custid: 90,
@@ -1078,7 +1133,7 @@ const seed = {
         91: 0.04
     },
     crimeRating: 227,
-    name: "sutter // sansome"
+    name: "SUTTER ST \\\\ SANSOME ST"
   },
   91: {
     custid: 91,
@@ -1089,7 +1144,8 @@ const seed = {
         103: 0.07,
         102: 0.25
     },
-    name: "sutter // market"
+    crimeRating: 0,
+    name: "SUTTER ST \\\\ MARKET ST"
   },
   92: {
     custid: 92,
@@ -1101,7 +1157,7 @@ const seed = {
         93: 0.14
     },
     crimeRating: 327,
-    name: "post // grant"
+    name: "GRANT AVE \\\\ POST ST"
   },
   93: {
     custid: 93,
@@ -1113,7 +1169,8 @@ const seed = {
         94: 0.14,
         96: 0.05
     },
-    name: "post // kearny" 
+    crimeRating: 0,
+    name: "POST ST \\\\ KEARNY ST" 
   },
   94: {
     custid: 94,
@@ -1125,7 +1182,7 @@ const seed = {
         102: 0.04
     },
     crimeRating: 51,
-    name: "post // montgomery"
+    name: "MONTGOMERY ST \\\\ POST ST"
   },
   95: {
     custid: 95,
@@ -1137,7 +1194,7 @@ const seed = {
         96: 0.14
     },
     crimeRating: 61,
-    name: "maiden // grant"
+    name: "GRANT AVE \\\\ MAIDEN LN"
   },
   96: {
     custid: 96,
@@ -1149,7 +1206,7 @@ const seed = {
         98: 0.05
     },
     crimeRating: 61,
-    name: "maiden // kearny"
+    name: "KEARNY ST \\\\ MAIDEN LN"
   },
   97: {
     custid: 97,
@@ -1160,7 +1217,8 @@ const seed = {
         100: 0.12,
         98: 0.14
     },
-    name: "geary // grant"
+    crimeRating: 0,
+    name: "GEARY ST \\\\ GRANT AVE"
   },
   98: {
     custid: 98,
@@ -1173,7 +1231,7 @@ const seed = {
         101: 0.03
     },
     crimeRating: 51,
-    name: "geary // kearny"
+    name: "GEARY ST \\\\ KEARNY ST"
   },
   99: {
     custid: 99,
@@ -1184,7 +1242,8 @@ const seed = {
         102: 0.12,
         98: 0.03
     },
-    name: "geary // market"
+    crimeRating: 0,
+    name: "GEARY ST \\\\ MARKET ST"
   },
   100: {
     custid: 100,
@@ -1194,7 +1253,8 @@ const seed = {
         97: 0.12,
         101: 0.15
     },
-    name: "market // grant"
+    crimeRating: 0,
+    name: "MARKET ST \\\\ GRANT AVE"
   },
   101: {
     custid: 101,
@@ -1205,7 +1265,8 @@ const seed = {
         98: 0.03,
         99: 0.05
     },
-    name: "market // kearny"
+    crimeRating: 0,
+    name: "MARKET ST \\\\ KEARNY ST"
   },
   102: {
     custid: 102,
@@ -1217,7 +1278,7 @@ const seed = {
         91: 0.25
     },
     crimeRating: 163,
-    name: "market // montgomery"
+    name: "NEW MONTGOMERY ST \\\\ MARKET ST \\\\ MONTGOMERY ST"
   },
   103: {
     custid: 103,
@@ -1228,7 +1289,8 @@ const seed = {
         91: 0.07,
         104: 0.15
     },
-    name: "market // battery"
+    crimeRating: 0,
+    name: "MARKET ST \\\\ BATTERY ST"
   },
   104: {
     custid: 104,
@@ -1240,7 +1302,7 @@ const seed = {
         78: 0.12
     },
     crimeRating: 52,
-    name: "market // front"
+    name: "FRONT ST \\\\ FREMONT ST \\\\ MARKET ST"
   },
   105: {
     custid: 105,
@@ -1250,7 +1312,8 @@ const seed = {
         78: 0.13,
         67: 0.04
     },
-    name: "market // drumm"
+    crimeRating: 0,
+    name: "MARKET ST \\\\ DRUMM ST"
   },
   106: {
     custid: 106,
@@ -1261,7 +1324,8 @@ const seed = {
         61: 0.06,
         107: 0.08
     },
-    name: "halleck // leidesdorff"
+    crimeRating: 0,
+    name: "HALLECK ST \\\\ LEIDESDORFF ST"
   },
   107: {
     custid: 107,
@@ -1274,7 +1338,7 @@ const seed = {
         108: 0.1
     },
     crimeRating: 51,
-    name: "halleck // sansome"
+    name: "HALLECK ST \\\\ SANSOME ST"
   },
   108: {
     custid: 108,
@@ -1286,7 +1350,8 @@ const seed = {
         107: 0.1,
         109: 0.11
     },
-    name: "halleck // battery"
+    crimeRating: 0,
+    name: "HALLECK ST \\\\ BATTERY ST"
   },
   109: {
     custid: 109,
@@ -1298,7 +1363,7 @@ const seed = {
         108: 0.11
     },
     crimeRating: 142,
-    name: "halleck // front"
+    name: "FRONT ST \\\\ HALLECK ST"
   },
   110: {
     custid: 110,
@@ -1309,7 +1374,8 @@ const seed = {
         35: 0.05,
         36: 0.1
     },
-    name: "washington // hotaling"
+    crimeRating: 52,
+    name: "WASHINGTON ST \\\\ HOTALING PL"
   },
   111: {
     custid: 111,
@@ -1320,7 +1386,8 @@ const seed = {
         50: .05,
         112: .14
     },
-    name: "commercial // grant"
+    crimeRating: 0,
+    name: "COMMERCIAL ST \\\\ GRANT AVE"
   },
   112: {
     custid: 112,
@@ -1332,7 +1399,8 @@ const seed = {
         111: .14,
         113: .15
     },
-    name: "commercial // kearny"
+    crimeRating: 178,
+    name: "KEARNY ST \\\\ COMMERCIAL ST"
   },
   113: {
     custid: 113,
@@ -1344,7 +1412,8 @@ const seed = {
         114: .07,
         52: .05
     },
-    name: "commercial // montgomery"
+    crimeRating: 60,
+    name: "MONTGOMERY ST \\\\ COMMERCIAL ST"
   },
   114: {
     custid: 114,
@@ -1356,7 +1425,8 @@ const seed = {
         53: .05,
         115: .08
     },
-    name: "commercial // leidesdorff"
+    crimeRating: 101,
+    name: "COMMERCIAL ST \\\\ LEIDESDORFF ST"
   },
   115: {
     custid: 115,
@@ -1367,7 +1437,8 @@ const seed = {
         114: .08,
         54: .05
     },
-    name: "commercial // sansome"
+    crimeRating: 176,
+    name: "SANSOME ST \\\\ COMMERCIAL ST"
   },
   117: {
     custid: 117,
@@ -1378,7 +1449,8 @@ const seed = {
        74: .07,
        61: .1
     },
-    name: "pine // leidesdorff"
+    crimeRating: 0,
+    name: "PINE ST \\\\ LEIDESDORFF ST"
   }
 }
 
