@@ -6,6 +6,7 @@ import MapContainer from './map_container'
 import TripInfo from './duration';
 import TBTContainer from "./tbt_container.js";
 import DangerZone from './danger_zone';
+import Authors from './authors';
 
 export default class Splash extends React.Component{
 
@@ -18,6 +19,7 @@ export default class Splash extends React.Component{
                     <DangerZone />
                     <TripInfo />
                     <TBTContainer />
+                    <Authors />
                 </div>
             </div>
         )
