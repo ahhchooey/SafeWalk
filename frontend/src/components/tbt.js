@@ -23,7 +23,7 @@ export default class TBT extends React.Component {
     if (this.state.setRoute !== this.props.setRoute) {
       this.setState({setRoute: this.props.setRoute || ""})
     }
-    if (this.state.setRoute !== "") {
+    if (this.state.setRoute !== "" && this.props.entities[this.props.setRoute]) {
       if (this.state.directions !== this.props.entities[this.state.setRoute].directions) {
         this.setState({directions: this.props.entities[this.props.setRoute].directions})
       }

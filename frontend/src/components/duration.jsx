@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {toggleTripInfo, toggleAllDirections, toggleShowSearch, toggleTurnByTurn} from '../actions/ui_actions';
+import {toggleTripInfo, toggleAllDirections, toggleShowSearch, toggleTurnByTurn, clearRoute} from '../actions/ui_actions';
 import {clearRoutes} from '../actions/directions_actions';
 import './stylesheets/tripinfo.scss'
 
@@ -17,6 +17,7 @@ class TripInfo extends React.Component {
         this.props.toggleAllDirections();
         this.props.toggleTurnByTurn();
         this.props.toggleShowSearch();
+        this.props.clearRoute();
     }
 
     render() {
@@ -54,31 +55,42 @@ class TripInfo extends React.Component {
 const mstp = (state) => {
     let currentDist;
     let tripTime;
-    if (state.entities.directions) {
-        let sum = 0;
-        Object.values(state.entities.directions).forEach(el => {
-            sum = sum + el.distance;
-        })
-        currentDist = sum;
-    } else {
-        return {};
+
+    if (!state.ui.setRoute) {
+        currentDist = {}
+        tripTime = {}
     }
 
-    if (state.entities.directions) {
-        let sum = 0;
-        Object.values(state.entities.directions).forEach(el => {
-            sum = sum + el.duration;
+    if (state.ui.setRoute === 'safest') {
+        let time = 0;
+        let dist = 0;
+        state.entities.safest['directions'].forEach(el => {
+            dist = dist + el.distance;
         })
-        tripTime = sum;
-    } else {
-        return {};
+        state.entities.safest['directions'].forEach(el => {
+            time = time + el.duration;
+        })
+        currentDist = dist;
+        tripTime = time;
+    }
+
+    if (state.ui.setRoute === 'fastest') {
+        let time = 0;
+        let dist = 0;
+        state.entities.fastest['directions'].forEach(el => {
+            dist = dist + el.distance;
+        })
+        state.entities.fastest['directions'].forEach(el => {
+            time = time + el.duration;
+        })
+        currentDist = dist;
+        tripTime = time;
     }
 
     return {
         showTripInfo: state.ui.showTripInfo,
         currentDist: currentDist,
         tripTime: tripTime,
-        // showTripInfo: STATUS_CODES.ui.showTripInfo
     }
 }
 
@@ -87,7 +99,8 @@ const mdtp = (dispatch) => ({
     toggleAllDirections: () => dispatch(toggleAllDirections()),
     toggleShowSearch: () => dispatch(toggleShowSearch()),
     toggleTurnByTurn: () => dispatch(toggleTurnByTurn()),
-    clearRoutes: () => dispatch(clearRoutes())
+    clearRoutes: () => dispatch(clearRoutes()),
+    clearRoute: () => dispatch(clearRoute())
 })
 
 export default connect(mstp, mdtp)(TripInfo);
