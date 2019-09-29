@@ -3,14 +3,11 @@ import Map from './map';
 import { receiveCurrentLocation } from '../actions/directions_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
-    const safestRoute = state.entities.safest.route;
-    const fastestRoute = state.entities.fastest.route;
-    const setRoute = state.ui.setRoute;
     return ({
-        safestRoute,
-        fastestRoute,
-        setRoute
+        safestRoute: state.entities.safest.route,
+        fastestRoute: state.entities.fastest.route,
+        setRoute: state.ui.setRoute,
+        showHeat: state.ui.showHeat
     })
 }
 
