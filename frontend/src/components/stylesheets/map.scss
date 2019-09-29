@@ -34,3 +34,12 @@ body {
     position: fixed;
     z-index: -1
 }
+
+.mapboxgl-popup-content {
+
+    h2 {
+        b {
+            color: red;
+        }
+    }
+}
