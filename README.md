@@ -77,7 +77,7 @@ router.route("/safest").get((req, res) => {
 ```
 
 An example of map layering to create a dynamic and interesting map render.
-```
+```js
 map.on('load', () => {
     map.addSource("sf-neighborhoods", {
         type: 'geojson',
