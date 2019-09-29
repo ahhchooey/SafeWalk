@@ -55,7 +55,7 @@ class Authors extends React.Component {
                             <a href="https://www.linkedin.com/in/stan1000/">LinkedIn</a> |
                             <a href="https://github.com/aethervial">GitHub</a>
                             <br/>
-                            Theodore Brown | 
+                            Theodore Browne | 
                             <a href="https://www.linkedin.com/in/theodore-browne-7201a3165/">
                               LinkedIn
                             </a> |
