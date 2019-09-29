@@ -25,13 +25,21 @@ class Map extends Component {
         this.addCrimeHeatMap = this.addCrimeHeatMap.bind(this);
     }
     componentDidMount() {
-      this.createMap();
+        this.createMap();
+        this.interval = setInterval(() => navigator.geolocation.getCurrentPosition(res => {
+            this.setState({userLocation: res})
+            console.log(res)
+        }), 1000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval)
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) {
             if( this.props.showHeat ) {
-                this.addCrimeHeatMap(FIDI_CRIMES);
+                this.addCrimeHeatMap(FEATURE_COLLECTION);
             } else {
                 this.addCrimeHeatMap(NULL_CRIMES);
             }
@@ -132,10 +140,7 @@ class Map extends Component {
 
         map.on('click', 'trees-point', function (e) {
 
-            const categories = ["Lost", "Theft", "Stolen", "Malicious Mischief",
-                "Miscellaneous", "Robbery", "Assault", "Suspicious", "Fraud", "Traffic", "Disorderly",
-                "Weapons", "Burglary", "Drug", "Warrant", "Missing", "Offences", "Embezzlement",
-                "Forgery", "Vandalism", "Intimination", "Liquor", "Other"];
+            const categories = ["Assault", "Robbery", "Intimination", "Weapons", "Theft", "Stolen", "Burglary", "Traffic", "Offences", "Suspicious", "Malicious Mischief", "Vandalism", "Miscellaneous", "Lost", "Disorderly", "Drug", "Warrant", "Missing", "Embezzlement", "Other", "Fraud", "Forgery", "Liquor"];
             function onIntersectionClick(crimes){
                 let intersectionCrimeCount = [];
                 categories.forEach( crimeCategory => {
@@ -145,7 +150,7 @@ class Map extends Component {
                 })
 
                 intersectionCrimeCount = intersectionCrimeCount.join(', ');
-                intersectionCrimeCount = "<b>CR:</b> "+ crimes.crimeRating + ", " + intersectionCrimeCount;
+                intersectionCrimeCount = "<h2><b>Crime Rating:</b> "+ crimes.crimeRating + "</h2>" + intersectionCrimeCount;
                 
                 return intersectionCrimeCount;
             }
@@ -175,7 +180,7 @@ class Map extends Component {
                     ["linear"],
                     ["get", "crimeRating"],
                     0, 0,
-                    6, 1
+                    3000, 1
                 ],
                 // Increase the heatmap color weight weight by zoom level
                 // heatmap-intensity is a multiplier on top of heatmap-weight
@@ -192,26 +197,28 @@ class Map extends Component {
                     "interpolate",
                     ["linear"],
                     ["heatmap-density"],
-                    0, 'rgba(236,222,239,0)',
-                    0.2, 'rgb(208,209,230)',
-                    0.4, 'rgb(166,189,219)',
-                    0.6, 'rgb(103,169,207)',
-                    0.8, 'rgb(28,144,153)'
+                    0, "rgba(33,102,172,0)",
+                    0.2, "rgb(103,169,207)",
+                    0.4, "rgb(209,229,240)",
+                    0.6, "rgb(253,219,199)",
+                    0.8, "rgb(239,138,98)",
+                    1, "rgb(178,24,43)"
                 ],
                 // Adjust the heatmap radius by zoom level
-                'heatmap-radius': {
-                    stops: [
-                        [11, 15],
-                        [15, 20]
-                    ]
-                },
+                "heatmap-radius": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0, 2,
+                    9, 20
+                ],
                 // Transition from heatmap to circle layer by zoom level
                 "heatmap-opacity": [
                     "interpolate",
                     ["linear"],
                     ["zoom"],
-                    30, 1,
-                    20000, 0
+                    20, 1,
+                    30, 0
                 ],
             }
         }, 'waterway-label');
@@ -243,13 +250,13 @@ class Map extends Component {
                     property: 'Theft',
                     type: 'exponential',
                     stops: [
-                        [0, 'rgba(236,222,239,0)'],
-                        [10, 'rgb(236,222,239)'],
-                        [20, 'rgb(208,209,230)'],
-                        [30, 'rgb(166,189,219)'],
-                        [40, 'rgb(103,169,207)'],
-                        [50, 'rgb(28,144,153)'],
-                        [60, 'rgb(1,108,89)']
+                        [0, 'rgba(33,102,172,0)'],
+                        [10, 'rgb(103,169,207)'],
+                        [20, 'rgb(209,229,240)'],
+                        [30, 'rgb(253,219,199)'],
+                        [40, 'rgb(239,138,98)'],
+                        [50, 'rgb(178,24,43)'],
+                        // [60, 'rgb(1,108,89)']
                     ]
                 },
                 'circle-stroke-color': 'white',
