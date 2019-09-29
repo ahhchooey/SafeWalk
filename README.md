@@ -119,8 +119,8 @@ map.on('load', () => {
 
 ------
 
-[Alex Chui](https://github.com/ahhchooey)
-[Jimmy Pham](https://github.com/jipham510)
-[Stanton Huang](https://github.com/aethervial)
+[Alex Chui](https://github.com/ahhchooey) |
+[Jimmy Pham](https://github.com/jipham510) |
+[Stanton Huang](https://github.com/aethervial) |
 [Theodore Browne](https://github.com/theo-browne)
 
