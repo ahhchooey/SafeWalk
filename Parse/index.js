@@ -73,7 +73,6 @@ let featureCollection = {
 const dummyObject = {
   "type": "Feature",
   "name": "",
-  "crimeRating": 0,
   "geometry": {
     "type": "Point",
     "coordinates": []
@@ -98,16 +97,15 @@ featureCollection.features.forEach(inter => {
   let i = ints.filter(int => {
     return int.name === inter.name.split("\\").join("\\\\")
   })[0];
-  inter.crimeRating = i ? i.crimeRating : 0;
+  inter.properties.crimeRating = i ? i.crimeRating : 0;
 })
 
-featureCollection.features.forEach(int => console.log(int))
 //console.log(featureCollection.features.length)
 
-let featureCollectionJSON = JSON.stringify(featureCollection);
-fs.writeFile("featureCollection.json", featureCollectionJSON, (err, result) => {
-  if(err) console.log('error', err);
-});
+//let featureCollectionJSON = JSON.stringify(featureCollection);
+//fs.writeFile("featureCollection.json", featureCollectionJSON, (err, result) => {
+//  if(err) console.log('error', err);
+//});
 
 //for (intersection in counter) {
 //  let total = 0;
