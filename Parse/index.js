@@ -24,12 +24,7 @@ crimes = json.map((ele) => ({
 //     if (parseFloat(c1.longitude) < parseFloat(c2.longitude)) return -1;
 // })
 
-map = crimes.filter(el => {
-    // console.log(el);
-    // (parseFloat(el.latitude) >= 37.7879) && (parseFloat(el.latitude) <= 37.7989) && (parseFloat(el.longitude) >= -122.4055) && (parseFloat(el.longitude) < -122.3965 )
-    return ((parseFloat(el.latitude) >= 37.7879) && (parseFloat(el.latitude) <= 37.7989) && (parseFloat(el.longitude) >= -122.4055) && (parseFloat(el.longitude) < -122.3965)
-    )});
-
+map = crimes
 
 const categories = ["Lost", "Theft", "Stolen", "Malicious Mischief", "Theft", 
 "Miscellaneous", "Robbery", "Assault", "Suspicious", "Fraud", "Traffic", "Disorderly", 
