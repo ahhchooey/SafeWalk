@@ -18,6 +18,7 @@ class HeatToggle extends React.Component {
     }
 
     toggle(e){
+        e.preventDefault();
         e.stopPropagation();
         this.props.toggleHeat();
     }
