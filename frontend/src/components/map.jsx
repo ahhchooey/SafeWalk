@@ -135,11 +135,14 @@ class Map extends Component {
             function onIntersectionClick(crimes){
                 let intersectionCrimeCount = [];
                 categories.forEach( crimeCategory => {
-                    if(crimes[crimeCategory]){
+                    if (crimes[crimeCategory]){
                         intersectionCrimeCount.push(`<b>${crimeCategory}:</b> ${crimes[crimeCategory]}`);
                     }
                 })
+
                 intersectionCrimeCount = intersectionCrimeCount.join(', ');
+                intersectionCrimeCount = "<b>CR:</b> "+ crimes.crimeRating + ", " + intersectionCrimeCount;
+                
                 return intersectionCrimeCount;
             }
             new mapboxgl.Popup()
