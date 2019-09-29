@@ -6,7 +6,8 @@ import {
     TOGGLE_DZ,
     SET_ROUTE,
     TOGGLE_HEAT,
-    CLEAR_ROUTE
+    CLEAR_ROUTE,
+    SET_MAP
 } from '../actions/ui_actions';
 
 let defaultState = {
@@ -16,7 +17,8 @@ let defaultState = {
     showTurnByTurn: false,
     showDZ: false,
     showHeat: false,
-    setRoute: null
+    setRoute: null,
+    setMap: false
 }
 
 const uiReducer = (state = defaultState, action) => {
@@ -44,8 +46,12 @@ const uiReducer = (state = defaultState, action) => {
         case TOGGLE_HEAT:
             newState.showHeat = !newState.showHeat;
             return newState;
+        case SET_MAP:
+            newState.setMap = true;
+            return newState;
         case CLEAR_ROUTE:
-            return defaultState;
+            let thing = Object.assign({}, defaultState, {setMap: true})
+            return thing;
         default:
             return state;
     }
