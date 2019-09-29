@@ -98,10 +98,10 @@ featureCollection.features.forEach(inter => {
   let i = ints.filter(int => {
     return int.name === inter.name.split("\\").join("\\\\")
   })[0];
-  inter.crimeRating = i || 0;
+  inter.crimeRating = i ? i.crimeRating : 0;
 })
 
-//featureCollection.features.forEach(int => console.log(int))
+featureCollection.features.forEach(int => console.log(int))
 //console.log(featureCollection.features.length)
 
 let featureCollectionJSON = JSON.stringify(featureCollection);

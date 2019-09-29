@@ -5,7 +5,7 @@ const intersections = require("./routes/api/intersections.js");
 const {Intersection} = require("./models/intersection.model.js");
 const seed = require("./node_seed.js");
 const path = require('path');
-const {featureCollection} = require("./Parse/index.js")
+//const {featureCollection} = require("./Parse/index.js")
 
 const app = express();
 mongoose
