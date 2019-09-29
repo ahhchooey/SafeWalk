@@ -29,7 +29,6 @@ class Map extends Component {
 
         this.interval = setInterval(() => navigator.geolocation.getCurrentPosition(res => {
             this.setState({userLocation: res})
-            console.log(res)
         }), 1000)
     }
 
