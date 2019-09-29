@@ -3,6 +3,7 @@ let json = require('./crimes.json');
 const crimeRating = require("../crime_rating.js");
 const fs = require("fs");
 const lodash = require("lodash");
+const seed = require("../node_seed.js")
 
 let crimes = [];
 
@@ -72,6 +73,7 @@ let featureCollection = {
 const dummyObject = {
   "type": "Feature",
   "name": "",
+  "crimeRating": 0,
   "geometry": {
     "type": "Point",
     "coordinates": []
@@ -90,9 +92,17 @@ map.forEach(intersection => {
   featureCollection.features.push(obj);
 })
 
+
+let ints = Object.values(seed);
+featureCollection.features.forEach(inter => {
+  let i = ints.filter(int => {
+    return int.name === inter.name.split("\\").join("\\\\")
+  })[0];
+  inter.crimeRating = i || 0;
+})
+
 //featureCollection.features.forEach(int => console.log(int))
 //console.log(featureCollection.features.length)
-
 
 let featureCollectionJSON = JSON.stringify(featureCollection);
 fs.writeFile("featureCollection.json", featureCollectionJSON, (err, result) => {
