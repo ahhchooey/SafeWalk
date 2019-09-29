@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Map from './map';
 import { receiveCurrentLocation } from '../actions/directions_actions';
+import {setMap} from "../actions/ui_actions.js";
 
 const mapStateToProps = (state, ownProps) => {
     return ({
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    receiveCurrentLocation: (currentLocation) => dispatch(receiveCurrentLocation(currentLocation))
+  receiveCurrentLocation: (currentLocation) => dispatch(receiveCurrentLocation(currentLocation)),
+  setMap: () => dispatch(setMap())
 })
 
 export default connect(

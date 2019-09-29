@@ -35,6 +35,7 @@ class Map extends Component {
     componentWillUnmount() {
         clearInterval(this.interval)
     }
+
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) {
             if( this.props.showHeat ) {
@@ -66,7 +67,7 @@ class Map extends Component {
         });
         //create map
         let map = this.map;
-        map.on('load', function () {
+        map.on('load', () => {
             map.addSource("sf-neighborhoods", {
                 type: 'geojson',
                 data: SF_NEIGHBORHOODS
@@ -131,8 +132,11 @@ class Map extends Component {
             });
             addLineLayer("fastestRoute", map, [], fastColor, 0)
             addLineLayer("safestRoute", map, [], safeColor, 0)
-            
-        })
+                      
+            setTimeout(() => {
+                this.props.setMap()
+            }, 0)
+      })
 
         map.on('click', 'trees-point', function (e) {
 

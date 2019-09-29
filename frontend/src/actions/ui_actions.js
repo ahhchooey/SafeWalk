@@ -7,6 +7,7 @@ export const TOGGLE_TURN_BY_TURN = "TOGGLE_TURN_BY_TURN";
 export const TOGGLE_DZ = "TOGGLE_DZ";
 export const SET_ROUTE = "SET_ROUTE";
 export const TOGGLE_HEAT = "TOGGLE_HEAT"
+export const SET_MAP = "SET_MAP";
 
 export const toggleShowSearch = () => ({
     type: TOGGLE_SHOW_SEARCH
@@ -35,6 +36,10 @@ export const toggleHeat = () => ({
 export const setRoute = str => ({
     type: SET_ROUTE,
     str: str
+})
+
+export const setMap = () => ({
+  type: SET_MAP
 })
 
 export const clearRoute = () => ({
