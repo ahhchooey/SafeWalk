@@ -5,6 +5,7 @@ class Authors extends React.Component {
     constructor(props) {
         super(props);
         this.handleSlide = this.handleSlide.bind(this);
+        this.removeSlide = this.removeSlide.bind(this);
     }
 
     handleSlide(e) {
@@ -12,12 +13,23 @@ class Authors extends React.Component {
         $('.slideout').toggleClass('slide-active');
         $('.slideout_inner').toggleClass('authors-active');
     }
+
+    removeSlide(e) {
+        e.stopPropagation();
+        $('.slideout').removeClass('slide-active');
+        $('.slideout_inner').removeClass('authors-active');
+    }
     
     render() {
         return (
 
          <React.Fragment>
-                <div onMouseDown={this.handleSlide} onMouseOut={this.handleSlide} className="slideout">About Me</div>
+               <div onMouseDown={this.handleSlide} 
+                 onMouseLeave={this.removeSlide}
+                 className="slideout"
+               >
+                 About Me
+               </div>
                     <div className="slideout_inner">
                         <h3>Welcome to SafeWalker!</h3>
                         <br/>
@@ -28,11 +40,15 @@ class Authors extends React.Component {
                             Authors:
                             <br/>
                             Alex Chui |  
-                            <a href="https://www.linkedin.com/in/alex-chui-075785117/">LinkedIn</a> |  
+                            <a href="https://www.linkedin.com/in/alex-chui-075785117/">
+                              LinkedIn
+                            </a> |  
                             <a href="https://github.com/ahhchooey">GitHub</a>
                             <br/>
                             Jimmy Pham |
-                            <a href="https://www.linkedin.com/in/jimmy-pham-38a208139/">LinkedIn</a> |
+                            <a href="https://www.linkedin.com/in/jimmy-pham-38a208139/">
+                              LinkedIn
+                            </a> |
                             <a href="https://github.com/jipham510">GitHub</a>
                             <br/>
                             Stanton Huang |
@@ -40,7 +56,9 @@ class Authors extends React.Component {
                             <a href="https://github.com/aethervial">GitHub</a>
                             <br/>
                             Theodore Brown | 
-                            <a href="https://www.linkedin.com/in/theodore-browne-7201a3165/">LinkedIn</a> |
+                            <a href="https://www.linkedin.com/in/theodore-browne-7201a3165/">
+                              LinkedIn
+                            </a> |
                             <a href="https://github.com/theo-browne">GitHub</a>
                         </p>
                 </div>
