@@ -1,6 +1,7 @@
 // import _ from 'lodash';
 let json = require('./crimes.json');
 const crimeRating = require("../crime_rating.js");
+const fs = require("fs");
 
 let crimes = [];
 
@@ -83,6 +84,10 @@ map.forEach(intersection => {
   featureCollection.features.push(obj);
 })
 
+//let featureCollectionJSON = JSON.stringify(featureCollection);
+//fs.writeFile("featureCollection.json", featureCollectionJSON, (err, result) => {
+//  if(err) console.log('error', err);
+//});
 
 //for (intersection in counter) {
 //  let total = 0;
