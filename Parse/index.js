@@ -62,16 +62,49 @@ keys.forEach(key => {
 
 console.log("crimes by intersection", counter);
 
+let featureCollection = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.40014878003355,
+          37.794134234076786
+        ]
+      },
+      "properties": {
+        "Aggravated Assault": 20,
+        "Larceny": 10,
+        "other": 2
+      }
+    }
+  ]
+}
+
+let dummyObject = {
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": []
+  },
+  "properties": {}
+}
+
+//console.log(map[0])
+
+
 for (intersection in counter) {
   let total = 0;
   let crimes = Object.keys(counter[intersection]);
   crimes.forEach(crime => {
-    total += crimeRating[crime] || 0;
+    total += crimeRating[crime] * counter[intersection][crime] || 0;
   })
   counter[intersection] = total
 }
 
-console.log("crimeRating by intersection", counter);
+//console.log("crimeRating by intersection", counter);
 
 //let counter2 = {};
 //categories.forEach(crime => {
