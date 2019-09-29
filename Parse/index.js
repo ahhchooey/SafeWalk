@@ -2,6 +2,7 @@
 let json = require('./crimes.json');
 const crimeRating = require("../crime_rating.js");
 const fs = require("fs");
+const lodash = require("lodash");
 
 let crimes = [];
 
@@ -70,6 +71,7 @@ let featureCollection = {
 
 const dummyObject = {
   "type": "Feature",
+  "name": "",
   "geometry": {
     "type": "Point",
     "coordinates": []
@@ -78,16 +80,24 @@ const dummyObject = {
 }
 
 map.forEach(intersection => {
-  let obj = Object.assign({}, dummyObject);
+  let obj = lodash.merge({}, dummyObject);
+  obj.name = intersection.intersection;
+  if (featureCollection.features.some(inter => {
+    return inter.name === obj.name
+  })) return;
   obj.geometry.coordinates = [intersection.longitude, intersection.latitude];
-  obj.properties = counter[intersection.intersection];
+  obj.properties = counter[obj.name];
   featureCollection.features.push(obj);
 })
 
-//let featureCollectionJSON = JSON.stringify(featureCollection);
-//fs.writeFile("featureCollection.json", featureCollectionJSON, (err, result) => {
-//  if(err) console.log('error', err);
-//});
+//featureCollection.features.forEach(int => console.log(int))
+//console.log(featureCollection.features.length)
+
+
+let featureCollectionJSON = JSON.stringify(featureCollection);
+fs.writeFile("featureCollection.json", featureCollectionJSON, (err, result) => {
+  if(err) console.log('error', err);
+});
 
 //for (intersection in counter) {
 //  let total = 0;

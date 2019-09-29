@@ -17,7 +17,7 @@ class Authors extends React.Component {
         return (
 
          <React.Fragment>
-                <div onClick={this.handleSlide} onMouseOut={this.handleSlide} className="slideout">About Me</div>
+                <div onMouseDown={this.handleSlide} onMouseOut={this.handleSlide} className="slideout">About Me</div>
                     <div className="slideout_inner">
                         <h3>Welcome to SafeWalker!</h3>
                         <br/>
