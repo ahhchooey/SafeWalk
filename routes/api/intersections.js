@@ -19,19 +19,19 @@ router.route("/").get((req, res) => {
 
 router.route("/all").get((req, res) => {
 
-  let start = closest(req.query.query.start)
-  let destination = closest(req.query.query.destination)
-  let directions
+  let start = closest(req.query.query.start);
+  let destination = closest(req.query.query.destination);
+  let directions;
   Intersection.find()
     .then(async intersections => {
       const fastmap = new Graph();
-      const safemap = new Graph()
+      const safemap = new Graph();
       intersections.forEach(inter => {
 
         fastmap.addNode(String(inter.custid), inter.options)
         
-        let op = Object.assign({}, inter)
-        let newOptions = Object.assign({}, inter.options)
+        let op = Object.assign({}, inter);
+        let newOptions = Object.assign({}, inter.options);
         let keys = Object.keys(newOptions);
         keys.forEach(key => {
           newOptions[key] = newOptions[key] * 1 + 10 * (op._doc.crimeRating || 0);
