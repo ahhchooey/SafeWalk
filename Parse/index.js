@@ -73,6 +73,7 @@ let featureCollection = {
 const dummyObject = {
   "type": "Feature",
   "name": "",
+  "crimeRating": 0,
   "geometry": {
     "type": "Point",
     "coordinates": []
@@ -97,9 +98,11 @@ featureCollection.features.forEach(inter => {
   let i = ints.filter(int => {
     return int.name === inter.name.split("\\").join("\\\\")
   })[0];
+  inter.properties.name = inter.name;
   inter.properties.crimeRating = i ? i.crimeRating : 0;
 })
 
+featureCollection.features.forEach(int => console.log(int))
 //console.log(featureCollection.features.length)
 
 //let featureCollectionJSON = JSON.stringify(featureCollection);
