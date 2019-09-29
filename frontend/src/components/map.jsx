@@ -26,6 +26,7 @@ class Map extends Component {
     }
     componentDidMount() {
         this.createMap();
+
         this.interval = setInterval(() => navigator.geolocation.getCurrentPosition(res => {
             this.setState({userLocation: res})
             console.log(res)
@@ -136,6 +137,11 @@ class Map extends Component {
             setTimeout(() => {
                 this.props.setMap()
             }, 0)
+
+            let marker = new mapboxgl.Marker()
+                .setLngLat([this.state.userLocation.coords.longitude,
+                            this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
+                .addTo(map); 
       })
 
         map.on('click', 'trees-point', function (e) {
