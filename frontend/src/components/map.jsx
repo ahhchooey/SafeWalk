@@ -62,10 +62,6 @@ class Map extends Component {
                 type: 'geojson',
                 data: SF_NEIGHBORHOODS
             });
-            map.addSource('trees', {
-                type: 'geojson',
-                data: FIDI_CRIMES
-            });
             map.addLayer({
                 id: 'sf-neighborhoods-fill',
                 source: 'sf-neighborhoods',
@@ -87,108 +83,25 @@ class Map extends Component {
             });
             map.addSource('crime', {
                 "type": "geojson",
-                "data": FIDI_CRIMES
+                "data": NULL_CRIMES
             });
             map.addLayer({
                 "id": "crimes-heat",
                 "type": "heatmap",
                 "source": "crime",
                 "maxzoom": 16,
-                "paint": {
-                    // Increase the heatmap weight based on frequency and property magnitude
-                    "heatmap-weight": {
-                        "property": 'cnn',
-                        "type": 'exponential',
-                        "stops": [
-                            [1, 10],
-                            [10, 100]
-                        ]
-                    },
-                    // Increase the heatmap color weight weight by zoom level
-                    // heatmap-intensity is a multiplier on top of heatmap-weight
-                    "heatmap-intensity": {
-                        "stops": [
-                            [11, 1],
-                            [15, 3]
-                        ]
-                    },
-                    // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-                    // Begin color ramp at 0-stop with a 0-transparancy color
-                    // to create a blur-like effect.
-                    "heatmap-color": [
-                        "interpolate",
-                        ["linear"],
-                        ["heatmap-density"],
-                        0, "rgba(0, 250,250 ,0)",
-                        0.2, "rgb(227, 215, 84)",
-                        0.4, "rgb(250,150,150)",
-                        0.6, "rgb(253,100,100)",
-                        0.8, "rgb(250,50,50)",
-                        1, "rgb(250,0,0)"
-                    ],
-                    // Adjust the heatmap radius by zoom level
-                    "heatmap-radius": [
-                        "interpolate",
-                        ["linear"],
-                        ["zoom"],
-                        1, 1,
-                        3, 20
-                    ],
-                    // Transition from heatmap to circle layer by zoom level
-                    "heatmap-opacity": [
-                        "interpolate",
-                        ["linear"],
-                        ["zoom"],
-                        30, 1,
-                        20000, 0
-                    ],
-                }
             }, 'waterway-label');
 
-
+            map.addSource('trees', {
+                type: 'geojson',
+                data: NULL_CRIMES
+            });
             map.addLayer({
                 id: 'trees-point',
                 type: 'circle',
-                source: 'trees', 
+                source: 'trees',
                 minzoom: 16,
-                paint: {
-                    // increase the radius of the circle as the zoom level and dbh value increases
-                    'circle-radius': {
-                        property: 'incident_subcategory',
-                        type: 'exponential',
-                        stops: [
-                            [{ zoom: 16, value: 1 }, 5],
-                            [{ zoom: 16, value: 62 }, 10],
-                            [{ zoom: 22, value: 1 }, 20],
-                            [{ zoom: 22, value: 62 }, 50],
-                        ]
-                    },
-                    'circle-color': {
-                        property: 'incident_subcategory',
-                        type: 'exponential',
-                        stops: [
-                            [0, 'rgba(236,222,239,0)'],
-                            [10, 'rgb(236,222,239)'],
-                            [20, 'rgb(208,209,230)'],
-                            [30, 'rgb(166,189,219)'],
-                            [40, 'rgb(103,169,207)'],
-                            [50, 'rgb(28,144,153)'],
-                            [60, 'rgb(1,108,89)']
-                        ]
-                    },
-                    'circle-stroke-color': 'white',
-                    'circle-stroke-width': 1,
-                    'circle-opacity': {
-                        stops: [
-                            [14, 0],
-                            [15, 1]
-                        ]
-                    }
-                }
             }, 'waterway-label');
-
-
-
 
             const geolocate = new mapboxgl.GeolocateControl({
                 positionOptions: {
@@ -209,6 +122,7 @@ class Map extends Component {
             });
             addLineLayer("fastestRoute", map, [], fastColor, 0)
             addLineLayer("safestRoute", map, [], safeColor, 0)
+            
         })
         map.on('click', 'trees-point', function (e) {
             new mapboxgl.Popup()
@@ -229,7 +143,7 @@ class Map extends Component {
             "id": "crimes-heat",
             "type": "heatmap",
             "source": "crime",
-            "maxzoom": 18,
+            "maxzoom": 16,
             "paint": {
                 // Increase the heatmap weight based on frequency and property magnitude
                 "heatmap-weight": {
@@ -278,6 +192,53 @@ class Map extends Component {
                     30, 1,
                     20000, 0
                 ],
+            }
+        }, 'waterway-label');
+        map.removeLayer('trees-point');
+        map.removeSource('trees');
+
+        map.addSource('trees', {
+            type: 'geojson',
+            data: FIDI_CRIMES
+        });
+        map.addLayer({
+            id: 'trees-point',
+            type: 'circle',
+            source: 'trees',
+            minzoom: 16,
+            paint: {
+                // increase the radius of the circle as the zoom level and dbh value increases
+                'circle-radius': {
+                    property: 'incident_subcategory',
+                    type: 'exponential',
+                    stops: [
+                        [{ zoom: 16, value: 1 }, 5],
+                        [{ zoom: 16, value: 62 }, 10],
+                        [{ zoom: 22, value: 1 }, 20],
+                        [{ zoom: 22, value: 62 }, 50],
+                    ]
+                },
+                'circle-color': {
+                    property: 'incident_subcategory',
+                    type: 'exponential',
+                    stops: [
+                        [0, 'rgba(236,222,239,0)'],
+                        [10, 'rgb(236,222,239)'],
+                        [20, 'rgb(208,209,230)'],
+                        [30, 'rgb(166,189,219)'],
+                        [40, 'rgb(103,169,207)'],
+                        [50, 'rgb(28,144,153)'],
+                        [60, 'rgb(1,108,89)']
+                    ]
+                },
+                'circle-stroke-color': 'white',
+                'circle-stroke-width': 1,
+                'circle-opacity': {
+                    stops: [
+                        [14, 0],
+                        [15, 1]
+                    ]
+                }
             }
         }, 'waterway-label');
     }
