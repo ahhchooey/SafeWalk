@@ -26,6 +26,14 @@ class Map extends Component {
     }
     componentDidMount() {
         this.createMap();
+        this.interval = setInterval(() => navigator.geolocation.getCurrentPosition(res => {
+            this.setState({userLocation: res})
+            console.log(res)
+        }), 1000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval)
     }
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) {
