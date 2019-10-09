@@ -153,9 +153,28 @@ class Map extends Component {
                         intersectionCrimeCount.push(`<b>${crimeCategory}:</b> ${crimes[crimeCategory]}`);
                     }
                 })
+                let rating;
+                
+                    if (parseFloat(crimes.crimeRating) < 1){
+                        rating = "A"
+                    } else if(parseFloat(crimes.crimeRating) >= 1 && parseFloat(crimes.crimeRating) < 100){
+                        rating = "B"
+                    } else if (parseFloat(crimes.crimeRating) >= 100 && parseFloat(crimes.crimeRating) < 250){
+                        rating = "C"
+                    } else if (parseFloat(crimes.crimeRating) >=250  && parseFloat(crimes.crimeRating) < 500){
+                        rating = "D"
+                    } else if (parseFloat(crimes.crimeRating) >= 500 && parseFloat(crimes.crimeRating) < 1000) {
+                        rating = "E"
+                    }else if (parseFloat(crimes.crimeRating) >= 1000 ){
+                        rating = "F"
+                    } else {
+                        rating = "Bad Bad Not Good"
+                    }
+                    
+                
 
                 intersectionCrimeCount = intersectionCrimeCount.join(', ');
-                intersectionCrimeCount = "<h2><b>Crime Rating:</b> "+ crimes.crimeRating + "</h2>" + intersectionCrimeCount;
+                intersectionCrimeCount = "<h2><b>Crime Rating:</b> "+ rating + "</h2>" + intersectionCrimeCount;
                 
                 return intersectionCrimeCount;
             }
@@ -252,15 +271,15 @@ class Map extends Component {
                     ]
                 },
                 'circle-color': {
-                    property: 'Theft',
+                    property: 'crimeRating',
                     type: 'exponential',
                     stops: [
-                        [0, 'rgba(33,102,172,0)'],
-                        [10, 'rgb(103,169,207)'],
-                        [20, 'rgb(209,229,240)'],
-                        [30, 'rgb(253,219,199)'],
-                        [40, 'rgb(239,138,98)'],
-                        [50, 'rgb(178,24,43)'],
+                        [0, 'rgb(0,200,0)'],
+                        [1, 'rgb(103,169,207)'],
+                        [100, 'rgb(209,229,240)'],
+                        [250, 'rgb(253,219,199)'],
+                        [500, 'rgb(239,138,98)'],
+                        [1000, 'rgb(178,24,43)'],
                         // [60, 'rgb(1,108,89)']
                     ]
                 },
