@@ -91,8 +91,7 @@ router.route("/all").get((req, res) => {
        }
        fastwaypoints.push(destination)
        safewaypoints.push(destination)
-       
-      //  console.log(safewaypoints)
+    
        const fetchDirections = async(waypoints) => {
          return await mapMatchingClient.getMatch({
            points: waypoints,
@@ -103,11 +102,21 @@ router.route("/all").get((req, res) => {
          })
            .send()
        }
-       const parseDirections = async(route) => {
+       const parseDirections = async(route, type) => {
          return await Promise.resolve(route.then(response => {
+
+           let path = (type === 'fast') ? fastwaypoints : safewaypoints
+    
+
            let directions = []
+           directions.push({
+             location: start.coordinates, 
+             instruction: "Start",
+             distance: 0,
+             duration: 0
+           })
            response.body.matchings[0].legs.forEach(leg => {
-             leg.steps.forEach(step => {
+             leg.steps.forEach((step, idx) => {
                let obj = {
                  location: step.maneuver.location,
                  instruction: step.maneuver.instruction,
@@ -117,7 +126,15 @@ router.route("/all").get((req, res) => {
                directions.push(obj)
              })
            })
+           directions.push({
+             location: destination.coordinates,
+             instruction: "End",
+             distance: 0,
+             duration: 0
+           })
+           console.log(directions)
            return directions
+           
          }))
        }
 
@@ -132,8 +149,8 @@ router.route("/all").get((req, res) => {
          })
   
        }
-      let fastDir = parseDirections(fetchDirections(fastwaypoints))
-      let safeDir = parseDirections(fetchDirections(safewaypoints))
+      let fastDir = parseDirections(fetchDirections(fastwaypoints), 'fast')
+      let safeDir = parseDirections(fetchDirections(safewaypoints), 'safe')
       sendDirections(safeDir, fastDir)
     })
     .catch(err => res.status(400).json({message: "intersections cannot be found"}))
