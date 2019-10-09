@@ -44,11 +44,15 @@
     transition-duration: 0.3s;
     box-sizing: border-box;
     border-radius: 0px 10px 10px 0px;
-    z-index: 4;
+    z-index: 10000000;
 }
 
-.slideout_inner a {
+.slideout_inner > p > a {
     margin-left: 3px;
+}
+
+.sideout_inner > p > a:hover {
+  cursor: pointer;
 }
 
 .slide-active {
@@ -85,7 +89,6 @@
   left: 0;
   bottom: 0;
   display: none;
-  background-color: "red";
   z-index: 100;
 }
 

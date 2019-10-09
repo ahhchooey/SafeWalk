@@ -108,7 +108,7 @@ router.route("/all").get((req, res) => {
            let directions = []
            directions.push({
              location: start.coordinates,
-             instruction: "End",
+             instruction: "Start",
              distance: 0,
              duration: 0
            })
