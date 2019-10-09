@@ -108,6 +108,7 @@ router.route("/all").get((req, res) => {
        const parseDirections = async(route) => {
          return await Promise.resolve(route.then(response => {
            let directions = []
+
            response.body.matchings[0].legs.forEach(leg => {
              leg.steps.forEach(step => {
                let obj = {

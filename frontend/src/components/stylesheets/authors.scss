@@ -44,11 +44,15 @@
     transition-duration: 0.3s;
     box-sizing: border-box;
     border-radius: 0px 10px 10px 0px;
-    z-index: 4;
+    z-index: 10000000;
 }
 
-.slideout_inner a {
+.slideout_inner > p > a {
     margin-left: 3px;
+}
+
+.sideout_inner > p > a:hover {
+  cursor: pointer;
 }
 
 .slide-active {
@@ -76,4 +80,18 @@
     transform: rotate(90deg);
     border-radius: 10px 10px 0px 0px;
     border: 1px solid black;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  z-index: 100;
+}
+
+.modal-active {
+  display: block;
 }
