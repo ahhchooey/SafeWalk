@@ -147,10 +147,10 @@ class Map extends Component {
                 navigator.geolocation.getCurrentPosition(res => {
                     this.setState({ userLocation: res });
                 })
-                marker = new mapboxgl.Marker()
-                    .setLngLat([this.state.userLocation.coords.longitude,
-                    this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
-                    .addTo(map);
+              //                marker = new mapboxgl.Marker()
+              //                    .setLngLat([this.state.userLocation.coords.longitude,
+              //                    this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
+              //                    .addTo(map);
             } 
       })
 
@@ -160,7 +160,7 @@ class Map extends Component {
             function onIntersectionClick(crimes){
                 let intersectionCrimeCount = [];
                 categories.forEach( crimeCategory => {
-                    if (crimes[crimeCategory]){
+                    if (crimes[crimeCategory] && crimes.crimeRating !== 0){
                         intersectionCrimeCount.push(`<b>${crimeCategory}:</b> ${crimes[crimeCategory]}`);
                     }
                 })
