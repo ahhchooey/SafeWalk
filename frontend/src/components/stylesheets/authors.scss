@@ -77,3 +77,18 @@
     border-radius: 10px 10px 0px 0px;
     border: 1px solid black;
 }
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  background-color: "red";
+  z-index: 100;
+}
+
+.modal-active {
+  display: block;
+}
