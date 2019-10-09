@@ -137,10 +137,21 @@ class Map extends Component {
                 this.props.setMap()
             }, 0)
 
-            let marker = new mapboxgl.Marker()
-                .setLngLat([this.state.userLocation.coords.longitude,
-                            this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
-                .addTo(map); 
+            let marker;
+            if (this.state.userLocation.length > 0) {
+                marker = new mapboxgl.Marker()
+                    .setLngLat([this.state.userLocation.coords.longitude,
+                    this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
+                    .addTo(map);
+            } else {
+                navigator.geolocation.getCurrentPosition(res => {
+                    this.setState({ userLocation: res });
+                })
+                marker = new mapboxgl.Marker()
+                    .setLngLat([this.state.userLocation.coords.longitude,
+                    this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
+                    .addTo(map);
+            } 
       })
 
         map.on('click', 'trees-point', function (e) {
