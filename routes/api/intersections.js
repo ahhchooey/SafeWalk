@@ -106,6 +106,12 @@ router.route("/all").get((req, res) => {
        const parseDirections = async(route) => {
          return await Promise.resolve(route.then(response => {
            let directions = []
+           directions.push({
+             location: start.coordinates,
+             instruction: "End",
+             distance: 0,
+             duration: 0
+           })
            response.body.matchings[0].legs.forEach(leg => {
              leg.steps.forEach(step => {
                let obj = {
@@ -116,6 +122,12 @@ router.route("/all").get((req, res) => {
                }
                directions.push(obj)
              })
+           })
+           directions.push({
+             location: destination.coordinates,
+             instruction: "End",
+             distance: 0,
+             duration: 0
            })
            return directions
          }))
@@ -134,6 +146,7 @@ router.route("/all").get((req, res) => {
        }
       let fastDir = parseDirections(fetchDirections(fastwaypoints))
       let safeDir = parseDirections(fetchDirections(safewaypoints))
+
       sendDirections(safeDir, fastDir)
     })
     .catch(err => res.status(400).json({message: "intersections cannot be found"}))
