@@ -61,12 +61,13 @@ router.route("/all").get((req, res) => {
       return [saferoute, fastroute]
     })
     .then((route) => {
-      // console.log(route)
       let safewaypoints = []
       let fastwaypoints = []
        let start = {
          coordinates: [parseFloat(req.query.query.start.longitude), parseFloat(req.query.query.start.latitude) ],
-         waypointName: 'Start'
+         waypointName: 'Start',
+         approach: "curb",
+         radius: 30
        }
        safewaypoints.push(start)
        fastwaypoints.push(start)
@@ -87,12 +88,13 @@ router.route("/all").get((req, res) => {
       })
        let destination = {
          coordinates: [parseFloat(req.query.query.destination.longitude), parseFloat(req.query.query.destination.latitude)],
-         waypointName: 'Destination'
+         waypointName: 'Destination',
+         approach: "curb",
+         radius: 30
        }
        fastwaypoints.push(destination)
        safewaypoints.push(destination)
-       
-      //  console.log(safewaypoints)
+ 
        const fetchDirections = async(waypoints) => {
          return await mapMatchingClient.getMatch({
            points: waypoints,
@@ -106,12 +108,7 @@ router.route("/all").get((req, res) => {
        const parseDirections = async(route) => {
          return await Promise.resolve(route.then(response => {
            let directions = []
-           directions.push({
-             location: start.coordinates,
-             instruction: "Start",
-             distance: 0,
-             duration: 0
-           })
+
            response.body.matchings[0].legs.forEach(leg => {
              leg.steps.forEach(step => {
                let obj = {
@@ -122,12 +119,6 @@ router.route("/all").get((req, res) => {
                }
                directions.push(obj)
              })
-           })
-           directions.push({
-             location: destination.coordinates,
-             instruction: "End",
-             distance: 0,
-             duration: 0
            })
            return directions
          }))
