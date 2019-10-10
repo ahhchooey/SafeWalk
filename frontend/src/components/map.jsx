@@ -138,19 +138,23 @@ class Map extends Component {
             }, 0)
 
             let marker;
+
             if (this.state.userLocation.length > 0) {
                 marker = new mapboxgl.Marker()
                     .setLngLat([this.state.userLocation.coords.longitude,
                     this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
                     .addTo(map);
-            } else {
+            } 
+            else {
                 navigator.geolocation.getCurrentPosition(res => {
                     this.setState({ userLocation: res });
                 })
+                if (this.state.userLocation.length > 0) {
                 marker = new mapboxgl.Marker()
                     .setLngLat([this.state.userLocation.coords.longitude,
                     this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
                     .addTo(map);
+                    }
             } 
       })
 
