@@ -1,0 +1,33 @@
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #888888;
+  margin-right: 20px;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+  border: black 1px solid;
+}
+
+#legend {
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: 150px;
+  margin-bottom: 20vh;
+  width: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.hide {
+        opacity: 0;
+}
+.legend-key {
+  display: inline-block;
+  border-radius: 20%;
+  width: 10px;
+  height: 10px;
+  margin-right: 20px;
+}

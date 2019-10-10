@@ -113,23 +113,7 @@ class Map extends Component {
                 minzoom: 16,
             }, 'waterway-label');
 
-            const geolocate = new mapboxgl.GeolocateControl({
-                positionOptions: {
-                    enableHighAccuracy: true
-                },
-                trackUserLocation: true
-            });
 
-            map.addControl(geolocate);
-            geolocate.on('geolocate', function (e) {
-                // debugger
-                // console.log(e)                
-                const lon = e.coords.longitude;
-                const lat = e.coords.latitude;
-                const position = [lon, lat];
-                // console.log(position);
-                receiveCurrentLocation(position);
-            });
             addLineLayer("fastestRoute", map, [], fastColor, 0)
             addLineLayer("safestRoute", map, [], safeColor, 0)
                       
