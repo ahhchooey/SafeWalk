@@ -8,6 +8,7 @@ import TBTContainer from "./tbt_container.js";
 import DangerZone from './danger_zone';
 import Authors from './authors';
 import HeatToggle from './heattoggle.jsx';
+import Legend from './legend.jsx';
 
 export default class Splash extends React.Component{
 
@@ -22,6 +23,7 @@ export default class Splash extends React.Component{
                     <TBTContainer />
                     <Authors />
                     <HeatToggle />
+                    <Legend />
                 </div>
             </div>
         )
