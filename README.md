@@ -34,7 +34,7 @@ Using SafeWalk is easy. Simply go to the live site and enter a location and a de
 
 ------
 
-* Note is built from the MERN (MongoDB, Express, React, Node.js) stack.
+* SafeWalk is built from the MERN (MongoDB, Express, React, Node.js) stack.
 * MongoDB holds our node graph. Each node hold information about the other nodes they are connected to, as well as the cost it requires to traverse to these adjacent nodes. Each node also holds coordinates and some crime information about the area.
 * Mongoose allows for communication between Express and Mongo. We use Mongoose to create a reachable api route. When the route is called it uses the node graph in the database and Dijkstra's algorithm to find the shortest path when taking into account distance between two nodes and the amount of dangerous crime at each node.
 * The user interface is built with React and Redux, so that we only render components that we need. Redux is used in our case to control our UI elements, as SafeWalk does not use front end routing.
