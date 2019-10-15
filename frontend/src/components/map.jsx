@@ -26,10 +26,10 @@ class Map extends Component {
     }
     componentDidMount() {
         this.createMap();
-
         this.interval = setInterval(() => navigator.geolocation.getCurrentPosition(res => {
             this.setState({userLocation: res})
         }), 1000)
+        setInterval(() => this.addCrimeHeatMap(FEATURE_COLLECTION), 2000 )
     }
 
     componentWillUnmount() {
@@ -169,7 +169,7 @@ class Map extends Component {
                 
 
                 intersectionCrimeCount = intersectionCrimeCount.join(', ');
-                intersectionCrimeCount = "<h2><b>Crime Rating:</b> "+ rating + "</h2>" + intersectionCrimeCount;
+                intersectionCrimeCount = "<h2><b>Safety Rating:</b> "+ rating + "</h2>" + intersectionCrimeCount;
                 
                 return intersectionCrimeCount;
             }
@@ -179,8 +179,11 @@ class Map extends Component {
                 .addTo(map);
         });
     }
+
+
     addCrimeHeatMap(crimes){
         let map = this.map;
+        let circleData = (crimes === NULL_CRIMES) ? NULL_CRIMES : FEATURE_COLLECTION
         map.removeLayer('crimes-heat');
         map.removeSource('crime');
         map.addSource('crime', {
@@ -246,7 +249,7 @@ class Map extends Component {
 
         map.addSource('trees', {
             type: 'geojson',
-            data: FEATURE_COLLECTION
+            data: circleData
         });
         map.addLayer({
             id: 'trees-point',
@@ -288,6 +291,7 @@ class Map extends Component {
                 }
             }
         }, 'waterway-label');
+        
     }
     handleClick(e) {
         e.target.classList.add('hide')
