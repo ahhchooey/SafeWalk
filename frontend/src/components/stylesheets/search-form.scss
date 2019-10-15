@@ -7,12 +7,14 @@
     width: 80vw;
     height: 20px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 10px;
+    max-width: 80vw;
 }
 
 .search-form > form input::placeholder{
     color: lightgray;
+    letter-spacing: .05em;
 }
 
 .search-form {
@@ -28,12 +30,15 @@
     border-radius: 10px;
     height: 125px;
     color: black;
+    padding-bottom: 5px;
 }
 
 .search-form > form {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+    position: relative;
 }
 
 @keyframes slide {
@@ -46,10 +51,6 @@
   }
 }
 .search-form > form label{
-    position: relative;
-}
-.search-form > form {
-    width: 100%;
     position: relative;
 }
 
@@ -65,7 +66,7 @@
     display: flex;
 }
 
-.search-form  ul{
+.search-form ul{
     background-color: #888;
     border-radius: 5px;
     padding: 0;
@@ -81,32 +82,48 @@
     padding-top: 3px;
     border-bottom: 1px solid black;
 }
+
 .search-form > form ul:last-child{
    border-bottom: none;
 }
 
 .search-form > form button {
-    // border: 1px solid #66ff99;
     border: 1px solid #fff;
     margin-top: 5px;
-    padding: 5px 10px;
+    padding: 7.5px 10px;
     border-radius: 5px;
     color: #fff;
     background-color: #777;
+    font-size: 15px;
+}
+
+#form-buttons {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+    #form-buttons {
+        width: 45%;
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 
 .search-dd{
-    border-top: 1px solid #fff;
+    border: 1px solid #fff;
     position: absolute;
-    top: 120px;
-    left: 0;
+    width: 100%;
+    top: 125px;
     background-color: #888;
     display: none;
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
     overflow: hidden;
-    box-shadow: 0px 1px 1px 1px rgb(255, 255, 255);
+    // box-shadow: 0px 1px 1px 1px rgb(255, 255, 255);
     z-index: 5;
 }
+
 .search-dd div {
     display: flex;
     border-bottom: 1px solid rgb(255, 255, 255);
@@ -133,4 +150,12 @@
 }
 .show{
     display: block
+}
+
+.clear-from {
+    z-index: 99;
+}
+
+.clear-to {
+    z-index: 99;
 }
