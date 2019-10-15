@@ -22,7 +22,9 @@
     z-index: 4;
     border: 1px solid black;
     border-bottom: 1px solid #888;
+    cursor: pointer;
 }
+
 .slideout_inner {
     position: fixed;
     background-color: #888;
