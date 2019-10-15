@@ -15,15 +15,19 @@ export default class SearchForm extends React.Component {
             destination: "",
             startPlaces: [],
             destinationPlaces: [],
-            startCoordinates: "",
-            destinationCoordinates: ""
+            startCoordinates: {},
+            destinationCoordinates: {}
         }
         this.selected = false
         this.handleSubmit = this.handleSubmit.bind(this)
         this.showDropdown = this.showDropdown.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.back = this.back.bind(this)
+        this.demoRoute = this.demoRoute.bind(this)
+        this.clearTo = this.clearTo.bind(this)
+        this.clearFrom = this.clearFrom.bind(this)
     }
+
     showDropdown(str) {
         let dd = (str === 'destination') ? 'destination-dropdown' : 'start-dropdown'
         document.querySelector(`#${dd}`).classList.add('show')
@@ -63,7 +67,7 @@ export default class SearchForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault()
+        if (e) e.preventDefault();
         let query = { start: this.state.startCoordinates, destination: this.state.destinationCoordinates }
       //        $.ajax({
       //      url: '/api/intersections/shortest',
@@ -94,6 +98,42 @@ export default class SearchForm extends React.Component {
         document.querySelector('#map').classList.remove('fix')
     }
 
+    demoRoute(e) {
+      const start = "825 Battery Street, San Francisco, California 94111, United States"
+      const destination = "1 Sutter Street, San Francisco, California 94104, United States"
+
+      const typer = (string, type) => () => {
+        if (string.length > 0) {
+          this.setState({[type]: this.state[type] + string[0]});
+          setTimeout(typer(string.slice(1), type), 25);
+        }
+      }
+
+      typer(start, "start")();
+      typer(destination, "destination")();
+
+      this.setState({
+        startPlaces: [],
+        destinationPlaces: [],
+        startCoordinates: {longitude: -122.401172, latitude: 37.799009},
+        destinationCoordinates: {longitude: -122.400828, latitude: 37.790227}
+      })
+
+      setTimeout(this.handleSubmit, 3000);
+    }
+
+    clearFrom(e) {
+      this.setState({
+        start: ""
+      })
+    } 
+
+    clearTo(e) {
+      this.setState({
+        destination: ""
+      })
+    }
+
     render() {
 
       //let places = this.state.places || []
@@ -119,6 +159,9 @@ export default class SearchForm extends React.Component {
                       onBlur={() => this.hideDropdown('start')} 
                       value={this.state.start} 
                     />
+                        {
+                          (this.state.start) ? <span className="clear-from" onMouseDown={this.clearFrom}>x</span> : ""
+                        }
                         <div className="locations-dropdown">
                             <ul>
                               {this.state.startPlaces.map((place, idx) => {
@@ -144,12 +187,21 @@ export default class SearchForm extends React.Component {
                           onChange={this.handleInput('destination')} 
                           value={this.state.destination} 
                         />
+                        {
+                          (this.state.destination) ? <span className="clear-to" onMouseDown={this.clearTo}>x</span> : ""
+                        }
                         <div className="locations-dropdown">
                             
                         </div>
                     </label>
                     <button type="submit" >Create Routes</button>
                 </form>
+
+                <div className="demo-button" onMouseDown={this.demoRoute}>
+                  Demo Route
+                </div>
+
+
                     <div className="search-dd" id="start-dropdown">
                         <ul>
                           {this.state.startPlaces.map((place, idx) => {
