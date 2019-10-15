@@ -9,6 +9,12 @@ class Authors extends React.Component {
         
     }
 
+    componentDidMount() {
+        $('.slideout').toggleClass('slide-active');
+        $('.slideout_inner').toggleClass('authors-active');
+        $(".modal").toggleClass("modal-active")
+    }
+
     handleSlide(e) {
         e.stopPropagation();
         $('.slideout').toggleClass('slide-active');
