@@ -12,24 +12,39 @@ class Map extends Component {
     constructor(props){
         super(props);
         this.state = {
-            map: "",
-            userLocation: []
+            userLocation: [],
         }
+        this.map = "";
+        this.marker = "";
         this.receiveCurrentLocation = this.props.receiveCurrentLocation;
         this.handleClick = this.handleClick.bind(this);
         this.createMap = this.createMap.bind(this);
         this.updateRoutes = this.updateRoutes.bind(this);
+        this.updateMarker = this.updateMarker.bind(this);
         this.renderLineLayer = this.renderLineLayer.bind(this);
         this.addLineLayer = this.addLineLayer.bind(this);
         this.addCrimeHeatMap = this.addCrimeHeatMap.bind(this);
     }
     componentDidMount() {
         this.createMap();
-        this.interval = setInterval(() => navigator.geolocation.getCurrentPosition(res => {
-            this.setState({userLocation: res})
+        this.interval = setInterval(() => navigator.geolocation.getCurrentPosition((res) => {
+            this.setState({
+                userLocation: [res.coords.longitude,
+                res.coords.latitude]
+            }, this.updateMarker());
         }), 1000)
     }
-
+    updateMarker() {
+        console.log(this.state.userLocation);
+        if (this.marker) {
+            this.marker.remove();
+        }
+        if (this.state.userLocation.length > 0) {
+            this.marker = new mapboxgl.Marker()
+                .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
+                .addTo(this.map);
+        }
+    }
     componentWillUnmount() {
         clearInterval(this.interval)
     }
@@ -202,21 +217,19 @@ class Map extends Component {
                 this.props.setMap()
             }, 0)
 
-            // if (this.state.userLocation.length > 0) {
-            //     marker = new mapboxgl.Marker()
-            //         .setLngLat([this.state.userLocation.coords.longitude,
-            //         this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
-            //         .addTo(map);
-            // } 
-            // else {
-            //     navigator.geolocation.getCurrentPosition(res => {
-            //         this.setState({ userLocation: res });
-            //     })
-              //                marker = new mapboxgl.Marker()
-              //                    .setLngLat([this.state.userLocation.coords.longitude,
-              //                    this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
-              //                    .addTo(map);
-           // } 
+            if (this.state.userLocation.length > 0) {
+                this.marker = new mapboxgl.Marker()
+                    .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
+                    .addTo(map);
+            } 
+            else {
+                navigator.geolocation.getCurrentPosition(res => {
+                    this.setState({ userLocation: res });
+                })
+                this.marker = new mapboxgl.Marker()
+                    .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
+                    .addTo(map);
+           } 
       })
 
         map.on('click', 'trees-point', function (e) {
