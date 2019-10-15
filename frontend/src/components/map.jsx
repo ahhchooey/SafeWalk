@@ -220,7 +220,7 @@ class Map extends Component {
             if (this.state.userLocation.length > 0) {
                 this.marker = new mapboxgl.Marker()
                     .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
-                    .addTo(map);
+                    .addTo(this.map);
             } 
             else {
                 navigator.geolocation.getCurrentPosition(res => {
@@ -228,7 +228,7 @@ class Map extends Component {
                 })
                 this.marker = new mapboxgl.Marker()
                     .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
-                    .addTo(map);
+                    .addTo(this.map);
            } 
       })
 
