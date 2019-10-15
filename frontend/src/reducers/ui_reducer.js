@@ -7,7 +7,8 @@ import {
     SET_ROUTE,
     TOGGLE_HEAT,
     CLEAR_ROUTE,
-    SET_MAP
+    SET_MAP,
+    TOGGLE_AUTHORS
 } from '../actions/ui_actions';
 
 let defaultState = {
@@ -16,6 +17,7 @@ let defaultState = {
     showTripInfo: false,
     showTurnByTurn: false,
     showDZ: false,
+    showAuthor: false,
     showHeat: true,
     setRoute: null,
     setMap: false
@@ -39,6 +41,9 @@ const uiReducer = (state = defaultState, action) => {
             return newState;
         case TOGGLE_DZ:
             newState.showDZ = !newState.showDZ;
+            return newState;
+        case TOGGLE_AUTHORS:
+            newState.showAuthor = !newState.showAuthor;
             return newState;
         case SET_ROUTE:
             newState.setRoute = action.str;
