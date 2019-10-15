@@ -16,7 +16,7 @@ let defaultState = {
     showTripInfo: false,
     showTurnByTurn: false,
     showDZ: false,
-    showHeat: false,
+    showHeat: true,
     setRoute: null,
     setMap: false
 }
