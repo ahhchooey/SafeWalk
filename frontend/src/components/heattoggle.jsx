@@ -19,7 +19,7 @@ class HeatToggle extends React.Component {
         super(props);
         this.toggle = this.toggle.bind(this);
     }
-
+ 
     toggle(e){
         e.preventDefault();
         e.stopPropagation();
@@ -27,6 +27,7 @@ class HeatToggle extends React.Component {
     }
 
     render() {
+      
       if (this.props.mapState === false) {
         return (
             <div className="tripdanger">
@@ -39,10 +40,10 @@ class HeatToggle extends React.Component {
             </div>
         )
       }
-
+      
         return(
             <div className="heatToggle" onClick={this.toggle}>
-                Show Heatmap
+                Toggle Heatmap
             </div>
         )
     }

@@ -26,7 +26,6 @@ class Map extends Component {
     }
     componentDidMount() {
         this.createMap();
-
         this.interval = setInterval(() => navigator.geolocation.getCurrentPosition(res => {
             this.setState({userLocation: res})
         }), 1000)
@@ -93,26 +92,109 @@ class Map extends Component {
             });
             map.addSource('crime', {
                 "type": "geojson",
-                "data": NULL_CRIMES
+                "data": FEATURE_COLLECTION
             });
             map.addLayer({
                 "id": "crimes-heat",
                 "type": "heatmap",
                 "source": "crime",
-                "maxzoom": 16,
+                "maxzoom": 15,
+                "paint": {
+                    // Increase the heatmap weight based on frequency and property magnitude
+                    "heatmap-weight": [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "crimeRating"],
+                        0, 0,
+                        3000, 1
+                    ],
+                    // Increase the heatmap color weight weight by zoom level
+                    // heatmap-intensity is a multiplier on top of heatmap-weight
+                    "heatmap-intensity": {
+                        "stops": [
+                            [11, 1],
+                            [15, 3]
+                        ]
+                    },
+                    // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+                    // Begin color ramp at 0-stop with a 0-transparancy color
+                    // to create a blur-like effect.
+                    "heatmap-color": [
+                        "interpolate",
+                        ["linear"],
+                        ["heatmap-density"],
+                        0, "rgba(33,102,172,0)",
+                        0.2, "rgb(103,169,207)",
+                        0.4, "rgb(209,229,240)",
+                        0.6, "rgb(253,219,199)",
+                        0.8, "rgb(239,138,98)",
+                        1, "rgb(178,24,43)"
+                    ],
+                    // Adjust the heatmap radius by zoom level
+                    "heatmap-radius": [
+                        "interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        0, 2,
+                        9, 20
+                    ],
+                    // Transition from heatmap to circle layer by zoom level
+                    "heatmap-opacity": [
+                        "interpolate",
+                        ["linear"],
+                        ["zoom"],
+                        20, 1,
+                        30, 0
+                    ],
+                }
             }, 'waterway-label');
+            // map.removeLayer('trees-point');
+            // map.removeSource('trees');
 
             map.addSource('trees', {
                 type: 'geojson',
-                data: NULL_CRIMES
+                data: FEATURE_COLLECTION
             });
             map.addLayer({
                 id: 'trees-point',
                 type: 'circle',
                 source: 'trees',
-                minzoom: 16,
+                minzoom: 15,
+                paint: {
+                    // increase the radius of the circle as the zoom level and dbh value increases
+                    'circle-radius': {
+                        property: 'Theft',
+                        type: 'exponential',
+                        stops: [
+                            [{ zoom: 15, value: 1 }, 5],
+                            [{ zoom: 15, value: 62 }, 10],
+                            [{ zoom: 22, value: 1 }, 20],
+                            [{ zoom: 22, value: 62 }, 50],
+                        ]
+                    },
+                    'circle-color': {
+                        property: 'crimeRating',
+                        type: 'exponential',
+                        stops: [
+                            [0, 'rgb(0,200,0)'],
+                            [1, 'rgb(103,169,207)'],
+                            [100, 'rgb(209,229,240)'],
+                            [250, 'rgb(253,219,199)'],
+                            [500, 'rgb(239,138,98)'],
+                            [1000, 'rgb(178,24,43)'],
+                            // [60, 'rgb(1,108,89)']
+                        ]
+                    },
+                    'circle-stroke-color': 'white',
+                    'circle-stroke-width': 1,
+                    'circle-opacity': {
+                        stops: [
+                            [14, 0],
+                            [15, 1]
+                        ]
+                    }
+                }
             }, 'waterway-label');
-
 
             addLineLayer("fastestRoute", map, [], fastColor, 0)
             addLineLayer("safestRoute", map, [], safeColor, 0)
@@ -169,7 +251,7 @@ class Map extends Component {
                 
 
                 intersectionCrimeCount = intersectionCrimeCount.join(', ');
-                intersectionCrimeCount = "<h2><b>Crime Rating:</b> "+ rating + "</h2>" + intersectionCrimeCount;
+                intersectionCrimeCount = "<h2><b>Safety Rating:</b> "+ rating + "</h2>" + intersectionCrimeCount;
                 
                 return intersectionCrimeCount;
             }
@@ -179,8 +261,11 @@ class Map extends Component {
                 .addTo(map);
         });
     }
+
+
     addCrimeHeatMap(crimes){
         let map = this.map;
+        let circleData = (crimes === NULL_CRIMES) ? NULL_CRIMES : FEATURE_COLLECTION
         map.removeLayer('crimes-heat');
         map.removeSource('crime');
         map.addSource('crime', {
@@ -246,7 +331,7 @@ class Map extends Component {
 
         map.addSource('trees', {
             type: 'geojson',
-            data: FEATURE_COLLECTION
+            data: circleData
         });
         map.addLayer({
             id: 'trees-point',
@@ -288,6 +373,7 @@ class Map extends Component {
                 }
             }
         }, 'waterway-label');
+        
     }
     handleClick(e) {
         e.target.classList.add('hide')
