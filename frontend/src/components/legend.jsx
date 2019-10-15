@@ -64,7 +64,7 @@ class Legend extends React.Component {
     render() {
         return (
             <div id="legend" className='map-overlay hide'>
-                <h3>Safety Rating</h3>
+                Safety Rating
             </div>
         )
     }

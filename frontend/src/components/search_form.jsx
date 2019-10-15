@@ -123,21 +123,20 @@ export default class SearchForm extends React.Component {
     }
 
     clearFrom(e) {
+      
       this.setState({
         start: ""
       })
     } 
 
     clearTo(e) {
+      
       this.setState({
         destination: ""
       })
     }
 
     render() {
-
-      //let places = this.state.places || []
-
         if (!this.props.showSearch) {
             return <div></div>
         }
@@ -145,11 +144,9 @@ export default class SearchForm extends React.Component {
 
         return (
             <div className="search-form">
-                <div></div>
-                {/* <button id="formbutt" onClick={this.back}>X</button> */}
                 <form className="formsies" onSubmit={this.handleSubmit}>
 
-                    <label htmlFor="">
+                    <div>
                     <input 
                       type="text" 
                       placeholder="From:"
@@ -159,9 +156,6 @@ export default class SearchForm extends React.Component {
                       onBlur={() => this.hideDropdown('start')} 
                       value={this.state.start} 
                     />
-                        {
-                          (this.state.start) ? <span className="clear-from" onMouseDown={this.clearFrom}>x</span> : ""
-                        }
                         <div className="locations-dropdown">
                             <ul>
                               {this.state.startPlaces.map((place, idx) => {
@@ -175,7 +169,11 @@ export default class SearchForm extends React.Component {
                               })}
                             </ul>
                         </div>
-                    </label>
+                      {
+                  (this.state.start) ? <span className="clear-from" onMouseDown={this.clearFrom} onClick={() => {}}>x</span> : ""
+                      }
+                    </div>
+
                     <label 
                       onFocus={() => this.showDropdown('destination')} 
                       onBlur={() => this.hideDropdown('destination')} 
@@ -188,18 +186,19 @@ export default class SearchForm extends React.Component {
                           value={this.state.destination} 
                         />
                         {
-                          (this.state.destination) ? <span className="clear-to" onMouseDown={this.clearTo}>x</span> : ""
+                  (this.state.destination) ? <span className="clear-to" onMouseDown={this.clearTo} onClick={() => { }}>x</span> : ""
                         }
                         <div className="locations-dropdown">
                             
                         </div>
                     </label>
-                    <button type="submit" >Create Routes</button>
-                </form>
-
-                <div className="demo-button" onMouseDown={this.demoRoute}>
-                  Demo Route
-                </div>
+                    <div id="form-buttons">
+                      <button type="submit" >Create Routes</button>
+                      <button className="demo-button" onMouseDown={this.demoRoute}>
+                        Demo Route
+                      </button>
+                    </div>
+              </form>
 
 
                     <div className="search-dd" id="start-dropdown">

@@ -3,12 +3,11 @@ import { Component } from 'react';
 import mapboxgl from 'mapbox-gl'
 import './stylesheets/map.scss'
 import SF_NEIGHBORHOODS from '../data/feature-example-sf';
-import FIDI_CRIMES from '../data/fidi.geojson';
 import NULL_CRIMES from '../data/null.geojson';
 import FEATURE_COLLECTION from '../data/featureCollection.json';
 const safeColor = "#67CF9A";
 const fastColor = "red";
-//showHeat
+
 class Map extends Component {
     constructor(props){
         super(props);
@@ -46,7 +45,7 @@ class Map extends Component {
         }
     }
     createMap() {
-        const receiveCurrentLocation = this.props.receiveCurrentLocation;
+        // const receiveCurrentLocation = this.props.receiveCurrentLocation;
         const addLineLayer = this.addLineLayer;
 
         const centerOnLoad = [-122.401334, 37.793987]; //center in middle of fidi
@@ -203,23 +202,21 @@ class Map extends Component {
                 this.props.setMap()
             }, 0)
 
-            let marker;
-
-            if (this.state.userLocation.length > 0) {
-                marker = new mapboxgl.Marker()
-                    .setLngLat([this.state.userLocation.coords.longitude,
-                    this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
-                    .addTo(map);
-            } 
-            else {
-                navigator.geolocation.getCurrentPosition(res => {
-                    this.setState({ userLocation: res });
-                })
+            // if (this.state.userLocation.length > 0) {
+            //     marker = new mapboxgl.Marker()
+            //         .setLngLat([this.state.userLocation.coords.longitude,
+            //         this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
+            //         .addTo(map);
+            // } 
+            // else {
+            //     navigator.geolocation.getCurrentPosition(res => {
+            //         this.setState({ userLocation: res });
+            //     })
               //                marker = new mapboxgl.Marker()
               //                    .setLngLat([this.state.userLocation.coords.longitude,
               //                    this.state.userLocation.coords.latitude]) // [lng, lat] coordinates to place the marker at
               //                    .addTo(map);
-            } 
+           // } 
       })
 
         map.on('click', 'trees-point', function (e) {
