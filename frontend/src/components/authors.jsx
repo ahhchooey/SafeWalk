@@ -1,6 +1,9 @@
 import React from 'react';
 import './stylesheets/authors.scss';
 import $ from 'jquery';
+import { connect } from 'react-redux';
+
+import { toggleAuthors } from '../actions/ui_actions'
 class Authors extends React.Component {
     constructor(props) {
         super(props);
@@ -12,21 +15,25 @@ class Authors extends React.Component {
     componentDidMount() {
         $('.slideout').toggleClass('slide-active');
         $('.slideout_inner').toggleClass('authors-active');
-        $(".modal").toggleClass("modal-active")
+        $(".modal").toggleClass("modal-active");
+      this.props.toggleAuthors();
     }
-
+    
     handleSlide(e) {
-        e.stopPropagation();
-        $('.slideout').toggleClass('slide-active');
-        $('.slideout_inner').toggleClass('authors-active');
-        $(".modal").toggleClass("modal-active")
+      e.stopPropagation();
+      $('.slideout').toggleClass('slide-active');
+      $('.slideout_inner').toggleClass('authors-active');
+      $(".modal").toggleClass("modal-active");
+      this.props.toggleAuthors();
+      
     }
-
+    
     removeSlide(e) {
-        e.stopPropagation();
-        $('.slideout').removeClass('slide-active');
-        $('.slideout_inner').removeClass('authors-active');
-        $(".modal").removeClass("modal-active");
+      e.stopPropagation();
+      $('.slideout').removeClass('slide-active');
+      $('.slideout_inner').removeClass('authors-active');
+      $(".modal").removeClass("modal-active");
+      this.props.toggleAuthors();
     }
     
     render() {
@@ -81,5 +88,14 @@ class Authors extends React.Component {
 }
 
 
+const mstp = state => {
+  return {
+    showAuthors: state.ui.showAuthors,
+  }
+}
 
-export default Authors;
+const mdtp = dispatch => ({
+  toggleAuthors: () => dispatch(toggleAuthors()),
+})
+
+export default connect(mstp, mdtp)(Authors);
