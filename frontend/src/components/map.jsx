@@ -35,7 +35,6 @@ class Map extends Component {
         }), 1000)
     }
     updateMarker() {
-        console.log(this.state.userLocation);
         if (this.marker) {
             this.marker.remove();
         }

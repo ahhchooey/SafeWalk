@@ -26,6 +26,15 @@ export default class SearchForm extends React.Component {
         this.demoRoute = this.demoRoute.bind(this)
         this.clearTo = this.clearTo.bind(this)
         this.clearFrom = this.clearFrom.bind(this)
+      this.routing = false;
+    }
+
+    componentDidMount() {
+        this.demoButton = document.querySelector(".demo-button")
+      this.demoButton.addEventListener("mousedown", (e) => {
+        if (this.routing) return;
+        this.demoRoute(e);
+      })
     }
 
     showDropdown(str) {
@@ -99,6 +108,8 @@ export default class SearchForm extends React.Component {
     }
 
     demoRoute(e) {
+      this.routing = true;
+
       const start = "825 Battery Street, San Francisco, California 94111, United States"
       const destination = "1 Sutter Street, San Francisco, California 94104, United States"
 
@@ -119,7 +130,15 @@ export default class SearchForm extends React.Component {
         destinationCoordinates: {longitude: -122.400828, latitude: 37.790227}
       })
 
-      setTimeout(this.handleSubmit, 3000);
+      setTimeout(() => {
+        let query = { start: this.state.startCoordinates, destination: this.state.destinationCoordinates }
+        this.props.fetchRoute(query)
+          .then(res => this.setState({start: "", destination: ""}))
+          .fail(err => console.log("failure"));
+        this.props.toggleDangerZone();
+        this.props.toggleSearch();
+        this.routing = false;
+      }, 3000);
     }
 
     clearFrom(e) {
@@ -194,9 +213,9 @@ export default class SearchForm extends React.Component {
                     </label>
                     <div id="form-buttons">
                       <button type="submit" >Create Routes</button>
-                      <button className="demo-button" onMouseDown={this.demoRoute}>
+                      <div className="demo-button">
                         Demo Route
-                      </button>
+                      </div>
                     </div>
               </form>
 

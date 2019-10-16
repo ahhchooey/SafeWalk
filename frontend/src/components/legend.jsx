@@ -27,7 +27,6 @@ class Legend extends React.Component {
     }
     componentDidUpdate(prevProps){
         if (prevProps !== this.props) {
-            console.log(this.props.showAuthor)
             if (this.props.showHeat && !this.props.showAuthor) {
                 this.showLegend();
             } else {

@@ -97,6 +97,24 @@
     font-size: 15px;
 }
 
+.search-form > form button:hover {
+  cursor: pointer;
+}
+
+.demo-button {
+    border: 1px solid #fff;
+    margin-top: 5px;
+    padding: 7.5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #777;
+    font-size: 15px;
+}
+
+.demo-button:hover {
+  cursor: pointer;
+}
+
 #form-buttons {
     width: 75%;
     display: flex;
