@@ -58,27 +58,40 @@ class Authors extends React.Component {
                     <br />
                     Authors:
                     <br/>
-                    Alex Chui |  
-                    <a href="https://www.linkedin.com/in/alex-chui-075785117/">
+                    <div className='author'>Alex Chui
+                    <div>
+                      <a href="https://www.linkedin.com/in/alex-chui-075785117/"
+                      target="_blank">
+                        LinkedIn
+                      </a> &nbsp;
+                      <a href="https://github.com/ahhchooey" target="_blank" style={{color: '#ffcc5c'}}>GitHub</a>
+                    </div>
+                    </div>
+                    <div className='author'>Jimmy Pham
+                      <div>
+                    <a href="https://www.linkedin.com/in/jimmy-pham-38a208139/"
+                    target="_blank">
                       LinkedIn
-                    </a> |  
-                    <a href="https://github.com/ahhchooey">GitHub</a>
-                    <br/>
-                    Jimmy Pham |
-                    <a href="https://www.linkedin.com/in/jimmy-pham-38a208139/">
+                    </a> &nbsp;
+                    <a href="https://github.com/jipham510" target="_blank" style={{ color: '#ffcc5c' }}>GitHub</a>
+                  </div>
+                  </div>
+                  <div className='author'>
+                    Stanton Huang
+                  <div>
+                    <a href="https://www.linkedin.com/in/stan1000/" target="_blank">LinkedIn</a> &nbsp;
+                    <a href="https://github.com/aethervial" target="_blank" style={{ color: '#ffcc5c' }}>GitHub</a>
+                  </div>
+                  </div>
+                <div className='author'>
+                    Theodore Browne  
+                  <div>
+                    <a href="https://www.linkedin.com/in/theodore-browne-7201a3165/" target="_blank">
                       LinkedIn
-                    </a> |
-                    <a href="https://github.com/jipham510">GitHub</a>
-                    <br/>
-                    Stanton Huang |
-                    <a href="https://www.linkedin.com/in/stan1000/">LinkedIn</a> |
-                    <a href="https://github.com/aethervial">GitHub</a>
-                    <br/>
-                    Theodore Browne | 
-                    <a href="https://www.linkedin.com/in/theodore-browne-7201a3165/">
-                      LinkedIn
-                    </a> |
-                    <a href="https://github.com/theo-browne">GitHub</a>
+                    </a> &nbsp;
+                    <a href="https://github.com/theo-browne" target="_blank" style={{ color: '#ffcc5c' }}>GitHub</a>
+                  </div>
+                  </div>
                   </p>
                 </div>
         </React.Fragment>
