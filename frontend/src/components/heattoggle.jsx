@@ -24,6 +24,12 @@ class HeatToggle extends React.Component {
         e.preventDefault();
         e.stopPropagation();
         this.props.toggleHeat();
+      let text = document.querySelector('.heatToggle')
+        if (this.props.showHeat) {
+          text.style.color = "white"
+        }else {
+          text.style.color = "rgb(178, 24, 43)"
+        }
     }
 
     render() {
@@ -43,7 +49,7 @@ class HeatToggle extends React.Component {
       
         return(
             <div className="heatToggle" onClick={this.toggle}>
-                🔥
+                Heatmap
             </div>
         )
     }
