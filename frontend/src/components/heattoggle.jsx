@@ -43,7 +43,7 @@ class HeatToggle extends React.Component {
       
         return(
             <div className="heatToggle" onClick={this.toggle}>
-                Toggle Heatmap
+                🔥
             </div>
         )
     }
