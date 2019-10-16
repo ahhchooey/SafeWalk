@@ -63,27 +63,34 @@
 .authors-active {
   left: 0;
 }
+.heatToggle:hover{
+  cursor: pointer;
+}
 
 .heatToggle {
     position: fixed;
     height: 40px;
     width: 100px;
-    // background-color: #888;
-    background-color: white;
-    bottom: 0px;
-    left: 0px;
-    color: #888;
+    background-color: #888;
+    // background-color: 888;
+    top: 330px;
+    left: -30px;
+    color:rgb(178, 24, 43);
     text-align: center;
     display: flex;
     align-items: center;
     z-index: 101;
-    // -webkit-transform: rotate(90deg);
-    // -moz-transform: rotate(90deg);
-    // -o-transform: rotate(90deg);
-    // -ms-transform: rotate(90deg);
-    // transform: rotate(90deg);
-    // border-radius: 10px 10px 0px 0px;
-    border: 1px solid black;
+    justify-content: center;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid black ;
+    border-bottom: 1px solid #888;
+    user-select: none;
+   -webkit-user-select: none;
 }
 
 .modal {
