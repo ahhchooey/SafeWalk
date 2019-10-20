@@ -40,6 +40,7 @@
     height: 60vh;
     width: 250px;
     left: -250px;
+    line-height: 20px;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
@@ -50,12 +51,19 @@
     overflow: auto;
 }
 
-.slideout_inner > p > a {
+.slideout_inner > p > div > div > a {
     margin-left: 3px;
+    color: blue;
+    text-decoration: none;
 }
 
 .sideout_inner > p > a:hover {
   cursor: pointer;
+}
+
+.author {
+  display: flex;
+  justify-content: space-between;
 }
 
 .slide-active {
@@ -108,3 +116,12 @@
 .modal-active {
   display: block;
 }
+
+.mapboxgl-ctrl-attrib-inner {
+  display: none;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none;
+}
+
