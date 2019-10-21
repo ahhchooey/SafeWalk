@@ -29,14 +29,6 @@ export default class SearchForm extends React.Component {
       this.routing = false;
     }
 
-    componentDidMount() {
-        this.demoButton = document.querySelector(".demo-button")
-      this.demoButton.addEventListener("mousedown", (e) => {
-        if (this.routing) return;
-        this.demoRoute(e);
-      })
-    }
-
     showDropdown(str) {
         let dd = (str === 'destination') ? 'destination-dropdown' : 'start-dropdown'
         document.querySelector(`#${dd}`).classList.add('show')
@@ -108,6 +100,7 @@ export default class SearchForm extends React.Component {
     }
 
     demoRoute(e) {
+      console.log("demoo")
       this.routing = true;
 
       const start = "825 Battery Street, San Francisco, California 94111, United States"
@@ -213,7 +206,10 @@ export default class SearchForm extends React.Component {
                     </label>
                     <div id="form-buttons">
                       <button type="submit" >Create Routes</button>
-                      <div className="demo-button">
+                      <div className="demo-button" onClick={(e) => {
+                        if (this.routing) return;
+                        this.demoRoute(e);
+                      }}>
                         Demo Route
                       </div>
                     </div>
