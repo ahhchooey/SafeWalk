@@ -50,6 +50,13 @@ class Authors extends React.Component {
                </div>
                <div className="slideout_inner"
                >
+                   <div style={{
+                    position: "absolute",
+                     fontSize: "10px",
+                     top: "0px",
+                     right: "5px",
+                     marginBottom: "3px"
+                   }}>*SafeWalker is intended for Mobile Use</div>
                   <h3>Welcome to SafeWalker!</h3>
                   <br/>
                   <p>

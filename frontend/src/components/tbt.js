@@ -58,6 +58,12 @@ export default class TBT extends React.Component {
               : <img src="https://img.icons8.com/ios/50/000000/gps-device.png" alt="forward" />
           } 
           {this.state.directions[0].instruction}
+          <div style={{
+            position: "absolute",
+            top: "1px",
+            right: "2px",
+            fontSize: "12px",
+          }}>Click to Expand Directions</div>
         </React.Fragment>
       )
     }
