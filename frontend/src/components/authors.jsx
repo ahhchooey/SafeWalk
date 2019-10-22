@@ -53,7 +53,7 @@ class Authors extends React.Component {
                   <h3>Welcome to SafeWalker!</h3>
                   <br/>
                   <p>
-                      Safewalker is an app that provides walking routes in the Financial District of San Francisco based on crime data pulled from DataSF, a platform by the city government that provides data on a variety of city-related infromation. We combined this data with Mapbox's map API, npm Dijkstra (a library that optimizes routes based on Dijkstra's pathfinding algorithm), and our own MongoDB database to provide you both the fastest and 'safest' routes to your destination.
+                      Safewalker is a mobile app that provides walking routes in the Financial District of San Francisco based on crime data pulled from DataSF, a platform by the city government that provides data on a variety of city-related infromation. We combined this data with Mapbox's map API, npm Dijkstra (a library that optimizes routes based on Dijkstra's pathfinding algorithm), and our own MongoDB database to provide you both the fastest and 'safest' routes to your destination.
                     <br/>
                     <br />
                     Authors:

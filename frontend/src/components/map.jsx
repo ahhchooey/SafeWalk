@@ -15,7 +15,9 @@ class Map extends Component {
             userLocation: [],
         }
         this.map = "";
-        this.marker = "";
+        this.currentLocationMarker = "";
+        this.startMarker = "";
+        this.endMarker = "";
         this.receiveCurrentLocation = this.props.receiveCurrentLocation;
         this.handleClick = this.handleClick.bind(this);
         this.createMap = this.createMap.bind(this);
@@ -24,6 +26,7 @@ class Map extends Component {
         this.renderLineLayer = this.renderLineLayer.bind(this);
         this.addLineLayer = this.addLineLayer.bind(this);
         this.addCrimeHeatMap = this.addCrimeHeatMap.bind(this);
+        this.renderPoints = this.renderPoints.bind(this);
     }
     componentDidMount() {
         this.createMap();
@@ -35,11 +38,11 @@ class Map extends Component {
         }), 1000)
     }
     updateMarker() {
-        if (this.marker) {
-            this.marker.remove();
+        if (this.currentLocationMarker) {
+            this.currentLocationMarker.remove();
         }
         if (this.state.userLocation.length > 0) {
-            this.marker = new mapboxgl.Marker()
+            this.currentLocationMarker = new mapboxgl.Marker()
                 .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
                 .addTo(this.map);
         }
@@ -217,7 +220,7 @@ class Map extends Component {
             }, 0)
 
             if (this.state.userLocation.length > 0) {
-                this.marker = new mapboxgl.Marker()
+                this.currentLocationMarker = new mapboxgl.Marker()
                     .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
                     .addTo(this.map);
             } 
@@ -225,7 +228,7 @@ class Map extends Component {
                 navigator.geolocation.getCurrentPosition(res => {
                     this.setState({ userLocation: res });
                 })
-                this.marker = new mapboxgl.Marker()
+                this.currentLocationMarker = new mapboxgl.Marker()
                     .setLngLat(this.state.userLocation) // [lng, lat] coordinates to place the marker at
                     .addTo(this.map);
            } 
@@ -398,6 +401,9 @@ class Map extends Component {
         let zoom;
 
         if( setRoute === null ) {
+            if (this.startMarker) this.startMarker.remove();
+            if (this.endMarker) this.endMarker.remove();
+            
             this.renderLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
             this.renderLineLayer("safestRoute", map, safestRoute, safeColor, 2);
             center = safestRoute.slice().sort()[Math.floor(safestRoute.length / 2)];
@@ -405,11 +411,13 @@ class Map extends Component {
         } else if ( setRoute === "safest" ) {
             this.renderLineLayer("fastestRoute", map, [], fastColor, 0);
             this.renderLineLayer("safestRoute", map, safestRoute, safeColor, 0);
+            this.renderPoints(safestRoute);
             center = safestRoute[0];
             zoom = 16;
         } else if ( setRoute === "fastest") {
             this.renderLineLayer("safestRoute", map, [], fastColor, 0);
             this.renderLineLayer("fastestRoute", map, fastestRoute, fastColor, 0);
+            this.renderPoints(fastestRoute);
             center = fastestRoute[0];
             zoom = 16;
         }
@@ -420,6 +428,23 @@ class Map extends Component {
         map.removeLayer(id);
         map.removeSource(id);
         this.addLineLayer(id, map, route, color, offset)
+    }
+    renderPoints(coordinates){
+        const start = document.createElement('div');
+        const end = document.createElement('div');
+        start.className = 'marker';
+        start.innerHTML="Start"
+        // make a marker for each feature and add to the map
+        this.startMarker = new mapboxgl.Marker(start)
+            .setLngLat(coordinates[0])
+            .addTo(this.map);
+
+        end.className = 'marker';
+        end.innerHTML="End"
+        // make a marker for each feature and add to the map
+        this.endMarker = new mapboxgl.Marker(end)
+            .setLngLat(coordinates[coordinates.length - 1])
+            .addTo(this.map);
     }
     addLineLayer(id, map, route, color, offset){
         map.addLayer({
