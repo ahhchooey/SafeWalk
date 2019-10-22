@@ -100,7 +100,6 @@ export default class SearchForm extends React.Component {
     }
 
     demoRoute(e) {
-      console.log("demoo")
       this.routing = true;
 
       const start = "825 Battery Street, San Francisco, California 94111, United States"
