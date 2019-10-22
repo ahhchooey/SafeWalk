@@ -55,7 +55,8 @@ class Authors extends React.Component {
                      fontSize: "10px",
                      top: "0px",
                      right: "5px",
-                     marginBottom: "3px"
+                     marginBottom: "3px",
+                     display: "none"
                    }}>*SafeWalker is intended for Mobile Use</div>
                   <h3>Welcome to SafeWalker!</h3>
                   <br/>
