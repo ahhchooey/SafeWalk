@@ -161,7 +161,7 @@ export default class SearchForm extends React.Component {
                     <div>
                     <input 
                       type="text" 
-                      placeholder="From:"
+                      placeholder="Start location?"
                       required 
                       onChange={this.handleInput('start')} 
                       onFocus={() => this.showDropdown('start')} 
@@ -192,7 +192,7 @@ export default class SearchForm extends React.Component {
                     >
                         <input 
                           type="text" 
-                          placeholder="To:"
+                          placeholder="Where to?"
                           required
                           onChange={this.handleInput('destination')} 
                           value={this.state.destination} 
