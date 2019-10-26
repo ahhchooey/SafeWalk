@@ -10,6 +10,8 @@ export default class TBT extends React.Component {
       directions: [],
       setRoute: "",
     }
+    this.hideDropdown = this.hideDropdown.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   componentDidMount() {
@@ -34,12 +36,14 @@ export default class TBT extends React.Component {
     e.preventDefault();
     $(".tbt-dropdown").toggleClass("visible")
     $(".tbt").toggleClass("corners")
+    this.props.toggleTBTDropDown();
   } 
-
+  
   hideDropdown(e) {
     e.preventDefault();
     $(".tbt-dropdown").removeClass("visible")
     $(".tbt").removeClass("corners")
+    this.props.toggleTBTDropDown();
   }
 
   render() {

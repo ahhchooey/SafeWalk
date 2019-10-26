@@ -2,8 +2,8 @@ import React from 'react';
 import './stylesheets/authors.scss';
 import $ from 'jquery';
 import { connect } from 'react-redux';
-
 import { toggleAuthors } from '../actions/ui_actions'
+
 class Authors extends React.Component {
     constructor(props) {
         super(props);

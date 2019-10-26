@@ -38,8 +38,11 @@ body {
 .mapboxgl-popup-content {
 
     h2 {
-        b {
+        .safeRating {
             color: rgb(0,200,0);
+        }
+        .dangerRating {
+            color: red;
         }
     }
 }

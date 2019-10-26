@@ -6,7 +6,6 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding')
 const baseClient = mbxClient({ accessToken: 'pk.eyJ1IjoidGhlby1icm93bmUiLCJhIjoiY2sweDNxNml3MDJrczNpcWk2Y2VkcTRscSJ9.spEwua1RKRltkkhpouI7-g' })
 const geocodingClient = mbxGeocoding(baseClient);
 
-
 export default class SearchForm extends React.Component {
     constructor(props) {
         super(props)
@@ -28,7 +27,10 @@ export default class SearchForm extends React.Component {
         this.clearFrom = this.clearFrom.bind(this)
       this.routing = false;
     }
-
+    componentDidMount(){
+      //auto scroll to top when search form mounts
+      window.scrollTo(0, 0);
+    }
     showDropdown(str) {
         let dd = (str === 'destination') ? 'destination-dropdown' : 'start-dropdown'
         document.querySelector(`#${dd}`).classList.add('show')

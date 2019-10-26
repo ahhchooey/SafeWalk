@@ -53,7 +53,12 @@
   height: 50vh;
   background-color: #888;
   box-sizing: border-box;
-
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Chrome/Safari/Webkit */
+  }
 }
 
 .tbt-dropdown-item {
@@ -102,6 +107,7 @@
 
 .corners {
   border-radius: 4px 4px 0px 0px;
+  z-index: 5;
 }
 
 .visible {
