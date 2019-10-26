@@ -8,16 +8,18 @@ import {
     TOGGLE_HEAT,
     CLEAR_ROUTE,
     SET_MAP,
-    TOGGLE_AUTHORS
+    TOGGLE_AUTHORS,
+    TOGGLE_TURN_BY_TURN_DROP_DOWN
 } from '../actions/ui_actions';
 
 let defaultState = {
-    showSearch: true,
+    showSearch: false,
     showAllDirections: false,
     showTripInfo: false,
     showTurnByTurn: false,
     showDZ: false,
     showAuthor: false,
+    showTBTDropDown: false,
     showHeat: true,
     setRoute: null,
     setMap: false
@@ -45,6 +47,9 @@ const uiReducer = (state = defaultState, action) => {
         case TOGGLE_AUTHORS:
             newState.showAuthor = !newState.showAuthor;
             return newState;
+        case TOGGLE_TURN_BY_TURN_DROP_DOWN:
+            newState.showTBTDropDown = !newState.showTBTDropDown;
+            return newState;
         case SET_ROUTE:
             newState.setRoute = action.str;
             return newState;
@@ -55,7 +60,7 @@ const uiReducer = (state = defaultState, action) => {
             newState.setMap = true;
             return newState;
         case CLEAR_ROUTE:
-            let thing = Object.assign({}, defaultState, {setMap: true})
+            let thing = Object.assign({}, defaultState, { setMap: true, showSearch: true})
             return thing;
         default:
             return state;

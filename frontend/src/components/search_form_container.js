@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import SearchForm from "./search_form.jsx";
 import {fetchRoute} from "../actions/directions_actions.js";
-import {toggleShowSearch, toggleDangerZone} from '../actions/ui_actions';
+import { toggleShowSearch, toggleDangerZone} from '../actions/ui_actions';
 
 const mapStateToProps = (state) => ({
   showSearch: state.ui.showSearch

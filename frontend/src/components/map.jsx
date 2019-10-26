@@ -12,7 +12,7 @@ class Map extends Component {
     constructor(props){
         super(props);
         this.state = {
-            userLocation: [],
+            userLocation: {},
         }
         this.map = "";
         this.currentLocationMarker = "";
@@ -216,7 +216,8 @@ class Map extends Component {
             addLineLayer("safestRoute", map, [], safeColor, 0)
                       
             setTimeout(() => {
-                this.props.setMap()
+                this.props.setMap();
+                this.props.toggleShowSearch();
             }, 0)
 
             if (this.state.userLocation.length > 0) {
@@ -226,6 +227,7 @@ class Map extends Component {
             } 
             else {
                 navigator.geolocation.getCurrentPosition(res => {
+                    debugger
                     this.setState({ userLocation: res });
                 })
                 this.currentLocationMarker = new mapboxgl.Marker()
@@ -246,24 +248,22 @@ class Map extends Component {
                 })
                 let rating;
                 
-                    if (parseFloat(crimes.crimeRating) < 1){
-                        rating = "A"
-                    } else if(parseFloat(crimes.crimeRating) >= 1 && parseFloat(crimes.crimeRating) < 100){
-                        rating = "B"
-                    } else if (parseFloat(crimes.crimeRating) >= 100 && parseFloat(crimes.crimeRating) < 250){
-                        rating = "C"
-                    } else if (parseFloat(crimes.crimeRating) >=250  && parseFloat(crimes.crimeRating) < 500){
-                        rating = "D"
-                    } else if (parseFloat(crimes.crimeRating) >= 500 && parseFloat(crimes.crimeRating) < 1000) {
-                        rating = "E"
-                    }else if (parseFloat(crimes.crimeRating) >= 1000 ){
-                        rating = "F"
-                    } else {
-                        rating = "Bad Bad Not Good"
-                    }
+                if (parseFloat(crimes.crimeRating) < 1){
+                    rating = "<span class='safeRating'>A</span>";
+                } else if(parseFloat(crimes.crimeRating) >= 1 && parseFloat(crimes.crimeRating) < 100){
+                    rating = "<span class='safeRating'>B</span>";
+                } else if (parseFloat(crimes.crimeRating) >= 100 && parseFloat(crimes.crimeRating) < 250){
+                    rating = "<span class='safeRating'>C</span>";
+                } else if (parseFloat(crimes.crimeRating) >=250  && parseFloat(crimes.crimeRating) < 500){
+                    rating = "<span class='dangerRating'>D</span>";
+                } else if (parseFloat(crimes.crimeRating) >= 500 && parseFloat(crimes.crimeRating) < 1000) {
+                    rating = "<span class='dangerRating'>E</span>";
+                }else if (parseFloat(crimes.crimeRating) >= 1000 ){
+                    rating = "<span class='dangerRating'>F</span>";
+                } else {
+                    rating = "Bad Bad Not Good"
+                }
                     
-                
-
                 intersectionCrimeCount = intersectionCrimeCount.join(', ');
                 intersectionCrimeCount = "<h2><b>Safety Rating:</b> "+ rating + "</h2>" + intersectionCrimeCount;
                 

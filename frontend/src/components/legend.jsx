@@ -8,6 +8,7 @@ const mstp = state => ({
     showHeat: state.ui.showHeat,
     mapState: state.ui.setMap,
     showAuthor: state.ui.showAuthor,
+    showTBTDropDown: state.ui.showTBTDropDown,
 })
 
 const mdtp = dispatch => ({
@@ -27,7 +28,7 @@ class Legend extends React.Component {
     }
     componentDidUpdate(prevProps){
         if (prevProps !== this.props) {
-            if (this.props.showHeat && !this.props.showAuthor) {
+            if (this.props.showHeat && !this.props.showAuthor && !this.props.showTBTDropDown) {
                 this.showLegend();
             } else {
                 this.hideLegend();
