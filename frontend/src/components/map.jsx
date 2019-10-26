@@ -12,7 +12,7 @@ class Map extends Component {
     constructor(props){
         super(props);
         this.state = {
-            userLocation: {},
+            userLocation: [],
         }
         this.map = "";
         this.currentLocationMarker = "";
@@ -227,7 +227,6 @@ class Map extends Component {
             } 
             else {
                 navigator.geolocation.getCurrentPosition(res => {
-                    debugger
                     this.setState({ userLocation: res });
                 })
                 this.currentLocationMarker = new mapboxgl.Marker()
